@@ -138,19 +138,18 @@
 % TITLE & AUTHORS %
 %%%%%%%%%%%%%%%%%%%
 
-\title[Matrix Semigroups with Unary Operations]{The Finite Basis Problem\\ for Semigroups of Matrices\\
-with Natural Unary Operations}
+\title[Matrix Semigroups with Unary Operations]{Equational Theories of Matrix Semigroups\\ with Unary Operations}
 
 \author{K.~Auinger}
-\address{Fakult\"at f\"ur Mathematik, Universit\"at Wien,
-Nordbergstrasse 15,  A-1090 Wien, Austria}
+\address{Fakult\"at f\"ur Mathematik, Universit\"at Wien, Nordbergstrasse 15,  A-1090 Wien, Austria}
 \email{karl.auinger@univie.ac.at}
+%
 \author{I.~Dolinka}
-\address{Department of Mathematics and Informatics, University of Novi Sad,
-Trg Dositeja Obradovi\'ca 4, 21000 Novi Sad, Serbia} \email{dockie@dmi.uns.ac.rs}
+\address{Department of Mathematics and Informatics, University of Novi Sad, Trg Dositeja Obradovi\'ca 4, 21000 Novi Sad, Serbia}
+\email{dockie@dmi.uns.ac.rs}
+%
 \author {M.~V.~Volkov}
-\address{Faculty of Mathematics and Mechanics, Ural State University,
-Lenina 51, 620083 Ekaterinburg, Russia}
+\address{Faculty of Mathematics and Mechanics, Ural State University, Lenina 51, 620083 Ekaterinburg, Russia}
 \email{mikhail.volkov@usu.ru}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
@@ -160,79 +159,49 @@ Lenina 51, 620083 Ekaterinburg, Russia}
 \begin{document}
 
 \begin{abstract}
-We study equational theories of matrices in the language involving
-multiplication and natural unary operations such as transposition
-or Moore-Penrose inversion. We prove that in many cases such
-theories are not finitely axiomatizable.
+We study equational theories of matrices in the language involving multiplication and unary operations such as
+transposition or Moore-Penrose inversion. We prove that in many cases such theories are not finitely axiomatizable.
 \end{abstract}
 
 \maketitle
 
 \section{Background and motivation}
-A fundamental and widely studied question connected with an
-algebraic structure is whether its equational theory is finitely
-axiomatizable. This question is often referred to as the
-\emph{finite basis problem} because structures for which it is
-answered in the affirmative are usually said to be \emph{finitely
-based}. Being very natural by itself, the finite basis problem has
-also revealed a number of interesting and unexpected relations to
-many issues of theoretical and practical importance ranging from
-feasible algorithms for membership in certain classes of formal
-languages (see \cite{Alm95}) to classical number-theoretic
-conjectures (such as the Twin Prime, Goldbach, existence of odd
-perfect numbers and the infinitude of even perfect numbers: see
-\cite{Per89} where it is shown that each of these conjectures is
-equivalent to the finite basability of a particular groupoid).
+A fundamental and widely studied question connected with an algebraic structure is whether its equational theory is
+finitely axiomatizable. This question is often referred to as the \emph{finite basis problem} because structures for
+which it is answered in the affirmative are usually said to be \emph{finitely based}. Being very natural by itself, the
+finite basis problem has also revealed a number of interesting and unexpected relations to many issues of theoretical
+and practical importance ranging from feasible algorithms for membership in certain classes of formal languages (see
+\cite{Alm95}) to classical number-theoretic conjectures (such as the Twin Prime, Goldbach, existence of odd perfect
+numbers and the infinitude of even perfect numbers: see \cite{Per89} where it is shown that each of these conjectures
+is equivalent to the finite basability of a particular groupoid).
 
-Since matrices play a distinguished role in mathematics, algebraic
-structures whose carriers are sets of matrices form important and
-popular objects of study. In particular, the finite basis problem
-has been exhaustively investigated for the semigroup
-$\langle\mathrm{M}_n(\mathcal{K}),\cdot\rangle$ of all $n\times
-n$-matrices\footnote{In order to avoid boring trivialities, we
-always assume $n\ge 2$ when speaking about $n\times n$-matrices.}
-over a field $\mathcal{K}$. Corresponding results can be
-summarized in the following statement.
+Since matrices play a distinguished role in mathematics, algebraic structures whose carriers are sets of matrices form
+important and popular objects of study. In particular, the finite basis problem has been exhaustively investigated for
+the semigroup $\langle\mathrm{M}_n(\mathcal{K}),\cdot\rangle$ of all $n\times n$-matrices ($n\ge2$) over a field
+$\mathcal{K}$. Corresponding results can be summarized in the following statement.
 \begin{Thm}\label{Theorem 1.1}
-Let $\mathcal{K}$ be a field, $n\ge2$. The semigroup
-$\langle\mathrm{M}_n(\mathcal{K}),\cdot\rangle$ is finitely based
+Let $\mathcal{K}$ be a field, $n\ge2$. The semigroup $\langle\mathrm{M}_n(\mathcal{K}),\cdot\rangle$ is finitely based
 if and only if $\mathcal{K}$ is infinite.
 \end{Thm}
-The ``if'' part of Theorem~\ref{Theorem 1.1} is a straightforward
-corollary of the general fact that the semigroup of all $n\times
-n$-matrices over an infinite field satisfies only trivial
-identities, that is, consequences of the associative law, see
-\cite[Lemma~2]{GoMi78}. The ``only if'' part, that is, the claim
-that the semigroup $\langle\mathrm{M}_n(\mathcal{K}),\cdot\rangle$
-over a finite field is non-finitely based, was proved in the
-mid-1980s by the third author~\cite[Proposition~3]{V} and
-Sapir~\cite[Corollary 6.2]{sapirburnside}. For a forthcoming
-discussion it is worth noting that methods used in~\cite{V}
-and~\cite{sapirburnside} were rather different but each of them
-sufficed to cover all finite semigroups of the form
-$\langle\mathrm{M}_n(\mathcal{K}),\cdot\rangle$. Moreover, Sapir's
-approach implied that all these semigroups are even inherently
-non-finitely based, where a finite semigroup is called
-\emph{inherently non-finitely based} if it is not contained in any
-finitely based locally finite variety.
+The ``if'' part of Theorem~\ref{Theorem 1.1} is a straightforward corollary of the general fact that the semigroup of
+all $n\times n$-matrices over an infinite field satisfies only trivial identities, that is, consequences of the
+associative law, see \cite[Lemma~2]{GoMi78}. The ``only if'' part, that is, the claim that the semigroup
+$\langle\mathrm{M}_n(\mathcal{K}),\cdot\rangle$ over a finite field is non-finitely based, was proved in the mid-1980s
+by the third author~\cite[Proposition~3]{V} and Sapir~\cite[Corollary 6.2]{sapirburnside}. For a forthcoming discussion
+it is worth noting that methods used in~\cite{V} and~\cite{sapirburnside} were rather different but each of them
+sufficed to cover all finite semigroups of the form $\langle\mathrm{M}_n(\mathcal{K}),\cdot\rangle$. Moreover, Sapir's
+approach implied that all these semigroups are even inherently non-finitely based, where a finite semigroup is called
+\emph{inherently non-finitely based} if it is not contained in any finitely based locally finite variety.
 
-Matrices admit several fairly natural unary operations such as
-transposition, for instance. Here is the starting point of the
-present paper: we shall treat the finite basis problem for
-\textbf{unary semigroups of matrices} where a \emph{unary
-semigroup} is merely a semigroup equipped with some additional
-unary operation. For this we first have to adapt to the unary
-environment the methods of~\cite{V} and~\cite{sapirburnside}. We
-present the corresponding results in Section~2 while Section~3
-collects several applications to the finite basis problem for
-unary semigroups of matrices. Both methods of Section~2 are used
-here, and it turns out that they in some sense complement each
-other since, in contrast to the plain semigroup case, none of them
-alone suffice to cover, say, all finite unary semigroups of the
-form $\langle\mathrm{M}_n(\mathcal{K}),\cdot,{}^T\rangle$ where
-the unary operation $A\mapsto A^T$ is the usual transposition of
-matrices. For this particular case our main result is the
-following.
+Matrices admit several fairly natural unary operations such as transposition, for instance. Here is the starting point
+of the present paper: we shall treat the finite basis problem for \textbf{unary semigroups of matrices} where a
+\emph{unary semigroup} is merely a semigroup equipped with some additional unary operation. For this we first have to
+adapt to the unary environment the methods of~\cite{V} and~\cite{sapirburnside}. We present the corresponding results
+in Section~2 while Section~3 collects several applications to the finite basis problem for unary semigroups of
+matrices. Both methods of Section~2 are used here, and it turns out that they in some sense complement one another
+since, in contrast to the plain semigroup case, none of them alone suffices to cover, say, all finite unary semigroups
+of the form $\langle\mathrm{M}_n(\mathcal{K}),\cdot,{}^T\rangle$ where the unary operation $A\mapsto A^T$ is the usual
+transposition of matrices. For this particular case our main result is the following.
 \begin{Thm}\label{main result involution}
 Let $\mathcal{K}=\langle K,+,\cdot\rangle$
 be a finite field and $n\ge 2$. Then
@@ -240,26 +209,21 @@ be a finite field and $n\ge 2$. Then
 \item the involutory semigroup $\langle \mathrm{M}_n(\mathcal{K}),\cdot,{}^T\rangle$
 is not finitely based;
 \item the involutory semigroup $\langle \mathrm{M}_n(\mathcal{K}),\cdot,{}^T\rangle$
-is inherently non-finitely based if and only if either $n\ge 3$ or
-$n=2$ and $\vert K\vert\mathrel{\not\equiv 3} (\bmod\ 4)$.
+is inherently non-finitely ba\-sed if and only if either $n\ge 3$ or $n=2$ and $\vert K\vert\mathrel{\not\equiv 3}
+(\bmod\ 4)$.
 \end{enumerate}
 \end{Thm}
-Other types of unary operations with matrices studied in this
-paper include, for instance, Moore-Penrose inversion and
-symplectic transposition. We also consider unary semigroups of
-Boolean matrices under transposition.
+Other types of unary operations on matrices studied in this paper include, for instance, Moore-Penrose inversion and
+symplectic transposition. We also consider unary semigroups of Boolean matrices under transposition.
 
-We mention in passing that tools developed in Section~2 admit many
-further applications that will be published in a separate paper.
+We mention in passing that tools developed in Section~2 admit many further applications that will be published in a
+separate paper.
 
-We assume the reader's acquaintance with basic concepts of
-equational logic and the theory of varieties such as the
-HSP-theorem, see, e.g., \cite[Chapter~II]{BuSa81}. As far as \sm\
-notions are concerned, we adopt the standard terminology and
-notation from~\cite{CP}. It should be noted, however, that the
-presentation is to a reasonable extent self-contained so that most
-of the material  should be accessible to readers without any
-specific \sm-theoretic background.
+We assume the reader's acquaintance with basic concepts of equational logic and the theory of varieties such as the
+HSP-theorem, see, e.g., \cite[Chapter~II]{BuSa81}. As far as \sm\ notions are concerned, we adopt the standard
+terminology and notation from~\cite{CP}. It should be noted, however, that the presentation is to a reasonable extent
+self-contained so that most of the material  should be accessible to readers without any specific \sm-theoretic
+background.
 
 \section{Tools}\label{mainresult}
 
@@ -345,10 +309,8 @@ $X$} while elements of the free semigroup $X^+$ will be referred
 to as (plain semigroup) words over $X$.
 
 \subsection{A unary version of the critical semigroup method}
-Here we present a `unary' modification of the approach used
-in~\cite{V}. According to a classification proposed
-in~\cite{volkovjaponicae}, this approach is referred to as the
-\emph{critical semigroup method}.
+Here we present a `unary' modification of the approach used in~\cite{V}. According to the classification proposed
+in~\cite{volkovjaponicae}, this approach is referred to as the \emph{critical semigroup method}.
 
 The formulation of the corresponding result involves two simple
 operators on unary semigroup varieties. For any unary semigroup
@@ -680,14 +642,10 @@ semigroup case by the third author~\cite{V}.)
 \end{proof}
 
 \subsection{A unary version of the method of inherently
-non-finitely based semigroups} Recall that a finite algebraic
-structure of type $\tau$ is called \emph{inherently non-finitely
-based} if it is not contained in any finitely based locally finite
-variety of type $\tau$. Here we prove a sufficient condition for
-an involutory semigroup to be inherently non-finitely based and
-exhibit two concrete examples of involutory semigroups satisfying
-this condition. These examples will be essentially in our
-applications in Section~3.
+non-finitely based semigroups} Recall that a finite algebraic structure of type $\tau$ is called \emph{inherently
+non-finitely based} if it is not contained in any finitely based locally finite variety of type $\tau$. Here we prove a
+sufficient condition for an involutory semigroup to be inherently non-finitely based and exhibit two concrete examples
+of involutory semigroups satisfying this condition. These examples will be essential in our applications in Section~3.
 
 Let $x_1,x_2,\dots,x_n,\dots$ be a sequence of letters. The
 sequence $\{Z_n\}_{n=1,2,\dots}$ of \emph{Zimin words} is defined
@@ -1126,14 +1084,10 @@ $\var\mathcal{G}$ and so is locally finite. Altogether,
 $\mathcal{T}$ is finite and the proposition is proved.
 \end{proof}
 
-Proposition \ref{NINFB} implies in particular that no finite
-regular $*$-semigroup can be inherently non-\fb\ as one can use
-$x^*$ in the role of the term $\om(x)$. In particular, the unary
-semigroup $\langle B_2^1,\cdot,{}^T\rangle$ where the unary
-operation is the usual matrix transposition is not inherently
-non-\fb\ (the fact first discovered by Sapir,
-see~\cite{sapirinverse}), even though it is not finitely
-based~\cite{kleiman}.
+Proposition \ref{NINFB} implies in particular that no finite regular $*$-semigroup can be inherently non-\fb\ as one
+can use $x^*$ in the role of the term $\om(x)$. In particular, the unary semigroup $\langle B_2^1,\cdot,{}^T\rangle$,
+where the unary operation is the usual matrix transposition, is not inherently non-\fb\ (this fact was first discovered
+by Sapir, see~\cite{sapirinverse}), even though it is not finitely based~\cite{kleiman}.
 
 \section{Applications}
 
@@ -1532,19 +1486,14 @@ matrices has no finite identity basis.
 
 
 \subsection{Matrix semigroups with transposition}
-First of all, wee observe that, for each field $\mathcal{K}$ of
-characteristic $0$, the involutory semigroup
-$\langle\mathrm{M}_n(\mathcal{K}),\cdot,{}^T\rangle$ is finitely
-based. Indeed, we have already mentioned that the two matrices
-$\zeta$ and $\eta$ in~\eqref{free subgroup} generate a free
-subgroup of $\langle\mathrm{SL}_2(\bb Z),\cdot,{}^{-1}\rangle$ and
-hence a free subsemigroup of $\langle\mathrm{SL}_2(\bb Z),
-\cdot\rangle$. But $\eta=\zeta^T$ whence the unary subsemigroup in
-$\langle\mathrm{SL}_2(\bb Z),\cdot,{}^T\rangle$ generated by
-$\zeta$ is isomorphic to the free monogenic involutory semigroup
-$\mathrm{FI}(\{\zeta\})$. The latter semigroup is known to contain
-as a unary subsemigroup a free involutory semigroup on countably
-many generators, namely, $\mathrm{FI}(Z)$ where
+First of all, we observe that the involutory semigroup $\langle\mathrm{M}_n(\mathcal{K}),\cdot,{}^T\rangle$ is finitely
+based for any field $\mathcal{K}$ of characteristic $0$. Indeed, we have already mentioned that the two matrices
+$\zeta$ and $\eta$ in~\eqref{free subgroup} generate a free subgroup of $\langle\mathrm{SL}_2(\bb
+Z),\cdot,{}^{-1}\rangle$ and hence a free subsemigroup of $\langle\mathrm{SL}_2(\bb Z), \cdot\rangle$. But
+$\eta=\zeta^T$ whence the unary subsemigroup in $\langle\mathrm{SL}_2(\bb Z),\cdot,{}^T\rangle$ generated by $\zeta$ is
+isomorphic to the free monogenic involutory semigroup $\mathrm{FI}(\{\zeta\})$. The latter semigroup is known to
+contain as a unary subsemigroup a free involutory semigroup on countably many generators, namely, $\mathrm{FI}(Z)$
+where
 $$Z=\{\zeta \zeta ^T\zeta ,\ \zeta (\zeta ^T)^2\zeta ,\ \dots,\ \zeta (\zeta ^T)^n\zeta ,\ \dots\}.$$
 Hence all identities holding in
 $\langle\mathrm{M}_n(\mathcal{K}),\cdot,{}^T\rangle$ with $n\ge 2$
@@ -1686,40 +1635,31 @@ $\mathcal{K}=\langle K,+,\cdot\rangle$ be a finite field. Then
 \item the involutory semigroup $\langle \mathrm{M}_n(\mathcal{K}),\cdot,{}^T\rangle$
 is not finitely based;
 \item the involutory semigroup $\langle \mathrm{M}_n(\mathcal{K}),\cdot,{}^T\rangle$
-is inherently non-finitely based if and only if either $n\ge 3$ or
-$n=2$ and $\vert K\vert\mathrel{\not\equiv 3} (\bmod\ 4)$.
+is inherently non-finitely ba\-sed if and only if either $n\ge 3$ or $n=2$ and $\vert K\vert\mathrel{\not\equiv 3}
+(\bmod\ 4)$.
 \end{enumerate}
 \end{Thm}
-It remains to prove that
-$\langle\mathrm{M}_2(\mathcal{K}),\cdot,{}^T\rangle$ is
-\textbf{not} inherently non-finitely based if $\vert K\vert\equiv
-3\ (\bmod\ 4)$. The assertion follows from
-Proposition~\ref{NINFB}.
 
+It remains to prove that $\langle\mathrm{M}_2(\mathcal{K}),\cdot,{}^T\rangle$ is \textbf{not} inherently non-finitely
+based if $\vert K\vert\equiv 3\ (\bmod\ 4)$. The assertion follows from Proposition~\ref{NINFB}.
 
-\begin{proof}[Proof of Theorem \ref{main result matrix involution}.]
-Suppose that $\vert K\vert\equiv 3\ (\bmod\ 4)$. This is precisely
-the case when each matrix $A$ in
-$\langle\mathrm{M}_2(\mathcal{K}),\cdot,{}^T\rangle$ admits a
-Moore-Penrose inverse $A^\dag$ (Remark~\ref{remark on MP
-inverse}). Let $A$ be a matrix of rank 1; by (\ref{MP is scalar
-multiple}) there exists a scalar $\alpha\in
-\mathcal{K}\setminus\{0\}$ such that $\alpha A^\dag= A^T$. Let
-$r=\vert K\vert -1$; then $\alpha^r=1$. Since the multiplicative
-subgroup of $\mathcal{K}$ is a cyclic subgroup of
-$\mathrm{GL}_2(\mathcal{K})$, the number $r$ divides the exponent
-$d$ of $\mathrm{GL}_2(\mathcal{K})$ whence $\alpha^d=1$.
-Consequently,
+\begin{proof}
+As already remarked, the only assertion of this theorem not covered by previous results is that
+$\langle\mathrm{M}_2(\mathcal{K}),\cdot,{}^T\rangle$ is \textbf{not} inherently non-finitely based if $\vert
+K\vert\equiv 3\ (\bmod\ 4)$. We employ Proposition~\ref{NINFB} to prove this.
+
+Recall that the condition $\vert K\vert\equiv 3\ (\bmod\ 4)$ corresponds precisely to the case when each matrix $A$ in
+$\langle\mathrm{M}_2(\mathcal{K}),\cdot,{}^T\rangle$ admits a Moore-Penrose inverse $A^\dag$ (Remark~\ref{remark on MP
+inverse}). Let $A$ be a matrix of rank 1; by (\ref{MP is scalar multiple}) there exists a scalar $\alpha\in
+\mathcal{K}\setminus\{0\}$ such that $\alpha A^\dag= A^T$. Let $r=\vert K\vert -1$; then $\alpha^r=1$. Since the
+multiplicative subgroup of $\mathcal{K}$ is a cyclic subgroup of $\mathrm{GL}_2(\mathcal{K})$, the number $r$ divides
+the exponent $d$ of $\mathrm{GL}_2(\mathcal{K})$ whence $\alpha^d=1$. Consequently,
 $$A(A^TA)^d= A(\alpha A^\dag A)^d=\alpha^d A(A^\dag A)^d=A.$$
-If $A\in\mathrm{GL}_2(\mathcal{K})$, we also have $A=A(A^TA)^d$
-because $(A^TA)^d$ is the identity matrix; clearly, the equality
-$A=A(A^TA)^d$ holds also for the case when $A$ is the zero matrix.
-Summarizing, we conclude that the identity $x=x(x^Tx)^d$ holds in
-the involutory \sm\
-$\langle\mathrm{M}_2(\mathcal{K}),\cdot,{}^T\rangle$. Setting
-$\om(x):=x^T(xx^T)^{d-1}$, we see that
-$\langle\mathrm{M}_2(\mathcal{K}),\cdot,{}^T\rangle$ satisfies the
-identity $x=x\om(x)x$, as required by Proposition~\ref{NINFB}.
+If $A\in\mathrm{GL}_2(\mathcal{K})$, we also have $A=A(A^TA)^d$ because $(A^TA)^d$ is the identity matrix; clearly, the
+equality $A=A(A^TA)^d$ holds also for the case when $A$ is the zero matrix. Summarizing, we conclude that the identity
+$x=x(x^Tx)^d$ holds in the involutory \sm\ $\langle\mathrm{M}_2(\mathcal{K}),\cdot,{}^T\rangle$. Setting
+$\om(x):=x^T(xx^T)^{d-1}$, we see that $\langle\mathrm{M}_2(\mathcal{K}),\cdot,{}^T\rangle$ satisfies the identity
+$x=x\om(x)x$, as required by Proposition~\ref{NINFB}.
 \end{proof}
 
 \begin{Rmk}
@@ -1884,8 +1824,7 @@ A.\,H.\,Clifford and G.\,B.\,Preston, \emph{The Algebraic Theory
 of Semigroups I}, Amer.\ Math.\ Soc., Providence, 1961.
 
 \bibitem{Dolinka}
-I. Dolinka, \emph{On identities of finite involution semigroups},
-Semigroup Forum, to appear.
+I. Dolinka, \emph{On identities of finite involution semigroups}, Semigroup Forum \textbf{80} (2010), 105--120.
 
 \bibitem{D}
 M.\,P.\,Drazin, \emph{Regular semigroups with involution},
