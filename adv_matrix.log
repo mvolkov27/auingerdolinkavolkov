@@ -1,4 +1,4 @@
-This is e-TeX, Version 3.141592-2.1 (MiKTeX 2.4) (preloaded format=latex 2000.11.28)  31 MAR 2010 16:21
+This is e-TeX, Version 3.141592-2.1 (MiKTeX 2.4) (preloaded format=latex 2000.11.28)  31 MAR 2010 18:08
 entering extended mode
 **adv_matrix.tex
 (adv_matrix.tex
@@ -171,74 +171,50 @@ LaTeX Font Info:    Overwriting math alphabet `\EuScript' in version `bold'
 \c@Rmk=\count104
 \c@Problem=\count105
  (adv_matrix.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 160.
-LaTeX Font Info:    ... okay on input line 160.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 160.
-LaTeX Font Info:    ... okay on input line 160.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 160.
-LaTeX Font Info:    ... okay on input line 160.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 160.
-LaTeX Font Info:    ... okay on input line 160.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 160.
-LaTeX Font Info:    ... okay on input line 160.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 160.
-LaTeX Font Info:    ... okay on input line 160.
-LaTeX Font Info:    Try loading font information for U+msa on input line 160.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 159.
+LaTeX Font Info:    ... okay on input line 159.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 159.
+LaTeX Font Info:    ... okay on input line 159.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 159.
+LaTeX Font Info:    ... okay on input line 159.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 159.
+LaTeX Font Info:    ... okay on input line 159.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 159.
+LaTeX Font Info:    ... okay on input line 159.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 159.
+LaTeX Font Info:    ... okay on input line 159.
+LaTeX Font Info:    Try loading font information for U+msa on input line 159.
 
 (C:\texmf\tex\latex\amsfonts\umsa.fd
 File: umsa.fd 2002/01/19 v2.2g AMS font definitions
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 160.
+LaTeX Font Info:    Try loading font information for U+msb on input line 159.
  (C:\texmf\tex\latex\amsfonts\umsb.fd
 File: umsb.fd 2002/01/19 v2.2g AMS font definitions
 )
-LaTeX Font Info:    Try loading font information for OMS+rsfs on input line 160
+LaTeX Font Info:    Try loading font information for OMS+rsfs on input line 159
 .
 
 (C:\texmf\tex\latex\calrsfs\omsrsfs.fd)
-LaTeX Font Info:    Try loading font information for U+eus on input line 191.
+LaTeX Font Info:    Try loading font information for U+eus on input line 180.
  (C:\texmf\tex\latex\amsfonts\ueus.fd
 File: ueus.fd 2002/01/19 v2.2g AMS font definitions
 )
-[1]
-Overfull \hbox (1.35138pt too wide) in paragraph at lines 242--245
-[][]\OT1/cmr/m/it/10.95 the in-vo-lu-tory semi-group $\OMS/cmsy/m/n/10.95 h\OT1
-/cmr/m/n/10.95 M[](\U/eus/m/n/10.95 K\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ; 
-\OMS/cmsy/m/n/10.95 \OML/cmm/m/it/10.95 ; [][]\OMS/cmsy/m/n/10.95 i$ \OT1/cmr/
-m/it/10.95 is in-her-ently non-finitely based
- []
-
-[2] [3] [4] [5] [6] [7] [8] [9] [10] [11] [12] [13]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 1085
+[1] [2] [3] [4] [5] [6] [7] [8] [9] [10] [11] [12] [13]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 1043
 .
 
 (C:\texmf\tex\latex\base\omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1085.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1043.
 
 
 Underfull \vbox (badness 1675) has occurred while \output is active []
 
  [14]
-[15] [16] [17] [18] [19]
-Overfull \hbox (8.39061pt too wide) in paragraph at lines 1535--1548
-\OT1/cmr/m/n/10.95 that, for each field $\U/eus/m/n/10.95 K$ \OT1/cmr/m/n/10.95
- of char-ac-ter-is-tic $0$, the in-vo-lu-tory semi-group $\OMS/cmsy/m/n/10.95 h
-\OT1/cmr/m/n/10.95 M[](\U/eus/m/n/10.95 K\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.9
-5 ; \OMS/cmsy/m/n/10.95 \OML/cmm/m/it/10.95 ; [][]\OMS/cmsy/m/n/10.95 i$
- []
-
-[20] [21]
-Overfull \hbox (1.35138pt too wide) in paragraph at lines 1688--1691
-[][]\OT1/cmr/m/it/10.95 the in-vo-lu-tory semi-group $\OMS/cmsy/m/n/10.95 h\OT1
-/cmr/m/n/10.95 M[](\U/eus/m/n/10.95 K\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ; 
-\OMS/cmsy/m/n/10.95 \OML/cmm/m/it/10.95 ; [][]\OMS/cmsy/m/n/10.95 i$ \OT1/cmr/
-m/it/10.95 is in-her-ently non-finitely based
- []
-
-[22] [23] [24]
+[15] [16] [17] [18] [19] [20] [21] [22] [23] [24]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [25]
@@ -246,10 +222,10 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Here is how much of TeX's memory you used:
  2744 strings out of 95934
  28578 string characters out of 1195665
- 90293 words of memory out of 1078096
+ 89761 words of memory out of 1078076
  5439 multiletter control sequences out of 35000
  20205 words of font info for 80 fonts, out of 500000 for 1000
  176 hyphenation exceptions out of 607
  34i,16n,32p,247b,346s stack positions out of 1500i,500n,5000p,200000b,32768s
 
-Output written on adv_matrix.dvi (26 pages, 135236 bytes).
+Output written on adv_matrix.dvi (26 pages, 135280 bytes).
