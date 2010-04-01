@@ -1,31 +1,35 @@
-This is e-TeX, Version 3.141592-2.1 (MiKTeX 2.4) (preloaded format=latex 2000.11.28)  31 MAR 2010 18:08
-entering extended mode
+This is TeX, Version 3.14159 (Web2c 7.3.7x) (format=latex 2006.11.20)  1 APR 2010 11:57
 **adv_matrix.tex
-(adv_matrix.tex
+(./adv_matrix.tex
 LaTeX2e <2001/06/01>
-Babel <v3.7j> and hyphenation patterns for english, french, german, ngerman, du
-mylang, nohyphenation, loaded.
-(C:\texmf\tex\latex\amscls\amsart.cls
+Loading CZ hyphenation patterns: Pavel Sevecek, v3, 1995
+Loading SK hyphenation patterns: Jana Chlebikova, 1992
+Babel <v3.7h> and hyphenation patterns for english, dumylang, nohyphenation, cz
+ech, slovak, german, ngerman, spanish, catalan, french, ukenglish, italian, dut
+ch, polish, portuguese, russian, loaded.
+(c:/Program Files/TeXLive/texmf/tex/latex/amslatex/amsart.cls
 Document Class: amsart 2000/10/26 v2.08
 \linespacing=\dimen102
 \normalparindent=\dimen103
 \normaltopskip=\skip41
-(C:\texmf\tex\latex\amsmath\amsmath.sty
+(c:/Program Files/TeXLive/texmf/tex/latex/amslatex/amsmath.sty
 Package: amsmath 2000/07/18 v2.13 AMS math features
 \@mathmargin=\skip42
 
 For additional information on amsmath, use the `?' option.
-(C:\texmf\tex\latex\amsmath\amstext.sty
+(c:/Program Files/TeXLive/texmf/tex/latex/amslatex/amstext.sty
 Package: amstext 2000/06/29 v2.01
- (C:\texmf\tex\latex\amsmath\amsgen.sty
+
+(c:/Program Files/TeXLive/texmf/tex/latex/amslatex/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks14
 \ex@=\dimen104
-)) (C:\texmf\tex\latex\amsmath\amsbsy.sty
+))
+(c:/Program Files/TeXLive/texmf/tex/latex/amslatex/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen105
 )
-(C:\texmf\tex\latex\amsmath\amsopn.sty
+(c:/Program Files/TeXLive/texmf/tex/latex/amslatex/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count79
@@ -67,10 +71,11 @@ LaTeX Info: Redefining \[ on input line 2666.
 LaTeX Info: Redefining \] on input line 2667.
 )
 LaTeX Font Info:    Try loading font information for U+msa on input line 395.
- (C:\texmf\tex\latex\amsfonts\umsa.fd
+
+(c:/Program Files/TeXLive/texmf/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2002/01/19 v2.2g AMS font definitions
 )
-(C:\texmf\tex\latex\amsfonts\amsfonts.sty
+(c:/Program Files/TeXLive/texmf/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2001/10/25 v2.2f
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
@@ -100,67 +105,76 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 \thm@postskip=\skip49
 \thm@headsep=\skip50
 \dth@everypar=\toks24
-) (C:\texmf\tex\latex\cite\cite.sty
-Package: cite 2001/10/14  v 3.9
 )
-(C:\texmf\tex\latex\ltxmisc\url.sty
-\Urlmuskip=\muskip11
-Package: url 1999/03/28  ver 1.5x  Verb mode for urls, etc.
-) (C:\texmf\tex\latex\amsfonts\amssymb.sty
+(c:/Program Files/TeXLive/texmf-local/tex/latex/cite.sty
+Package: cite 1999/04/23  v 3.8
+)
+(c:/Program Files/TeXLive/texmf-local/tex/latex/url.sty
+Package: url 1996/10/19  ver 1.2  Verb mode for urls, email addresses, and file
+ names
+)
+(c:/Program Files/TeXLive/texmf/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2002/01/22 v2.2d
 )
-(C:\texmf\tex\latex\amsmath\amscd.sty
+(c:/Program Files/TeXLive/texmf/tex/latex/amslatex/amscd.sty
 Package: amscd 1999/11/29 v2.0
 \athelp@=\toks25
 \minaw@=\dimen114
 \bigaw@=\dimen115
 \minCDarrowwidth=\dimen116
-) (C:\texmf\tex\latex\eepic\eepic.sty
+)
+(c:/Program Files/TeXLive/texmf/tex/latex/eepic/eepic.sty
 Extension to Epic and LaTeX. Version 1.1e - Released Dec 21, 1999
 \@gphlinewidth=\count99
 \@eepictcnt=\count100
 \@tempdimc=\dimen117
 \maxovaldiam=\dimen118
 \@filltype=\box29
-) (C:\texmf\tex\latex\rotating\rotating.sty
-Package: rotating 1997/09/26 v2.13 Rotation package
+) (c:/Program Files/TeXLive/texmf/tex/latex/rotating/rotating.sty
+Package: rotating 1997/09/26, v2.13 Rotation package
 
-(C:\texmf\tex\latex\graphics\graphicx.sty
+(c:/Program Files/TeXLive/texmf/tex/latex/graphics/graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-(C:\texmf\tex\latex\graphics\keyval.sty
+(c:/Program Files/TeXLive/texmf/tex/latex/graphics/keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks26
 )
-(C:\texmf\tex\latex\graphics\graphics.sty
+(c:/Program Files/TeXLive/texmf/tex/latex/graphics/graphics.sty
 Package: graphics 2001/07/07 v1.0n Standard LaTeX Graphics (DPC,SPQR)
- (C:\texmf\tex\latex\graphics\trig.sty
+
+(c:/Program Files/TeXLive/texmf-local/tex/latex/trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
-) (C:\texmf\tex\latex\00miktex\graphics.cfg
-File: graphics.cfg 2003/03/12 v1.1 MiKTeX 'graphics' configuration
+)
+(c:/Program Files/TeXLive/texmf/tex/latex/texlive/graphics.cfg
+File: graphics.cfg 2001/08/31 v1.1 graphics configuration of teTeX/TeXLive
 )
 Package graphics Info: Driver file: dvips.def on input line 80.
 
-(C:\texmf\tex\latex\graphics\dvips.def
+(c:/Program Files/TeXLive/texmf/tex/latex/graphics/dvips.def
 File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
 ))
 \Gin@req@height=\dimen119
 \Gin@req@width=\dimen120
-) (C:\texmf\tex\latex\base\ifthen.sty
+)
+(c:/Program Files/TeXLive/texmf/tex/latex/base/ifthen.sty
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \c@r@tfl@t=\count101
 \rot@float@box=\box30
-) (C:\texmf\tex\latex\graphics\color.sty
+)
+(c:/Program Files/TeXLive/texmf/tex/latex/graphics/color.sty
 Package: color 1999/02/16 v1.0i Standard LaTeX Color (DPC)
- (C:\texmf\tex\latex\00miktex\color.cfg
-File: color.cfg 2003/03/08 v1.0 MiKTeX 'color' configuration
+
+(c:/Program Files/TeXLive/texmf/tex/latex/texlive/color.cfg
+File: color.cfg 2001/08/31 v1.1 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: dvips.def on input line 125.
-(C:\texmf\tex\latex\graphics\dvipsnam.def
+
+(c:/Program Files/TeXLive/texmf/tex/latex/graphics/dvipsnam.def
 File: dvipsnam.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
 ))
-(C:\texmf\tex\latex\amsfonts\eucal.sty
+(c:/Program Files/TeXLive/texmf/tex/latex/amsfonts/eucal.sty
 Package: eucal 2001/10/01 v2.2d Euler Script fonts
 LaTeX Font Info:    Overwriting math alphabet `\EuScript' in version `bold'
 (Font)                  U/eus/m/n --> U/eus/b/n on input line 55.
@@ -170,7 +184,9 @@ LaTeX Font Info:    Overwriting math alphabet `\EuScript' in version `bold'
 \c@Def=\count103
 \c@Rmk=\count104
 \c@Problem=\count105
- (adv_matrix.aux)
+ (./adv_matrix.aux)
+\openout1 = `adv_matrix.aux'.
+
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 159.
 LaTeX Font Info:    ... okay on input line 159.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 159.
@@ -184,27 +200,28 @@ LaTeX Font Info:    ... okay on input line 159.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 159.
 LaTeX Font Info:    ... okay on input line 159.
 LaTeX Font Info:    Try loading font information for U+msa on input line 159.
-
-(C:\texmf\tex\latex\amsfonts\umsa.fd
+ (c:/Program Files/TeXLive/texmf/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2002/01/19 v2.2g AMS font definitions
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 159.
- (C:\texmf\tex\latex\amsfonts\umsb.fd
+
+(c:/Program Files/TeXLive/texmf/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2002/01/19 v2.2g AMS font definitions
 )
 LaTeX Font Info:    Try loading font information for OMS+rsfs on input line 159
 .
 
-(C:\texmf\tex\latex\calrsfs\omsrsfs.fd)
+(c:/Program Files/TeXLive/texmf/tex/latex/calrsfs/omsrsfs.fd)
 LaTeX Font Info:    Try loading font information for U+eus on input line 180.
- (C:\texmf\tex\latex\amsfonts\ueus.fd
+
+(c:/Program Files/TeXLive/texmf/tex/latex/amsfonts/ueus.fd
 File: ueus.fd 2002/01/19 v2.2g AMS font definitions
-)
-[1] [2] [3] [4] [5] [6] [7] [8] [9] [10] [11] [12] [13]
+) [1] [2] [3]
+[4] [5] [6] [7] [8] [9] [10] [11] [12] [13]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 1043
 .
 
-(C:\texmf\tex\latex\base\omscmr.fd
+(c:/Program Files/TeXLive/texmf/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
@@ -218,14 +235,14 @@ Underfull \vbox (badness 1675) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [25]
-[26] (adv_matrix.aux) ) 
+[26] (./adv_matrix.aux) ) 
 Here is how much of TeX's memory you used:
- 2744 strings out of 95934
- 28578 string characters out of 1195665
- 89761 words of memory out of 1078076
- 5439 multiletter control sequences out of 35000
- 20205 words of font info for 80 fonts, out of 500000 for 1000
- 176 hyphenation exceptions out of 607
- 34i,16n,32p,247b,346s stack positions out of 1500i,500n,5000p,200000b,32768s
+ 2631 strings out of 50491
+ 30384 string characters out of 1189754
+ 90330 words of memory out of 1500001
+ 5372 multiletter control sequences out of 10000+15000
+ 20968 words of font info for 81 fonts, out of 400000 for 1000
+ 449 hyphenation exceptions out of 1000
+ 34i,16n,32p,247b,432s stack positions out of 1500i,500n,1500p,200000b,5000s
 
-Output written on adv_matrix.dvi (26 pages, 135280 bytes).
+Output written on adv_matrix.dvi (26 pages, 129968 bytes).
