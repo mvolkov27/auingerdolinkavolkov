@@ -1715,6 +1715,7 @@ $\mathcal{TB}^1_2$. Altogether, the twisted Brandt monoid
 $\mathcal{TB}^1_2$ divides
 $\left<\mathrm{M}_{2n}(\mathcal{K}),\cdot,{}^S\right>$.
 \end{proof}
+
 \subsection{Boolean matrices}
 Recall that a \emph{Boolean} matrix is a matrix with entries $0$
 and $1$ only. The multiplication of such matrices is as usual,
@@ -1751,9 +1752,31 @@ $$ (i,j)\mapsto B_{ij},\ 0\mapsto O,\ 1\mapsto I$$
 is an isomorphism of involutory semigroups. By
 Corollary~\ref{twisted Brandt} $\mathcal{M}$ is inherently
 non-finitely based whence so is $\Bc_2$. Since $\Bc_2$ can be
-embedded as an involutory semigroup into $\Bc_n$ for each $n$, the
-result follows.
+embedded as an involutory semigroup into $\Bc_n$ for each $n\ge 2$,
+the result follows.
 \end{proof}
+
+\begin{Rmk}
+Our proof of Theorem~\ref{Theorem 3.7} also applies to some
+important involutary subsemigroups of $\Bc_n$. In order to
+introduce an interesting instance, recall that Boolean
+$n\times n$-matrices are in a 1-1 correspondence with
+bipartite directed graphs whose parts are of size $n$:
+the bipartite graph of a matrix $A=(a_{ij})$ has the row
+set and the column set of $A$ as its parts and has an edge
+from the $i^\mathrm{th}$ row to the $j^\mathrm{th}$ column
+if and only if $a_{ij}=1$. If the graph of $A$ admits
+a perfect matching (i.e.\ a set of edges so that every
+vertex is incident to precisely one of them), $A$ is said
+to be a \emph{Hall matrix} (the name suggested in~\cite{Kim}
+is, of course, inspired by Hall's marriage theorem). It
+is easy to see that the collection $HB_n$ of all Hall
+$n\times n$-matrices is closed under multiplication and
+transposition. Since all the matrices $B_{11}, B_{12}, B_{21},
+B_{22},O,I$ from the above proof are Hall matrices, we readily
+conclude that the involutory semigroup $\langle HB_n,\cdot,{}^T\rangle$
+is inherently non-finitely based for each $n\ge 2$.
+\end{Rmk}
 
 \begin{Rmk}
 We can unify Theorem~\ref{Theorem 3.7} and some results in
@@ -1840,6 +1863,10 @@ Math.\ J. \textbf{8} (1967), 118--122.
 I.\,Z.\,Golubchik and A.\,V.\,Mikhalev, \emph{A note on varieties
 of semiprime rings with semigroup identities}, J. Algebra
 \textbf{54} (1978), 42--45.
+
+\bibitem{Kim}
+K.\,H.\, Kim, \emph{The semigroups of Hall relations}, Semigroup Forum
+\textbf{9} (1974), 253--260.
 
 \bibitem{KR}
 K.\,H.\,Kim and F.\,Roush, \emph{On groups in varieties of
