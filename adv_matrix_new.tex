@@ -4,7 +4,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Version of July 30th, 2010 %
+% Version of August 8th, 2010 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -17,7 +17,6 @@
 \usepackage{amsfonts}
 \usepackage{amsmath}
 \usepackage{eepic}
-\usepackage{rotating}
 \usepackage{amsthm}
 \usepackage{amsgen}
 \usepackage{amsmath}
@@ -85,8 +84,6 @@
 \def\Xc{{\cal X}}
 \def\Yc{{\cal Y}}
 \def\Zc{{\cal Z}}
-\def\es{{\Ec\Sc}}
-\def\cs{{\Cc\Sc}}
 \def\si{\sigma}
 \def\Si{\Sigma}
 \def\al{\alpha}
@@ -116,13 +113,14 @@
 \def\H{\mathrm H}
 \def\P{\mathrm P\!}
 \def\he#1{#1#1^*}
+
 \def\re{regular $*$-}
 \def\wi{weakly invertible}
 \def\ig{idempotent-generated}
 \def\Rm{Rees matrix}
 \def\sm{semi\-group}
 \def\va{variet}
-\def\evar{\mathsf{evar}}
+
 \def\A{\mathfrak{A}}
 \def\C{\mathfrak{C}}
 \def\B{\mathfrak{B}}
@@ -130,11 +128,18 @@
 \def\ov{\overline}
 \def\inv{^{-1}}
 \def\wt{\widetilde}
+
 \def\id{identit}
 \def\fb{finitely based}
+\def\ib{identity basis}
+\def\nfb{non\-finitely based}
+
 \def\TB{\ensuremath{\mathcal{T\kern-1pt B}_2^1}}
 \def\TA{\ensuremath{\mathcal{T\kern-1pt A}_2^1}}
 \def\BT{\ensuremath{\mathcal{B\kern-1pt T}}}
+\def\BR{\ensuremath{\mathcal{B\kern-1pt R}}}
+\def\BU{\ensuremath{\mathcal{B\kern-1pt U}}}
+\def\FI{\ensuremath{\mathcal{FI}}}
 
 %%%%%%%%%%%%%%%%%%%
 % TITLE & AUTHORS %
@@ -170,8 +175,8 @@ or Moore-Penrose inversion. We prove that in many cases such identities admit no
 \section*{Background and motivation}
 
 Matrices\footnote{In this paper, the word `matrix' always means a square matrix of
-finite size; in order to avoid trivialities, we always assume that the size is at least
-two.} and matrix operations constitute basic tools for many branches of mathematics.
+finite size; also, in order to avoid trivialities, we always assume that the size
+is at least two.} and matrix operations constitute basic tools for many branches of mathematics.
 Important properties of matrix operations are often expressed in form of \emph{laws} or
 \emph{identities} such as the associative law for multiplication of matrices. Studying
 matrix identities that involve multiplication and addition is a classic research direction
@@ -179,17 +184,17 @@ that was motivated by several important problems in geometry and algebra (see \c
 for a survey of the origins of the theory) and that has eventually led to the profound and
 beautiful theory of PI-rings \cite{DrFo04,GiZa05,KaRo05,Ro80}. Matrix identities involving
 along with multiplication and addition also certain involution operations (such as taking
-the usual or symplectic transpose of a matrix) have also attracted much attention, see,
+the usual or symplectic transpose of a matrix) have attracted much attention as well, see,
 for instance, \cite[Section~2.5]{Ro80}.
 
-If one aims to classify matrix identities of a certain type, a natural approach is
+If one aims to classify matrix identities of a certain type, then a natural approach is
 to look for a collection of `basic' identities such that all other identities would
 follow from these basic identities via some formal inference rules. Such a collection
 is usually referred to as an \emph{identity basis} or simply a \emph{basis}. For instance,
 all identities of matrices over an infinite field involving only multiplication are known
 to follow from the associative law, see \cite[Lemma~2]{GoMi78}. Thus, the associative
 law forms a basis of such `multiplicative' identities. For identities involving both
-multiplication a nd addition, an explicit basis is known for $2\times 2$-matrices (except
+multiplication and addition, an explicit basis is known for $2\times 2$-matrices (except
 the case of an infinite ground field of characteristic~2), see \cite{Ra73,MaKu78,Dr81,Ko01,CoKo04},
 and for $3\times 3$- and $4\times 4$-matrices over a finite field, see \cite{Ge81,GeSi82}.
 However, for matrices of arbitrary size over a finite field or a field of characteristic~0
@@ -203,7 +208,7 @@ and~\cite{sapirburnside} were very different but each of them sufficed to cover 
 identities of matrices of every fixed size over every finite field.
 
 In the present paper we study matrix identities involving multiplication and one or
-several natural one-place operations such as taking various transposes or Moore-Penrose
+two natural one-place operations such as taking various transposes or Moore-Penrose
 inversion. For this we first have to adapt the methods of~\cite{V} and~\cite{sapirburnside}.
 We present the corresponding results in Section~\ref{tools} while Section~\ref{preliminaries}
 collects necessary preliminaries. Applications to the finite basis problem for matrix identities
@@ -225,7 +230,7 @@ and symplectic transposition;
 \item the identities of $2\times 2$-matrices over the field of complex numbers involving
 either multiplication and Moore-Penrose inversion or multiplication, Moore-Penrose inversion
 and Hermitian conjugation;
-\item the identities of Boolean $n\times n$- matrices involving multiplication and transposition.
+\item the identities of Boolean $n\times n$-matrices involving multiplication and transposition.
 \end{itemize}
 \end{Summary}
 
@@ -233,38 +238,110 @@ We mention in passing that tools developed in Section~\ref{tools} admit many fur
 that will be published in a separate paper.
 
 As far as the theory of matrices is concerned, we use fairly standard concepts of linear algebra,
-see \cite{Meyer}. Our proofs however involve some notions of equational logic and universal algebra
+see \cite{Meyer}. Our proofs however involve some notions of equational logic and semigroup theory
 which are briefly recalled in the next section.
 
 
 \section{Preliminaries}\label{preliminaries}
 
+\subsection{Vocabulary of equational logic}\label{vocabulary logic}
 
+The concepts of an identity and an identity basis are intuitively clear. Nevertheless,
+any precise reasoning about these concepts requires a formal framework, especially
+when one aims at `negative' results as we do in this paper. Such a framework, provided
+by equational logic, is concisely presented, e.g., in \cite[Chapter~II]{BuSa81}.
+For the reader's convenience, we briefly overview the basic vocabulary of equational
+logic in a form adapted to the use in this paper. Readers familiar with equational
+logic may, of course, skip this overview.
 
-We assume the reader's acquaintance with basic concepts of equational logic and the theory of varieties such as the
-HSP-theorem, see, e.g., \cite[Chapter~II]{BuSa81}. As far as \sm\ notions are concerned, we adopt the standard
-terminology and notation from~\cite{CP}. It should be noted, however, that the presentation is to a reasonable extent
-self-contained so that most of the material  should be accessible to readers without any specific \sm-theoretic
-background.
+A non-empty set $A$ endowed with operations
+$f_1:\underbrace{A\times A\times\dots\times A}_{n_1}\to A$,
+$f_2:\underbrace{A\times A\times\dots\times A}_{n_2}\to A$, \dots\
+is called an \emph{algebraic structure with the carrier $A$ of type} $(n_1,n_2,\dots)$.
+Algebraic structures used in this paper are mostly of types $(2,1)$ or $(2,1,1)$ so
+that they have one binary operation and one or two unary operations. Since binary
+operations involved are always assumed to satisfy the associative law, our
+structures are \emph{semigroups} equipped with one or two additional unary
+operations; for brevity, we will call such structures \emph{unary semigroups}.
 
-\section{Tools}\label{tools}
+We formally define notions related to a unary semigroup identities
+only for the case of one unary operation leaving a straightforward
+modification for the case of two unary operations to the reader.
+Given a countably infinite set $X$, we define the set $T(X)$ of all
+\emph{unary semigroup terms} over $X$ as follows:
+\begin{itemize}
+\item every $x\in X$ is a unary semigroup term;
+\item if $u$ and $v$ are unary semigroup terms,
+then so is their concatenation $uv$;
+\item if $u$ is a unary semigroup term, then so is
+$(u)^*$.
+\end{itemize}
+The algebraic structure $\mathcal{T}(X)=(T(X),\cdot,{}^*)$ of type $(2,1)$
+whose binary operation $\cdot$ is concatenation and whose unary operation
+is $u\mapsto(u)^*$ is called the \emph{free unary \sm} over $X$.
+A \emph{unary \sm\ identity} over $X$ is merely an at most 2-element
+subset $\{u,v\}\subset T(X)^+$ usually written as $u=v$. A unary \sm\
+$\mathcal{S}=\langle S,\cdot,{}^*\rangle$ \emph{satisfies} the identity
+$u=v$ if the equality $\varphi(u)=\varphi(v)$ holds in $\mathcal{S}$ under all
+possible homomorphisms $\varphi:\mathcal{T}(X)\to\mathcal{S}$. Given $\mathcal{S}$,
+we denote by $\Id\mathcal{S}$ the set of all unary \sm\ identities it satisfies.
 
-\subsection{Preliminaries}
-As mentioned, by a \emph{unary semigroup} we mean an algebraic
-structure $\mathcal{S}=\langle S,\cdot,{}^*\rangle$ of type
-$(2,1)$ such that the binary operation $\cdot$ is associative,
-i.\,e.\ $\langle S,\cdot\rangle$ is a semigroup. In general, we do
-not assume any additional identities involving the unary operation
-${}^*$. If the identities $(xy)^* = y^*x^*$ and $(x^*)^* = x$
-happen to hold in $\mathcal{S}$, in other words, if the unary
-operation $x\mapsto x^*$ is an involutory anti-automorphism of the
-semigroup $\langle S,\cdot\rangle$, we call $\mathcal{S}$ an
-\emph{involutory semigroup}. If, in addition, the identity
-$x=xx^*x$ holds, $\mathcal{S}$ is said to be a \emph{regular
-$*$-semigroup}. Each group, subject to its inverse operation
-$x\mapsto x^{-1}$ is an involutory semigroup, even a regular
-$*$-semigroup; throughout the paper, any group is considered as a
-unary semigroup with respect to this inverse unary operation.
+Given any collection $\Sigma$ of unary \sm\ identities, we say that an identity $u=v$
+\emph{follows} from $\Sigma$ or that $\Sigma$ \emph{implies} $u=v$ if every
+unary \sm\ satisfying all identities of $\Sigma$ satisfies the identity $u=v$ as
+well. Birkhoff's completeness theorem of equational logic (see \cite[Theorem 14.17]{BuSa81})
+shows that this notion (which we have given a semantic definition) can be captured by
+a very transparent set of formal inference rules but we do not need this result here.
+
+Given a unary \sm\ $\mathcal{S}$, an \emph{\ib} for $\mathcal{S}$ is any set
+$\Sigma\subseteq\Id\mathcal{S}$ such that such that every identity of $\Id\mathcal{S}$
+follows from $\Sigma$. A unary \sm\ $\mathcal{S}$ is said to be \emph{\fb} if it possesses
+a finite \ib; otherwise $\Sc$ is called \emph{\nfb}.
+
+The class of all unary semigroups satisfying all identities from a given set
+$\Sigma$ of unary \sm\ identities called the \emph{variety defined by $\Sc$}.
+A variety is is said to be \emph{\fb} if it can be defined by a finite set
+of identities; otherwise it is called \emph{\nfb}.
+
+It is easy to see that identities are inherited by forming direct products,
+taking unary subsemigroups and homomorphic images so that each variety is
+closed under these operators. In fact, varieties can be characterized by
+this closure property (the HSP-theorem, see \cite[Theorem 11.9]{BuSa81}).
+Given a unary \sm\ $\mathcal{S}$, the variety defined by $\Id\Sc$ is
+is the \emph{variety generated by $\Sc$}; we denote this variety by
+$\var\Sc$. From the HSP-theorem it follows that every member of $\var\Sc$
+is a homomorphic image of a unary subsemigroup $\Uc$ of a direct
+product of several copies of $\Sc$. Observe also that a unary \sm\ and
+the variety it generates are simultaneously \fb\ or \nfb.
+
+A variety $\Vc$ is said to be \emph{locally finite} if every finitely
+generated member of $\Vc$ is finite. A  finite unary \sm\ is called
+\emph{inherently non-finitely based} if it is not contained in any
+finitely based locally finite variety. Since the variety generated
+by a finite unary \sm\ is locally finite (this is an easy consequence
+of the HSP-theorem, see \cite[Theorem 10.16]{BuSa81}), the property
+of being inherently non-finitely based implies the property of being
+\nfb; in fact, the former property is much stronger.
+
+\subsection{Vocabulary of semigroup theory}\label{vocabulary semigroup}
+
+Since the algebraic structures we deal with are semigroups with some
+additional operation(s), we freely use the standard terminology and
+notation of semigroup theory, mostly following the early chapters of
+the textbook~\cite{CP}. It should be noted, however, that our presentation
+is to a reasonable extent self-contained and does not require any specific
+\sm-theoretic background.
+
+In general, considering a unary semigroup $\mathcal{S}=\langle S,\cdot,{}^*\rangle$,
+we do not assume any additional identities involving the unary operation ${}^*$.
+If the identities $(xy)^* = y^*x^*$ and $(x^*)^* = x$ happen to hold in $\mathcal{S}$,
+in other words, if the unary operation $x\mapsto x^*$ is an involutory anti-automorphism
+of the semigroup $\langle S,\cdot\rangle$, we call $\mathcal{S}$ an \emph{involutory semigroup}.
+If, in addition, the identity $x=xx^*x$ holds, $\mathcal{S}$ is said to be a \emph{regular
+$*$-semigroup}. Each group, subject to its inverse operation $x\mapsto x^{-1}$ is
+an involutory semigroup, even a regular $*$-semigroup; throughout the paper,
+any group is considered as a unary semigroup with respect to this inverse unary
+operation.
 
 A wealth of examples of involutory semigroups and regular
 $*$-semigroups can be obtained via the following `unary' version
@@ -318,21 +395,67 @@ elements can be described as follows:
 \end{gather}
 
 Another unary semigroup that will be quite useful in the sequel is
-the \emph{free involutory semigroup} $\mathrm{FI}(X)$ on a given
+the \emph{free involutory semigroup} $\FI(X)$ on a given
 alphabet $X$. It can be constructed as follows. Let
 $\overline{X}=\{x^*\mid x\in X\}$ be a disjoint copy of $X$ and
 define $(x^*)^*=x$ for all $x^*\in \overline{X}$. Then
-$\mathrm{FI}(X)$ is the free semigroup $(X\cup\overline{X})^+$
+$\FI(X)$ is the free semigroup $(X\cup\overline{X})^+$
 endowed with an involution ${}^*$ defined by
 $$(x_1\cdots x_m)^* = x_m^*\cdots x_1^*$$
 for all $x_1,\dots,x_m\in X\cup \overline{X}$. We will refer to
-elements of $\mathrm{FI}(X)$ as to \emph{involutory words over
+elements of $\FI(X)$ as to \emph{involutory words over
 $X$} while elements of the free semigroup $X^+$ will be referred
 to as (plain semigroup) words over $X$.
 
+\subsection{A property of matrices of rank 1}
+\label{rank 1 lemma}
+
+For a field $\mathcal{K}$, we
+denote the set of all $n\times n$-matrices over $\mathcal{K}$ by
+$\mathrm{M}_n(\mathcal{K})$. As mentioned in the introduction,
+, in order to avoid trivialities, we always assume that $n\ge 2$.
+
+We conclude our preparations with registering a simple property of rank~1
+matrices. This property is, of course, known, but we do provide a proof
+for the sake of completeness.
+\begin{Lemma}
+\label{rank 1} If a matrix $A\in\mathrm{M}_n(\mathcal{K})$ has
+rank $1$, then $A^nBA^{n-1}=A^{n-1}BA^n$ for any matrix
+$B\in\mathrm{M}_n(\mathcal{K})$.
+\end{Lemma}
+
+\begin{proof}
+By the Cayley-Hamilton theorem, $A$ satisfies the equation
+$$A^n-\tr(A)A^{n-1}=0,$$
+where $\tr(A)$ stands for the trace of the matrix $A$. Hence
+$$A^nBA^{n-1}=\tr(A)A^{n-1}BA^{n-1}=A^{n-1}B\tr(A)A^{n-1}=A^{n-1}BA^n,$$
+as required.
+\end{proof}
+
+Let $\mathrm{L}_n(\mathcal{K})$ denote the set of all $n\times
+n$-matrices of rank at most~1 over $\mathcal{K}$. Adding the
+identity matrix to $\mathrm{L}_n(\mathcal{K})$ we obtain the set
+which we denote by $\mathrm{L}^1_n(\mathcal{K})$. Clearly, it is
+closed under matrix multiplication. From Lemma~\ref{rank 1} we
+immediately obtain
+\begin{Cor}
+\label{identity for rank 1} For any field $\mathcal{K}$ and
+$n\ge2$, the semigroup
+$\langle\mathrm{L}^1_n(\mathcal{K}),\cdot\rangle$ satisfies the
+identity
+\begin{equation}
+\label{abelian groups} x^nyx^{n-1}=x^{n-1}yx^n.
+\end{equation}
+\end{Cor}
+Observe that every group satisfying \eqref{abelian groups} is
+abelian.
+
+\section{Tools}\label{tools}
+
 \subsection{A unary version of the critical semigroup method}
-Here we present a `unary' modification of the approach used in~\cite{V}. According to the classification proposed
-in~\cite{volkovjaponicae}, this approach is referred to as the \emph{critical semigroup method}.
+Here we present a `unary' modification of the approach used in~\cite{V}. According
+to the classification proposed in the survey~\cite{volkovjaponicae}, this approach
+is referred to as the \emph{critical semigroup method}.
 
 The formulation of the corresponding result involves two simple
 operators on unary semigroup varieties. For any unary semigroup
@@ -349,8 +472,7 @@ $x^n$, where $x\in S$, and let $\P_n(\Vc)$ be the subvariety of
 $\Vc$ generated by all subsemigroups $\P_n(\mathcal{S})$, where
 $\mathcal{S}\in \Vc$.
 
-Denote by $\var\Sc$ the variety generated by a given unary
-semigroup $\Sc$. The following easy observation will be useful in
+The following easy observation will be useful in
 the sequel as it helps calculating the effect of the operators
 $\H$ and $\P_n$.
 
@@ -412,7 +534,7 @@ sub\sm s of $\mathcal{T}_k$ belong to ${\Vc}$.
 
 \medskip
 
- 2. Fix an \id y $u(x_1,\ldots,x_m) = v(x_1,\ldots,x_m)$ that holds in ${\H(\Vc)}$
+ 2. Fix an identity $u(x_1,\ldots,x_m) = v(x_1,\ldots,x_m)$ that holds in ${\H(\Vc)}$
 but fails in the group $\mathcal{G}$. The latter means that, for
 some $g_1,\dots,g_m\in G$, substitution of $g_i$ for $x_i$ yields
 \begin{equation}\label{2.1}
@@ -491,7 +613,7 @@ in the \va y ${\Vc}$. Indeed, if we take any
 $\mathcal{S}\in{\Vc}$, then, since $\he{s}\in\H(\mathcal{S})$ for
 any $s\in\mathcal{S}$, all the values of $w_i$ belong to the
 Hermitian sub\sm\ $\H(\mathcal{S})$ of $\mathcal{S}$. This sub\sm,
-however, lies in ${\H(\Vc)}$, and therefore, satisfies the \id y
+however, lies in ${\H(\Vc)}$, and therefore, satisfies the identity
 $u = v$.
 
 Now we shall show that \eqref{2.2} fails in $\mathcal{T}_k$.
@@ -589,7 +711,11 @@ e   & e  & g_i & 0 &  0 &\cdots & 0 & 0 \\
 0        & 0   & 0 & 0 &  0 &\cdots & e & e \\
 e        & 0   & 0 & 0 &  0 &\cdots & e & e
 \end{pmatrix}$\\
-&\\
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{cc}
 After the second & After the third\\
 transformation   & transformation\\[1ex]
 $\begin{pmatrix}
@@ -664,10 +790,9 @@ semigroup case by the third author~\cite{V}.)
 \end{proof}
 
 \subsection{A unary version of the method of inherently
-non-finitely based semigroups} Recall that a finite algebraic structure of type $\tau$ is called \emph{inherently
-non-finitely based} if it is not contained in any finitely based locally finite variety of type $\tau$. Here we prove a
-sufficient condition for an involutory semigroup to be inherently non-finitely based and exhibit two concrete examples
-of involutory semigroups satisfying this condition. These examples will be essential in our applications in Section~3.
+non-finitely based semigroups} Here we prove a sufficient condition for an involutory semigroup to be
+inherently non-finitely based and exhibit two concrete examples of involutory semigroups
+satisfying this condition. These examples will be essential in our applications in Section~\ref{applications}.
 
 Let $x_1,x_2,\dots,x_n,\dots$ be a sequence of letters. The
 sequence $\{Z_n\}_{n=1,2,\dots}$ of \emph{Zimin words} is defined
@@ -801,10 +926,10 @@ It is clear that $\mathcal{T}_k$ is infinite and is generated (as
 a unary semigroup) by the set $A$ which is finite. It remains to
 verify that $\mathcal{T}_k$ satisfies every identity in at most
 $k$ variables that holds in our initial unary semigroup
-$\mathcal{S}$. So, let $p,q\in\mathrm{FI}(X_k)$ and suppose that
+$\mathcal{S}$. So, let $p,q\in\FI(X_k)$ and suppose that
 the identity $p=q$ holds in $\mathcal{S}$ but fails in
 $\mathcal{T}_k$. Then there exists a unary semigroup homomorphism
-$\varphi:\mathrm{FI}(X_k)\to\mathcal{T}_k$ for which
+$\varphi:\FI(X_k)\to\mathcal{T}_k$ for which
 $\varphi(p)\ne\varphi(q)$. Hence, at least one of the elements
 $\varphi(p)$ and $\varphi(q)$ is not equal to $0$; (without loss
 of generality) assume that $\varphi(p)\ne 0$. Then we may also
@@ -812,7 +937,7 @@ assume $\varphi(p)\in V_k$; otherwise we may consider the identity
 $p^*=q^*$ instead of $p=q$. Since $\varphi(p)\ne0$, there is no
 letter $x\in X_k$ such that $p$ contains both $x$ and $x^*$. Now
 we define a substitution
-$\sigma:\mathrm{FI}(X_k)\to\mathrm{FI}(X_k)$ as follows:
+$\sigma:\FI(X_k)\to\FI(X_k)$ as follows:
 $$\sigma(x)=\left\{\begin{array}{ll}
 x^* & \text{if } p \text{ contains } x^*,\\
 x & \text{otherwise}.\end{array}\right.$$ Then $\sigma(p)$ does
@@ -830,7 +955,7 @@ $X_k^+$ such that the word $\psi(\sigma(p))$ appears as a factor
 in the Zimin word $Z_k$. Thus, $Z_k=z'\psi(\sigma(p))z''$ for some
 $z',z''$ (that may be empty). The endomorphism $\psi$ extends in a
 natural way to an endomorphism of the free involutory semigroup
-$\mathrm{FI}(X_k)$ and there is no harm in denoting the extension
+$\FI(X_k)$ and there is no harm in denoting the extension
 by $\psi$ as well. The identity $p=q$ implies the identity
 \begin{equation}
 \label{consequence of p=q}
@@ -1113,45 +1238,9 @@ by Sapir, see~\cite{sapirinverse}), even though it is not finitely based~\cite{k
 
 \section{Applications}\label{applications}
 
-\subsection{A property of matrices of rank 1}
-Recall that, for a field $\mathcal{K}$, we denote the set of all
-$n\times n$-matrices over $\mathcal{K}$ by
-$\mathrm{M}_n(\mathcal{K})$. We start with registering a simple
-property of rank~1 matrices. This property is, of course, known,
-but we do provide a proof for the sake of completeness.
-\begin{Lemma}
-\label{rank 1} If $A\in\mathrm{M}_n(\mathcal{K})$, $n\ge2$, has
-rank $1$, then $A^nBA^{n-1}=A^{n-1}BA^n$ for any matrix
-$B\in\mathrm{M}_n(\mathcal{K})$.
-\end{Lemma}
-
-\begin{proof}
-By the Cayley-Hamilton theorem, $A$ satisfies the equation
-$$A^n-\tr(A)A^{n-1}=0,$$
-where $\tr(A)$ stands for the trace of the matrix $A$. Hence
-$$A^nBA^{n-1}=\tr(A)A^{n-1}BA^{n-1}=A^{n-1}B\tr(A)A^{n-1}=A^{n-1}BA^n,$$
-as required.
-\end{proof}
-
-Let $\mathrm{L}_n(\mathcal{K})$ denote the set of all $n\times
-n$-matrices of rank at most~1 over $\mathcal{K}$. Adding the
-identity matrix to $\mathrm{L}_n(\mathcal{K})$ we obtain the set
-which we denote by $\mathrm{L}^1_n(\mathcal{K})$. Clearly, it is
-closed under matrix multiplication. From Lemma~\ref{rank 1} we
-immediately obtain
-\begin{Cor}
-\label{identity for rank 1} For any field $\mathcal{K}$ and
-$n\ge2$, the semigroup
-$\langle\mathrm{L}^1_n(\mathcal{K}),\cdot\rangle$ satisfies the
-identity
-\begin{equation}
-\label{abelian groups} x^nyx^{n-1}=x^{n-1}yx^n.
-\end{equation}
-\end{Cor}
-Observe that every group satisfying \eqref{abelian groups} is
-abelian.
-
 \subsection{Matrix semigroups with Moore-Penrose inverse}
+\label{Moore-Penrose}
+
 Certainly, the most common unary operation for matrices is
 transposition. However, it is convenient for us to start with
 analyzing matrix semigroups with Moore-Penrose inverse because
@@ -1444,8 +1533,19 @@ $\mathrm{GL}_n(\mathcal{K})$ has no finite identity basis.
 
 Another natural related structure is the semigroup
 $\textrm{M}_n(\mathcal{K})$ endowed with \textbf{both} unary
-operations ${}^\dag$ and ${}^*$. Here our techniques produce a
-similar result.
+operations ${}^\dag$ and ${}^*$. Recall that the Moore-Penrose
+inverse is in fact defined in terms of identities involving
+both these operations---namely, Proposition~\ref{Theorem 3.4}
+implies that $\langle\mathrm{M}_n(\mathcal{K}),\cdot,{}^\dag,{}^*\rangle$
+satisfies the identities
+\begin{equation}
+\label{penrose1} xx^\dag x=x,\ x^\dag xx^\dag=x^\dag,\ (xx^\dag)^*=xx^\dag,\ (x^\dag x)^*=x^\dag x
+\end{equation}
+and these identities uniquely determine the operation $A\mapsto A^\dag$.
+This might provoke one to conjecture that the identities \eqref{penrose1}
+together with the identities $(xy)^* = y^*x^*$ and $(x^*)^* = x$ form
+a basis for $\Id\langle\mathrm{M}_n(\mathcal{K}),\cdot,{}^\dag,{}^*\rangle$.
+However our techniques show that this is not the case at least for $n=2$.
 \begin{Thm}\label{both operations}
 Let $\mathcal{K}$ be a field as in Theorem~$\ref{Theorem 3.5}$;
 then $\langle\mathrm{M}_2(\mathcal{K}),\cdot,{}^\dag,{}^*\rangle$
@@ -1508,13 +1608,15 @@ matrices has no finite identity basis.
 
 
 \subsection{Matrix semigroups with transposition}
+\label{usual transposition}
+
 First of all, we observe that the involutory semigroup $\langle\mathrm{M}_n(\mathcal{K}),\cdot,{}^T\rangle$ is finitely
 based for any field $\mathcal{K}$ of characteristic $0$. Indeed, we have already mentioned that the two matrices
 $\zeta$ and $\eta$ in~\eqref{free subgroup} generate a free subgroup of $\langle\mathrm{SL}_2(\bb
 Z),\cdot,{}^{-1}\rangle$ and hence a free subsemigroup of $\langle\mathrm{SL}_2(\bb Z), \cdot\rangle$. But
 $\eta=\zeta^T$ whence the unary subsemigroup in $\langle\mathrm{SL}_2(\bb Z),\cdot,{}^T\rangle$ generated by $\zeta$ is
-isomorphic to the free monogenic involutory semigroup $\mathrm{FI}(\{\zeta\})$. The latter semigroup is known to
-contain as a unary subsemigroup a free involutory semigroup on countably many generators, namely, $\mathrm{FI}(Z)$
+isomorphic to the free monogenic involutory semigroup $\FI(\{\zeta\})$. The latter semigroup is known to
+contain as a unary subsemigroup a free involutory semigroup on countably many generators, namely, $\FI(Z)$
 where
 $$Z=\{\zeta \zeta ^T\zeta ,\ \zeta (\zeta ^T)^2\zeta ,\ \dots,\ \zeta (\zeta ^T)^n\zeta ,\ \dots\}.$$
 Hence all identities holding in
@@ -1534,9 +1636,8 @@ R),\cdot,{}^T\rangle$] that consists of all matrices of rank at
 most~1 together with all unitary [respectively all orthogonal]
 matrices.
 
-For the case of finite fields, one can show that Theorem
-~\ref{Theorem 2.1} solves the finite basis problem in the negative
-for the involutory semigroup
+For the case of finite fields, one can show that Theorem~\ref{Theorem 2.1}
+solves the finite basis problem in the negative for the involutory semigroup
 $\langle\mathrm{M}_2(\mathcal{K}),\cdot,{}^T\rangle$ for each
 finite field $\mathcal{K}$ except $\mathcal{K}=\mathbb{F}_2$, the
 $2$-element field. Indeed, it can be verified that the involutory
@@ -1694,6 +1795,8 @@ their semigroup reducts.
 \end{Rmk}
 
 \subsection{Matrix semigroups with symplectic transpose}
+\label{symplectic case}
+
 For a $2n\times 2n$-matrix
 $$X=\begin{pmatrix} A & B\\ C & D\end{pmatrix}$$ with $A,B,C, D$ being
 $n\times n$-matrices over any field $\mathcal{K}$, the
@@ -1736,6 +1839,8 @@ $\left<\mathrm{M}_{2n}(\mathcal{K}),\cdot,{}^S\right>$.
 \end{proof}
 
 \subsection{Boolean matrices}
+\label{Boolean case}
+
 Recall that a \emph{Boolean} matrix is a matrix with entries $0$
 and $1$ only. The multiplication of such matrices is as usual,
 except that addition and multiplication of the entries is defined
@@ -1799,14 +1904,14 @@ is inherently non-finitely based for each $n\ge 2$.
 
 \begin{Rmk}
 We can unify Theorem~\ref{Theorem 3.7} and some results in
-Subsection~2.3 by considering matrix semigroups with transposition
+Subsection~\ref{usual transposition} by considering matrices
 over \textbf{semirings}. A \emph{semiring} is an algebraic
 structure $\mathcal{L}=\langle L,+,\cdot\rangle$ of type $(2,2)$
 such that $\langle L,+\rangle$ is a commutative semigroup,
 $\langle L,\cdot\rangle$ is a semigroup and multiplication
 distributes over addition. From the proofs of
-Theorems~\ref{inherently degree 2} and~\ref{Theorem 3.7} we see
-that the involutory matrix semigroup
+Theorems~\ref{inherently degree 2} and~\ref{Theorem 3.7}
+we see that the involutory matrix semigroup
 $\langle\mathrm{M}_n(\mathcal{L}),\cdot,{}^T\rangle$ over a finite
 semiring is inherently non-finitely based whenever $n\ge 2$ and
 the semiring $\mathcal{L}$ has a zero 0 (that is, a neutral
@@ -1831,16 +1936,16 @@ class.
 A Boolean matrix $A=(a_{ij})$ is said to be \emph{upper triangular}
 if $a_{ij}=0$ whenever $i>j$. Let $BT_n$ stand for the set of all
 Boolean upper triangular $n\times n$-matrices. The semigroups
-$\BT_n=\langle BT_n,\cdot\rangle$ play an important role in the
+$\langle BT_n,\cdot\rangle$ play an important role in the
 theory of formal languages, see~\cite{PiSt85}; their identities
-have been studied in~\cite{VoGo04}. Observe that $\BT_n$ admits
-quite a natural unary operation: the reflection with respect to
-the secondary diagonal (the diagonal from the top right to the
-bottom left corner). We denote by $A^D$ the result of applying
-this operation to the matrix $A$. It is easy to see that the
-operation $A\mapsto A^D$ is in fact an involution; this follows,
-for instance, from the fact that $A^D=JA^TJ$ where $J$ is the
-Boolean matrix with 1s in the secondary diagonal and 0s elsewhere.
+have been studied by the third author and Goldberg in~\cite{VoGo04}.
+Observe that this \sm\ admits quite a natural unary operation:
+the reflection with respect to the secondary diagonal (the diagonal
+from the top right to the bottom left corner). We denote by $A^D$
+the result of applying this operation to the matrix $A$. It is easy
+to see that the operation $A\mapsto A^D$ is in fact an involution;
+this follows, for instance, from the fact that $A^D=JA^TJ$ where $J$
+is the Boolean matrix with 1s in the secondary diagonal and 0s elsewhere.
 
 \begin{Thm}
 \label{Theorem 3.8} For each integer $n\ge 3$, the involutory
@@ -1850,39 +1955,46 @@ with respect to the secondary diagonal is inherently non-finitely based.
 \end{Thm}
 
 \begin{proof}
-Consider the involutory submonoid $\mathcal{M}$ in $\BT_3$ generated
-by the following two Boolean matrices:
+Consider the involutory submonoid $\mathcal{M}$ in $\BT_n$
+generated by the following two Boolean matrices:
 $$X=\begin{pmatrix}
-1 & 0 & 0 \\
-0 & 0 & 0 \\
-0 & 0 & 1
+1 & 0 & \dots & 0 & 0 \\
+0 & 0 & \dots & 0 & 0\\
+\vdots & \vdots & \ddots & \vdots & \vdots\\
+0 & 0 & \dots & 0 & 0\\
+0 & 0 & \dots & 0 & 1
 \end{pmatrix}\quad
 \text{and}\quad
 Y=\begin{pmatrix}
-1 & 1 & 0\\
-0 & 0 & 1\\
-0 & 0 & 1
+1 & 1 & \dots & 1 & 0 \\
+0 & 0 & \dots & 0 & 1\\
+\vdots & \vdots & \ddots & \vdots & \vdots\\
+0 & 0 & \dots & 0 & 1\\
+0 & 0 & \dots & 0 & 1
 \end{pmatrix}. $$
 Clearly, for each matrix $(m_{ij})$ in this submonoid one has
-$m_{11}=m_{33}=1$, whence the set of all matrices $(m_{ij})$
-such that $m_{13}=1$ forms an ideal in $\mathcal{M}$. We denote
-this ideal by $\mathcal{N}$. A straightforward calculation shows
-that, besides $X$, $Y$, and the identity matrix $I$, only the two
+$m_{11}=m_{nn}=1$, whence the set of all matrices $(m_{ij})$ such
+that $m_{1n}=1$ forms an ideal in $\mathcal{M}$. We denote this
+ideal by $\mathcal{N}$. A straightforward calculation shows that,
+besides $X$, $Y$, and the identity matrix $I$, only the two
 matrices
 $$XY=\begin{pmatrix}
-1 & 1 & 0\\
-0 & 0 & 0\\
-0 & 0 & 1
-\end{pmatrix}\quad
-\text{and}\quad
+1 & 1 & \dots & 1 & 0 \\
+0 & 0 & \dots & 0 & 0\\
+\vdots & \vdots & \ddots & \vdots & \vdots\\
+0 & 0 & \dots & 0 & 0\\
+0 & 0 & \dots & 0 & 1
+\end{pmatrix}\quad \text{and}\quad
 YX=\begin{pmatrix}
-1 & 0 & 0\\
-0 & 0 & 1\\
-0 & 0 & 1
-\end{pmatrix}$$
-belong to $\mathcal{M}\setminus\mathcal{N}$. This allows one to organize
-the following bijection between $\mathcal{M}\setminus\mathcal{N}$ and the
-set of non-zero matrices in $\TA$:
+1 & 0 & \dots & 0 & 0 \\
+0 & 0 & \dots & 0 & 1\\
+\vdots & \vdots & \ddots & \vdots & \vdots\\
+0 & 0 & \dots & 0 & 1\\
+0 & 0 & \dots & 0 & 1
+\end{pmatrix}$$ belong to
+$\mathcal{M}\setminus\mathcal{N}$. This allows one to organize the
+following bijection between $\mathcal{M}\setminus\mathcal{N}$ and
+the set of non-zero matrices in $\TA$:
 $$I\mapsto\left(\begin{smallmatrix}
 1 & 0 \\ 0 & 1
 \end{smallmatrix}\right),\quad
@@ -1897,22 +2009,54 @@ XY\mapsto\left(\begin{smallmatrix}
 \end{smallmatrix}\right),\quad
 YX\mapsto\left(\begin{smallmatrix}
 1 & 0 \\ 0 & 0
-\end{smallmatrix}\right), $$
-and one easily checks that this bijection extends to an isomorphism
-between the Rees quotient $\mathcal{M}/\mathcal{N}$ and the \sm\ $\TA$.
-Moreover, this isomorphism respects the unary operations. We see that
-$\TA$ turns out to be an image of an involutory sub\sm\ in $\BT_3$
-under an involutary \sm\ homomorphism whence $\TA$ belongs to the
-involutary \sm\ variety generated by $\BT_3$. Corollary~\ref{twisted A}
-implies that $\BT_3$ is inherently non-finitely based.
- \end{proof}
+\end{smallmatrix}\right). $$
+One easily checks that this bijection extends to an isomorphism
+between the Rees quotient $\mathcal{M}/\mathcal{N}$ and the \sm\
+$\TA$; moreover, this isomorphism respects the unary operations.
+We see that $\TA$ turns out to be an image of an involutory
+sub\sm\ in $\BT_n$ under an involutary \sm\ homomorphism whence
+$\TA$ belongs to the involutary \sm\ variety generated by $\BT_n$.
+Corollary~\ref{twisted A} implies that $\BT_n$ is inherently
+non-finitely based.
+\end{proof}
 
-\noindent\textbf{Acknowledgement.} The second author was supported
-by Grant No.\ 144011 of the Ministry of Science and Technological
-Development of the Republic of Serbia. The third author
-acknowledges support from the Federal Education Agency of Russia,
-grant 2.1.1/3537, and from the Russian Foundation for Basic
-Research, grants 09-01-12142 and 10-01-00524.
+\begin{Rmk}
+In \cite{VoGo04} it was shown that the \sm\ $\langle BT_n,\cdot\rangle$
+is inherently non-finitely based for $n\ge4$. However, the construction
+used there does not imply the same fact for the involutory case. Our
+proof of Theorem~\ref{Theorem 3.8} follows a different construction
+suggested for the plain \sm\ case by Jian Rong Li (unpublished). Jian Rong Li
+has also verified that the \sm\ $\langle BT_2,\cdot\rangle$ is finitely
+based. We do not know whether or not the involutory semigroup $\BT_2$
+is finitely based.
+\end{Rmk}
+
+Other interesting involutory semigroups of Boolean matrices include
+the \sm\ $\BR_n=\langle BR_n,\cdot,{}^T\rangle$ of all Boolean
+$n\times n$-matrices with 1s on the main diagonal (such matrices
+correspond to reflexive binary relations) and the \sm\ $\BU_n=\langle
+BU_n,\cdot,{}^D\rangle$ of all Boolean upper triangular
+$n\times n$-matrices with 1s on the main diagonal. (The unary operation
+is the usual transpose in the former case and the reflection
+with respect to the secondary diagonal in the latter one.) Our present
+methods do not yet suffice to handle the finite basis problem for
+these unary semigroups so we just formulate
+\begin{Problem}
+Are the involutary semigroups $\BR_n$ and $\BU_n$ finitely based for $n\ge 3$?
+\end{Problem}
+The involutary semigroups $\BR_2$ and $\BU_2$ are easily seen to be
+finitely based. The finite basis problem for the plain semigroups
+$\langle BR_n,\cdot\rangle$ and $\langle BU_n,\cdot\rangle$ has been
+solved by the third author~\cite{Vo04}.
+
+\medskip
+
+ \noindent\textbf{Acknowledgement.} The second author was
+supported by Grant No.\ 144011 of the Ministry of Science and
+Technological Development of the Republic of Serbia. The third
+author acknowledges support from the Federal Education Agency of
+Russia, grant 2.1.1/3537, and from the Russian Foundation for
+Basic Research, grants 09-01-12142 and 10-01-00524.
 
 \begin{thebibliography}{99}
 \bibitem{Ami74}
@@ -1992,7 +2136,7 @@ of semiprime rings with semigroup identities}, J. Algebra
 
 \bibitem{KaRo05}
 A.\,Kanel-Belov and L.\,H.\,Rowen, \emph{Computational Aspects of Polynomial
-Identities}, A K Peters Ltd., Wellesley, 2005.
+Identities}, A~K~Peters Ltd., Wellesley, 2005.
 
 \bibitem{Ke87}
 A.\,R.\,Kemer, \emph{The finite basis property of identities of associative
@@ -2129,6 +2273,11 @@ English transl.\ Math.\ Notes \textbf{ 45} (1989), 187--194].
 \bibitem{volkovjaponicae}
 M.\,V.\,Volkov, \emph{The finite basis problem for finite
 semigroups}, Sci.\ Math.\ Jpn. \textbf{53} (2001), 171--199.
+
+\bibitem{Vo04}
+M.\,V.\,Volkov, \emph{Reflexive relations, extensive transformations
+and piecewise testable languages of a given height}, Int.\ J. Algebra
+and Computation \textbf{14} (2004), 817--827.
 
 \bibitem{VoGo04}
 M.\,V.\,Volkov, I.\,A.\,Goldberg, \emph{The finite basis problems
