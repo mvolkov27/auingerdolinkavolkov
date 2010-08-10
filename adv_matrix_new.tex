@@ -4,7 +4,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Version of August 8th, 2010 %
+% Version of August 10th, 2010 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -410,26 +410,29 @@ to as (plain semigroup) words over $X$.
 \subsection{A property of matrices of rank 1}
 \label{rank 1 lemma}
 
-For a field $\mathcal{K}$, we
+Given a field $\mathcal{K}\langle K,+,\cdot\rangle$, we
 denote the set of all $n\times n$-matrices over $\mathcal{K}$ by
 $\mathrm{M}_n(\mathcal{K})$. As mentioned in the introduction,
-, in order to avoid trivialities, we always assume that $n\ge 2$.
+in order to avoid trivialities, we always assume that $n\ge 2$.
 
 We conclude our preparations with registering a simple property of rank~1
 matrices. This property is, of course, known, but we do provide a proof
 for the sake of completeness.
 \begin{Lemma}
 \label{rank 1} If a matrix $A\in\mathrm{M}_n(\mathcal{K})$ has
-rank $1$, then $A^nBA^{n-1}=A^{n-1}BA^n$ for any matrix
-$B\in\mathrm{M}_n(\mathcal{K})$.
+rank $1$, then $A^2BA=ABA^2$ for any matrix $B\in\mathrm{M}_n(\mathcal{K})$.
 \end{Lemma}
 
 \begin{proof}
-By the Cayley-Hamilton theorem, $A$ satisfies the equation
-$$A^n-\tr(A)A^{n-1}=0,$$
-where $\tr(A)$ stands for the trace of the matrix $A$. Hence
-$$A^nBA^{n-1}=\tr(A)A^{n-1}BA^{n-1}=A^{n-1}B\tr(A)A^{n-1}=A^{n-1}BA^n,$$
-as required.
+Consider the natural action of $A$ on the vector space $K^n$. The null-space
+$N(A)=\{x\in K^n\mid xA=0\}$ has dimension $n-1$ whence the root subspace of
+$A$ corresponding to the eigenvalue $0$ coincides with either $K^n$ or $N(A)$.
+In the former case $A^2=0$ and $A^2BA=0=ABA^2$ for any matrix $B$. In the latter
+case $K^n$ decomposes into the direct sum of $N(A)$ and the range $R(A)=\{xA\mid x\in K^n\}$,
+see \cite[Section~5.10]{Meyer}. Then $R(A)$ is in fact the root subspace of
+$A$ corresponding to a non-zero eigenvalue $\alpha\in K$ and the minimal polynomial
+of $A$ is $x(x-\alpha)$. Thus, $A$ satisfies the equation $A^2-\alpha A=0$, whence
+$A^2BA=\alpha ABA=AB\alpha A=ABA^2$, as required.
 \end{proof}
 
 Let $\mathrm{L}_n(\mathcal{K})$ denote the set of all $n\times
@@ -444,7 +447,7 @@ $n\ge2$, the semigroup
 $\langle\mathrm{L}^1_n(\mathcal{K}),\cdot\rangle$ satisfies the
 identity
 \begin{equation}
-\label{abelian groups} x^nyx^{n-1}=x^{n-1}yx^n.
+\label{abelian groups} x^2yx=xyx^2.
 \end{equation}
 \end{Cor}
 Observe that every group satisfying \eqref{abelian groups} is
