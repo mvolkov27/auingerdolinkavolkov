@@ -4,7 +4,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Version of August 10th, 2010 %
+% Version of August 16th, 2010 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -184,21 +184,21 @@ for a survey of the origins of the theory) and that has eventually led to the pr
 beautiful theory of PI-rings \cite{DrFo04,GiZa05,KaRo05,Ro80}. Matrix identities involving
 along with multiplication and addition also certain involution operations (such as taking
 the usual or symplectic transpose of a matrix) have attracted much attention as well, see,
-for instance, \cite[Section~2.5]{Ro80}.
+for instance, \cite{DaRa99,DaRa04,DrGi95,Gi90,Ro80}.
 
 If one aims to classify matrix identities of a certain type, then a natural approach is
 to look for a collection of `basic' identities such that all other identities would
-follow from these basic identities via some formal inference rules. Such a collection
-is usually referred to as an \emph{identity basis} or simply a \emph{basis}. For instance,
-all identities of matrices over an infinite field involving only multiplication are known
-to follow from the associative law, see \cite[Lemma~2]{GoMi78}. Thus, the associative
-law forms a basis of such `multiplicative' identities. For identities involving both
-multiplication and addition, an explicit basis is known for $2\times 2$-matrices (except
-the case of an infinite ground field of characteristic~2), see \cite{Ra73,MaKu78,Dr81,Ko01,CoKo04},
-and for $3\times 3$- and $4\times 4$-matrices over a finite field, see \cite{Ge81,GeSi82}.
-However, for matrices of arbitrary size over a finite field or a field of characteristic~0
-the powerful results by Kruse-L'vov \cite{Kr73,Lv73} and Kemer \cite{Ke87,Ke91} ensure
-at least the existence of a finite identity basis for such identities.
+follow from these basic identities. Such a collection is usually referred to as an
+\emph{identity basis} or simply a \emph{basis}. For instance, all identities of matrices
+over an infinite field involving only multiplication are known to follow from the associative
+law, see \cite[Lemma~2]{GoMi78}. Thus, the associative law forms a basis of such `multiplicative'
+identities. For identities involving both multiplication and addition, an explicit basis is known
+for $2\times 2$-matrices (except the case of an infinite ground field of characteristic~2),
+see \cite{Ra73,MaKu78,Dr81,Ko01,CoKo04}, and for $3\times 3$- and $4\times 4$-matrices over
+a finite field, see \cite{Ge81,GeSi82}. However, for matrices of arbitrary size over a finite
+field or a field of characteristic~0 the powerful results by Kruse-L'vov \cite{Kr73,Lv73}
+and Kemer \cite{Ke87,Ke91} ensure at least the existence of a finite identity basis for such
+identities.
 
 In contrast, multiplicative identities of matrices over a finite field admit no finite basis.
 This rather surprising fact was proved in the mid-1980s by the third author~\cite[Proposition~3]{V}
@@ -254,17 +254,17 @@ logic in a form adapted to the use in this paper. Readers familiar with equation
 logic may, of course, skip this overview.
 
 A non-empty set $A$ endowed with operations
-$f_1:\underbrace{A\times A\times\dots\times A}_{n_1}\to A$,
+$f_1:\underbrace{A\times A\times\dots\times A}_{n_1}\to A$,\linebreak
 $f_2:\underbrace{A\times A\times\dots\times A}_{n_2}\to A$, \dots\
-is called an \emph{algebraic structure with the carrier $A$ of type} $(n_1,n_2,\dots)$.
+is called an \emph{algebraic structure of type $(n_1,n_2,\dots)$ with the carrier $A$}.
 Algebraic structures used in this paper are mostly of types $(2,1)$ or $(2,1,1)$ so
 that they have one binary operation and one or two unary operations. Since binary
 operations involved are always assumed to satisfy the associative law, our
 structures are \emph{semigroups} equipped with one or two additional unary
 operations; for brevity, we will call such structures \emph{unary semigroups}.
 
-We formally define notions related to a unary semigroup identities
-only for the case of one unary operation leaving a straightforward
+We formally define notions related to unary semigroup identities
+only for the case of one unary operation leaving the straightforward
 modification for the case of two unary operations to the reader.
 Given a countably infinite set $X$, we define the set $T(X)$ of all
 \emph{unary semigroup terms} over $X$ as follows:
@@ -275,7 +275,7 @@ then so is their concatenation $uv$;
 \item if $u$ is a unary semigroup term, then so is
 $(u)^*$.
 \end{itemize}
-The algebraic structure $\mathcal{T}(X)=(T(X),\cdot,{}^*)$ of type $(2,1)$
+The algebraic structure $\mathcal{T}(X)=\langle T(X),\cdot,{}^*\rangle$ of type $(2,1)$
 whose binary operation $\cdot$ is concatenation and whose unary operation
 is $u\mapsto(u)^*$ is called the \emph{free unary \sm} over $X$.
 A \emph{unary \sm\ identity} over $X$ is merely an at most 2-element
@@ -290,7 +290,12 @@ Given any collection $\Sigma$ of unary \sm\ identities, we say that an identity 
 unary \sm\ satisfying all identities of $\Sigma$ satisfies the identity $u=v$ as
 well. Birkhoff's completeness theorem of equational logic (see \cite[Theorem 14.17]{BuSa81})
 shows that this notion (which we have given a semantic definition) can be captured by
-a very transparent set of formal inference rules but we do not need this result here.
+a very transparent set of inference rules. These rules in fact formalize the most
+natural things one does with identities: substitution of a term for a variable,
+application of operations to identities (such as, say, multiplying an identity
+through on the right by the same term) and using transitivity of equality.
+We need not going into more detail here because the completeness theorem
+is not utilized in this paper.
 
 Given a unary \sm\ $\mathcal{S}$, an \emph{\ib} for $\mathcal{S}$ is any set
 $\Sigma\subseteq\Id\mathcal{S}$ such that such that every identity of $\Id\mathcal{S}$
@@ -298,7 +303,7 @@ follows from $\Sigma$. A unary \sm\ $\mathcal{S}$ is said to be \emph{\fb} if it
 a finite \ib; otherwise $\Sc$ is called \emph{\nfb}.
 
 The class of all unary semigroups satisfying all identities from a given set
-$\Sigma$ of unary \sm\ identities called the \emph{variety defined by $\Sc$}.
+$\Sigma$ of unary \sm\ identities is called the \emph{variety defined by $\Sc$}.
 A variety is is said to be \emph{\fb} if it can be defined by a finite set
 of identities; otherwise it is called \emph{\nfb}.
 
@@ -306,7 +311,7 @@ It is easy to see that identities are inherited by forming direct products,
 taking unary subsemigroups and homomorphic images so that each variety is
 closed under these operators. In fact, varieties can be characterized by
 this closure property (the HSP-theorem, see \cite[Theorem 11.9]{BuSa81}).
-Given a unary \sm\ $\mathcal{S}$, the variety defined by $\Id\Sc$ is
+Given a unary \sm\ $\mathcal{S}$, the variety defined by $\Id\Sc$
 is the \emph{variety generated by $\Sc$}; we denote this variety by
 $\var\Sc$. From the HSP-theorem it follows that every member of $\var\Sc$
 is a homomorphic image of a unary subsemigroup $\Uc$ of a direct
@@ -344,9 +349,10 @@ operation.
 
 A wealth of examples of involutory semigroups and regular
 $*$-semigroups can be obtained via the following `unary' version
-of the well known \Rm\ construction (see \cite[Section~3.1]{CP}
+of the well known \Rm\ construction\footnote{See \cite[Section~3.1]{CP}
 for a description of the construction in the plain semigroup
-case). Let $\mathcal{G}=\langle G,\cdot,{}^{-1}\rangle$ be a
+case and \cite[Section~2]{GePe85} for a detailed analysis of its unary
+version}. Let $\mathcal{G}=\langle G,\cdot,{}^{-1}\rangle$ be a
 group, $0$ a symbol beyond $G$, and $I$ a non-empty set. We
 formally set $0^{-1}=0$. Given an $I\times I$-matrix $P=(p_{ij})$
 over $G\cup\{0\}$ such that $p_{ij}=p_{ji}^{-1}$ for all $i,j\in
@@ -368,7 +374,7 @@ element of the group $\mathcal{G}$) for all $i\in I$. We denote
 this unary semigroup  by $\Mc^0(I,\mathcal{G},I;P)$ and call it
 the \emph{unary \Rm\ \sm\ over $\mathcal{G}$ with the sandwich
 matrix $P$}. If the involved group $\mathcal G$ happens to be the
-trivial group $\mathcal{E}=\{e\}$ then we usually shall ignore the
+trivial group $\mathcal{E}=\{e\}$, then we shall ignore the
 group entry and represent the non-zero elements of such a Rees
 matrix semigroup by the pairs $(i,j)$ with $i,j\in I$.
 
@@ -395,21 +401,23 @@ elements can be described as follows:
 
 Another unary semigroup that will be quite useful in the sequel is
 the \emph{free involutory semigroup} $\FI(X)$ on a given
-alphabet $X$. It can be constructed as follows. Let
+alphabet $X$. It can be constructed as follows.  Let
 $\overline{X}=\{x^*\mid x\in X\}$ be a disjoint copy of $X$ and
 define $(x^*)^*=x$ for all $x^*\in \overline{X}$. Then
 $\FI(X)$ is the free semigroup $(X\cup\overline{X})^+$
 endowed with an involution ${}^*$ defined by
 $$(x_1\cdots x_m)^* = x_m^*\cdots x_1^*$$
-for all $x_1,\dots,x_m\in X\cup \overline{X}$. We will refer to
-elements of $\FI(X)$ as to \emph{involutory words over
+for all $x_1,\dots,x_m\in X\cup \overline{X}$. See
+\cite[Section~3]{GePe85} for more detail on $\FI(X)$.
+
+We will refer to elements of $\FI(X)$ as \emph{involutory words over
 $X$} while elements of the free semigroup $X^+$ will be referred
 to as (plain semigroup) words over $X$.
 
 \subsection{A property of matrices of rank 1}
 \label{rank 1 lemma}
 
-Given a field $\mathcal{K}\langle K,+,\cdot\rangle$, we
+Given a field $\mathcal{K}=\langle K,+,\cdot\rangle$, we
 denote the set of all $n\times n$-matrices over $\mathcal{K}$ by
 $\mathrm{M}_n(\mathcal{K})$. As mentioned in the introduction,
 in order to avoid trivialities, we always assume that $n\ge 2$.
@@ -441,8 +449,7 @@ which we denote by $\mathrm{L}^1_n(\mathcal{K})$. Clearly, it is
 closed under matrix multiplication. From Lemma~\ref{rank 1} we
 immediately obtain
 \begin{Cor}
-\label{identity for rank 1} For any field $\mathcal{K}$ and
-$n\ge2$, the semigroup
+\label{identity for rank 1} For any field $\mathcal{K}$, the semigroup
 $\langle\mathrm{L}^1_n(\mathcal{K}),\cdot\rangle$ satisfies the
 identity
 \begin{equation}
@@ -480,7 +487,7 @@ $\H$ and $\P_n$.
 
 \begin{Lemma}\label{Lemma 3.1}
 $\H(\var\Sc)=\var\H(\Sc)$ and $\P_n(\var\Sc)= \var\P_n(\Sc)$ for
-every unary semigroup $\Sc$ and for each $n\in \bb N$.
+every unary semigroup $\Sc$ and for each $n$.
 \end{Lemma}
 
 \begin{proof}
@@ -537,8 +544,8 @@ sub\sm s of $\mathcal{T}_k$ belong to ${\Vc}$.
 \medskip
 
  2. Fix an identity $u(x_1,\ldots,x_m) = v(x_1,\ldots,x_m)$ that holds in ${\H(\Vc)}$
-but fails in the group $\mathcal{G}$. The latter means that, for
-some $g_1,\dots,g_m\in G$, substitution of $g_i$ for $x_i$ yields
+but fails in the group $\mathcal{G}=\langle G,\cdot,{}^{-1}\rangle$. The latter means
+that, for some $g_1,\dots,g_m\in G$, substitution of $g_i$ for $x_i$ yields
 \begin{equation}\label{2.1}
 u(g_1,\ldots,g_m) \ne v(g_1,\ldots,g_m).
 \end{equation}
@@ -613,7 +620,7 @@ get the identity
 u(w_1,\ldots,w_m) = v(w_1,\ldots,w_m) \end{equation} which holds
 in the \va y ${\Vc}$. Indeed, if we take any
 $\mathcal{S}\in{\Vc}$, then, since $\he{s}\in\H(\mathcal{S})$ for
-any $s\in\mathcal{S}$, all the values of $w_i$ belong to the
+any $s$ in $\mathcal{S}$, all the values of $w_i$ belong to the
 Hermitian sub\sm\ $\H(\mathcal{S})$ of $\mathcal{S}$. This sub\sm,
 however, lies in ${\H(\Vc)}$, and therefore, satisfies the identity
 $u = v$.
@@ -644,7 +651,7 @@ mn,
 \end{equation}
 consider the unary sub\sm \ $\mathcal{T}_k(\la_1,\ldots,\la_m)$ of
 $\mathcal{T}_k$ consisting of 0 and all triples $(i,g,j)$ such
-that $g\in \mathcal{G}$ and $i,j\not\in\{\la_1,\ldots,\la_m\}$.
+that $g\in G$ and $i,j\notin\{\la_1,\ldots,\la_m\}$.
 Using that $2k<n$ according to our choice of $n$, one concludes
 that any given $k$ elements of $\mathcal{T}_k$ must be contained
 in $\mathcal{T}_k(\la_1,\ldots,\la_m)$ for suitable
@@ -756,8 +763,8 @@ be the $I'\times I'$ unary \Rm \ \sm\ over the trivial group
 $\mathcal{E}$ with the sandwich matrix $Q_k$. It is easy to check
 that the mapping $\mathcal{G}\times \mathcal{U}_k\rightarrow
 \mathcal{R}_k$ defined by
-$$(g,(i,e,j))\mapsto (i,g,j),\quad  (g,0)\mapsto 0$$
-for all $g\in \mathcal{G}$, $i,j\in I'$, is a unary semigroup
+$$(g,(i,j))\mapsto (i,g,j),\quad  (g,0)\mapsto 0$$
+for all $g\in G$, $i,j\in I'$, is a unary semigroup
 homomorphism onto $\mathcal{R}_k$. Now we note that $\mathcal{G}
 \in {\Vc}$ and $\mathcal{U}_k$ belongs to the \va y generated by
 $\mathcal{K}_3$ (see \cite[Theorem 5.2]{A1}). This yields
@@ -821,7 +828,7 @@ following, our aim will be to construct, for any given positive
 integer $k$, an infinite, finitely generated involutory \sm\
 $\mathcal{T}_k$ which satisfies all identities in at most $k$
 variables that hold in $\mathcal{S}$. In particular,
-$\mathcal{T}_k$ will satisfy all identities from $\Si$. This
+$\mathcal{T}_\ell$ will satisfy all identities from $\Si$. This
 yields a contradiction, as then we must conclude that
 $\mathcal{T}_\ell\in\Vc$, which is impossible by the local
 finiteness of $\Vc$.
@@ -981,10 +988,29 @@ the identity $p=q$ implies $Z_{k+1}=z$, and we again get a
 contradiction.
 \end{proof}
 
-As a concrete example of an inherently non-finitely based
-involutory semigroup, consider the \emph{twisted Brandt monoid}
-$\TB=\langle B_2^1,\cdot,{}^*\rangle$, where $B_2^1$ is the set of
-the following six $2\times 2$-matrices:
+Before passing to concrete examples of inherently non-finitely
+based involutory semigroups, we formulate a corollary of our proof
+of Theorem~\ref{Theorem 2.2} which will be useful for our subsequent
+paper(s). Proposition~\ref{avoidable words} easily implies that no word
+in the sequence $\{\gamma^m(a_{11})\}_{m=1,2,\dots}$ has any square
+(that is, a word of the form $ww$) as a factor. Hence, the semigroup
+$\mathcal{V}_k^0$ satisfies the identity $x^2=0$. This identity is
+clearly inherited by the involutory semigroup $\mathcal{T}_k$ which
+by its construction satisfies also the identity $xx^*=0$. Since $\mathcal{T}_k$
+is finitely generated and infinite, we arrive at the following conclusion:
+\begin{Cor}
+\label{new corollary}
+If a variety $\mathbf{V}$ of involutory semigroups satisfies no
+non-trivial identity of the form $Z_{k+1}=z$ and all members of
+$\mathbf{V}$ satisfying the identities $xx^*=x^2=0$ are locally
+finite, then $\mathbf{V}$ is not finitely based.
+\end{Cor}
+
+
+
+Now consider the \emph{twisted Brandt monoid}
+$\TB=\langle B_2^1,\cdot,{}^*\rangle$, where $B_2^1$ is the set
+of the following six $2\times 2$-matrices:
 $$\begin{pmatrix} 0 & 0\\ 0 & 0\end{pmatrix},\
 \begin{pmatrix} 1 & 0\\ 0 & 0\end{pmatrix},\
 \begin{pmatrix} 0 & 1\\ 0 & 0\end{pmatrix},\
@@ -1129,22 +1155,25 @@ $\mathcal{S}$ is not inherently non-\fb.
 \end{Prop}
 
 \begin{proof}
-This is a consequence of some deep facts obtained by Margolis and
-Sapir in~\cite{margolissapir} and we shall follow their main
-arguments. The reason that these arguments apply here is that in
-$\mathcal{S}$, the Green relation $\Rc$ can be expressed in terms
-of equational logic. This ensures that we can construct a finite
-set of identities that defines a locally finite variety of
-involutory semigroups containing $\mathcal{S}$.
+We have to construct a finite set of identities that defines
+a locally finite variety of involutory semigroups containing
+$\mathcal{S}$. The crucial step towards this goal consists in
+verifying that the identity $x=x\om(x)x$ allows one to express
+right divisibility in terms of equational logic. This being done,
+we will be in a position to closely follow powerful arguments
+developed by Margolis and Sapir in~\cite{margolissapir}.
 
-First of all, we recall the definition of the relation $\Rc$. As
-usual, for a semigroup $a\in S$, the set $\{as\mid s\in
-S\}\cup\{a\}$ (that is, the right ideal generated by $a$) is
-denoted by $aS^1$. Now we say that elements $a,b\in S$ are
-$\Rc$-\emph{related} if $aS^1=bS^1$.
+We say that elements $a,b\in S$ \emph{divide each other on the right}
+and write $a\mathrel{\Rc}b$ if either $a=b$ or there exist $s,t\in S$
+such that $a=bs$ and $b=at$. We say that $b$ \emph{strictly divides}
+$a$ and write $a\mathrel{{<}_{\Rc}}b$ if $a=bs$ for some $s\in S$
+but $b\ne a$ and $b\ne at$ for any $t\in S$. Clearly, $\Rc$ is an
+equivalence relation (known as the \emph{right Green relation} in
+semigroup theory) and $<_{\Rc}$ is transitive and anti-reflexive.
 
 Since $\mathcal{S}$ satisfies the identity $x=x\om(x)x$, we have
-$a\mathrel{\Rc}a\om(a)$ for each element $a\in S$. Thus, for
+$a\mathrel{\Rc}a\om(a)$ for each element $a\in S$. (Indeed,
+$a=a\om(a)\cdot a$ and $a\om(a)=a\cdot\om(a)$.) Thus, for
 $a,b\in S$, we have $a\mathrel{\Rc}b$ if and only if
 $a\om(a)\mathrel{\Rc}b\om(b)$. Since $a\om(a)$ and $b\om(b)$ are
 idempotents, that latter condition is equivalent to the two
@@ -1156,11 +1185,10 @@ always true).
 
 Let $Z_n'$ be the word obtained from the Zimin word $Z_n$ by
 deleting the last letter (which is $x_1$), that is, $Z_n'x_1=Z_n$.
-Further let $h$ denote the $\Rc$-\emph{height} of $\mathcal{S}$,
-that is, $h$ is the length of the longest possible $\Rc$-chain
-$$s_1\mathrel{{<}_{\Rc}}s_2\mathrel{{<}_{\Rc}}\cdots\mathrel{{<}_{\Rc}}s_k$$
-where $a\mathrel{{<}_{\Rc}}b$ means that $aS^1\subseteq bS^1$ but
-$bS^1\nsubseteq aS^1$. Set $n=h+1$; Lemma~7 in
+Further let $h$ denote the length of the longest possible chain
+of the form
+$$s_1\mathrel{{<}_{\Rc}}s_2\mathrel{{<}_{\Rc}}\cdots\mathrel{{<}_{\Rc}}s_k.$$
+Set $n=h+1$; Lemma~7 in
 \cite{margolissapir} shows that $\mathcal{S}$ satisfies
 $Z_n'\mathrel{\Rc}Z_n$ whence it satisfies the identity
 \begin{equation}
@@ -1168,25 +1196,28 @@ $Z_n'\mathrel{\Rc}Z_n$ whence it satisfies the identity
 \end{equation}
 On the other hand, each involutory semigroup $\mathcal{T}$ which
 satisfies $x=x\om(x)x$ and \eqref{ziminR} necessarily satisfies
-$Z_n'\mathrel{\Rc}Z_n$, hence (its semigroup reduct) belongs to
-the quasivariety $\mathbf{Q}_n$ of semigroups defined by the
+$Z_n'\mathrel{\Rc}Z_n$, hence it satisfies the
 quasi-identity
-\begin{equation*}
+\begin{equation}
+\label{quasidentity}
 xZ_n=yZ_n\rightarrow xZ_n'=yZ_n'.
-\end{equation*}
-Lemma 8 in \cite{margolissapir} then shows that a finitely
-generated semigroup $\mathcal{T}\in\mathbf{Q}_n$ is finite if and
-only if it is periodic and all subgroups of $\mathcal{T}$ are
-locally finite. We note that an involutory semigroup is finitely
-generated if and only if so is its semigroup reduct. Hence it
-suffices to find a finite number of identities which hold in
-$\mathcal{S}$ and which force each (involutory) semigroup to be
-periodic and to have only locally finite subgroups.
+\end{equation}
+Lemma 8 in \cite{margolissapir} shows that a finitely generated semigroup
+satisfying \eqref{quasidentity} is finite if and only if it satisfies
+the identity
+\begin{equation}
+\label{periodic}
+x^k=x^{k+\ell}
+\end{equation}
+for some $k,\ell\ge 1$ and has only locally finite subgroups. We note that
+an involutory semigroup $\mathcal{T}=\langle T,\cdot,{}^*\rangle$ is finitely
+generated if and only if so is the semigroup $\mathcal{T}=\langle T,\cdot\rangle$.
+An identity of the form \eqref{periodic} definitely holds in $\mathcal{S}$
+since $\mathcal{S}$ is finite, Hence it suffices to find a finite number of
+identities which hold in $\mathcal{S}$ and which force each (involutory) semigroup
+to have only locally finite subgroups.
 
-We can proceed as at the end of \cite{margolissapir}: first, since
-$\mathcal{S}$ is finite, it satisfies the identity
-$x^k=x^{k+\ell}$ for some $k,\ell\ge 1$. This identity definitely
-forces any (involutory) semigroup to be periodic. Next, let
+We can proceed as at the end of \cite{margolissapir}. Let
 $\mathcal{G}$ be the direct product of all maximal subgroups of
 $\mathcal{S}$. By the Oates-Powell theorem~\cite{oatespowell}, see
 also \cite[\S5.2]{Ne}, the locally finite variety
@@ -1197,7 +1228,7 @@ negative letters, that is, $v$ is a plain semigroup word in the
 letters $x_1,\dots,x_m$. Now let
 $\mathcal{F}=\mathcal{F}(x_1,\dots,x_m)$ be the $m$-generated
 relatively free semigroup in the (locally finite) semigroup
-variety generated by the semigroup reduct of $\mathcal{S}$. Let
+variety generated by the semigroup $\langle S,\cdot\rangle$. Let
 $e$ be an idempotent in the minimal ideal of $\mathcal{F}$ and let
 $u(x_1,\dots,x_m)$ be a word  whose value in $\mathcal{F}$ is $e$.
 It follows that $\mathcal{F}$ (and therefore $\mathcal{S}$)
@@ -1216,20 +1247,17 @@ Note that both sides of that identity are plain semigroup words in
 the letters $x_1,\dots,x_m$.
 
 Now consider the variety of involutory semigroups defined by the
-identities $x=x\om(x)x$, $x^k=x^{k+\ell}$ together with
-\eqref{ziminR}, \eqref{idempotent law} and \eqref{crucial law}. By
+identities $x=x\om(x)x$, \eqref{periodic},
+\eqref{ziminR}, \eqref{idempotent law}, and \eqref{crucial law}. By
 construction, $\mathcal{S}$ is a member of that variety. Let
-$\mathcal{T}$ be any finitely generated member; then, as already
-mentioned, the semigroup reduct of $\mathcal{T}$ is also finitely
-generated. The first and the third identity ensure that the
-semigroup reduct of $\mathcal{T}$ belongs to the quasivariety
-$\mathbf{Q}_n$, and therefore it is finite provided that it is
-periodic and all its subgroups are locally finite. Periodicity is,
-of course, guaranteed by the second identity. Finally, each group
-$\mathcal{H}$ that satisfies the identities \eqref{idempotent law}
-and \eqref{crucial law} satisfies the identity
-$v(x_1,\dots,x_m)=1$, whence $\mathcal{H}$ belongs to
-$\var\mathcal{G}$ and so is locally finite. Altogether,
+$\mathcal{T}=\langle T,\cdot,{}^*\rangle$ be any finitely generated member;
+then, as already mentioned, the semigroup $\langle T,\cdot\rangle$ is also
+finitely generated. The first and the third identity ensure that the
+semigroup $\langle T,\cdot\rangle$ satisfies \eqref{quasidentity},
+and therefore, it is finite provided that all its subgroups are locally finite.
+Each group $\mathcal{H}$ that satisfies the identities \eqref{idempotent law}
+and \eqref{crucial law} satisfies the identity $v(x_1,\dots,x_m)=1$, whence
+$\mathcal{H}$ belongs to $\var\mathcal{G}$ and so is locally finite. Altogether,
 $\mathcal{T}$ is finite and the proposition is proved.
 \end{proof}
 
@@ -1622,13 +1650,11 @@ contain as a unary subsemigroup a free involutory semigroup on countably many ge
 where
 $$Z=\{\zeta \zeta ^T\zeta ,\ \zeta (\zeta ^T)^2\zeta ,\ \dots,\ \zeta (\zeta ^T)^n\zeta ,\ \dots\}.$$
 Hence all identities holding in
-$\langle\mathrm{M}_n(\mathcal{K}),\cdot,{}^T\rangle$ with $n\ge 2$
-and $\mathcal{K}$ of characteristic $0$ follow from the
-associativity and the involution laws $(xy)^T = y^Tx^T$, $(x^T)^T
-= x$. Similarly, $\langle\mathrm{M}_n(R),\cdot,{}^*\rangle$ is
-finitely based for each $n \ge 2$ and each subring $R\subseteq \bb
-C$ closed under complex conjugation---here ${}^*$ stands for the
-complex-conjugate transposition $(a_{ij})^*= (\ol{a_{ij}})^T$.
+$\langle\mathrm{M}_n(\mathcal{K}),\cdot,{}^T\rangle$ with $\mathcal{K}$
+of characteristic $0$ follow from the associativity and the involution
+laws $(xy)^T = y^Tx^T$, $(x^T)^T= x$. Similarly, $\langle\mathrm{M}_n(R),\cdot,{}^*\rangle$
+is finitely based for each subring $R\subseteq \bb C$ closed under complex conjugation---here
+${}^*$ stands for the complex-conjugate transposition $(a_{ij})^*= (\ol{a_{ij}})^T$.
 
 We note that Theorem~\ref{Theorem 2.1} and Corollary~\ref{identity
 for rank 1} prove the non-existence of a finite identity bases for
@@ -1687,7 +1713,8 @@ semigroup $\langle\mathrm{M}_2(\mathcal{K}),\cdot,{}^T\rangle$ is
 inherently non-finitely based.
 \end{Thm}
 
-\begin{proof} As mentioned in Remark \ref{remark on MP inverse},
+\begin{proof}
+As mentioned in Remark \ref{remark on MP inverse},
 there exists $x\in K$ for which $1+x^2=0$. Now consider the
 following matrices:
 \begin{gather*}
@@ -1717,7 +1744,8 @@ $\langle\mathrm{M}_n(\mathcal{K}),\cdot,{}^T\rangle$ is inherently
 non-finitely based.
 \end{Thm}
 
-\begin{proof} It follows from the Chevalley-Warning theorem
+\begin{proof}
+It follows from the Chevalley-Warning theorem
 \cite[Corollary~2 in \S1.2]{Serre} that there exist $x,y\in K$
 satisfying $1+x^2+y^2=0$. Now consider the following matrices:
 \begin{gather*}
@@ -1751,7 +1779,7 @@ where $(a_{ij})^{\si T}:=(a_{ij}^\si)^T$.
 We are ready to prove the main result of this subsection. With the exception
 of the `only if' part of item (2), this is a summary of Theorems \ref{Theorem 3.6},
 \ref{inherently degree 2}, and \ref{inherently degree 3}.
-\begin{Thm}\label{main result matrix involution} Let $n\ge 2$ and
+\begin{Thm}\label{main result matrix involution} Let
 $\mathcal{K}=\langle K,+,\cdot\rangle$ be a finite field. Then
 \begin{enumerate}
 \item the involutory semigroup $\langle \mathrm{M}_n(\mathcal{K}),\cdot,{}^T\rangle$
@@ -1762,11 +1790,8 @@ is inherently non-finitely ba\-sed if and only if either $n\ge 3$ or $n=2$ and $
 \end{enumerate}
 \end{Thm}
 
-It remains to prove that $\langle\mathrm{M}_2(\mathcal{K}),\cdot,{}^T\rangle$ is \textbf{not} inherently non-finitely
-based if $\vert K\vert\equiv 3\ (\bmod\ 4)$. The assertion follows from Proposition~\ref{NINFB}.
-
 \begin{proof}
-As already remarked, the only assertion of this theorem not covered by previous results is that
+The only assertion of this theorem not covered by previous results is that
 $\langle\mathrm{M}_2(\mathcal{K}),\cdot,{}^T\rangle$ is \textbf{not} inherently non-finitely based if $\vert
 K\vert\equiv 3\ (\bmod\ 4)$. We employ Proposition~\ref{NINFB} to prove this.
 
@@ -1787,7 +1812,7 @@ $x=x\om(x)x$, as required by Proposition~\ref{NINFB}.
 \begin{Rmk}
 It is known~\cite[Corollary~6.2]{sapirburnside} that the matrix
 semigroup $\langle\mathrm{M}_n(\mathcal{K}),\cdot\rangle$ is
-inherently non-\fb\ (as a plain \sm) for every $n\ge 2$ and every
+inherently non-\fb\ (as a plain \sm) for every
 finite field $\mathcal{K}$. Thus, the involutory semigroups
 $\langle\mathrm{M}_2(\mathcal{K}),\cdot,{}^T\rangle$ over finite
 fields $\mathcal{K}$ such that $\vert K\vert\equiv 3\ (\bmod\ 4)$
@@ -1799,9 +1824,9 @@ their semigroup reducts.
 \subsection{Matrix semigroups with symplectic transpose}
 \label{symplectic case}
 
-For a $2n\times 2n$-matrix
+For a $2m\times 2m$-matrix
 $$X=\begin{pmatrix} A & B\\ C & D\end{pmatrix}$$ with $A,B,C, D$ being
-$n\times n$-matrices over any field $\mathcal{K}$, the
+$m\times m$-matrices over any field $\mathcal{K}$, the
 \emph{symplectic transpose} $X^S$ is defined by
 $$X^S=\begin{pmatrix} D^T & -B^T\\ -C^T & A^T\end{pmatrix},$$
 see e.g. \cite[(5.1.1)]{Procesi}. This definition is similar to
@@ -1810,34 +1835,34 @@ $\mathcal{TB}^1_2$ (defined in terms of $2\times 2$-matrices) and
 leads to the following application.
 \begin{Thm}\label{symplecticinvolution}
 The involutory semigroup
-$\left<\mathrm{M}_{2n}(\mathcal{K}),\cdot,{}^S\right>$ is
-inherently non-finitely based for each $n\ge 1$ and each finite
+$\left<\mathrm{M}_{2m}(\mathcal{K}),\cdot,{}^S\right>$ is
+inherently non-finitely based for each $m\ge 1$ and each finite
 field $\mathcal{K}=\left<K,+,\cdot\right>$.
 \end{Thm}
-\begin{proof} Consider the following sets of $2n\times 2n$-matrices:
+\begin{proof} Consider the following sets of $2m\times 2m$-matrices:
 \begin{gather*}
-H_{11}=\left\{\pm \begin{pmatrix}O_n & I_n \\ O_n&O_n
+H_{11}=\left\{\pm \begin{pmatrix}O_m & I_m \\ O_m&O_m
 \end{pmatrix}\right\},\
-H_{12}=\left\{\pm \begin{pmatrix}I_n & O_n \\ O_n&O_n \end{pmatrix}\right\},\\
-H_{21}=\left\{\pm \begin{pmatrix}O_n & O_n \\ O_n&I_n
+H_{12}=\left\{\pm \begin{pmatrix}I_m & O_m \\ O_m&O_m \end{pmatrix}\right\},\\
+H_{21}=\left\{\pm \begin{pmatrix}O_m & O_m \\ O_m&I_m
 \end{pmatrix}\right\},\
-H_{22}=\left\{\pm \begin{pmatrix}O_n & O_n \\ I_n&O_n
+H_{22}=\left\{\pm \begin{pmatrix}O_m & O_m \\ I_m&O_m
 \end{pmatrix}\right\}
 \end{gather*}
 where for any positive integer $k$, we denote be $I_k$,
 respectively, $O_k$ the identity, respectively, zero $k\times
 k$-matrix. Let
-$$T=\bigcup_{1\le i,j\le 2}H_{ij}\cup \{O_{2n}, I_{2n}\}.$$
+$$T=\bigcup_{1\le i,j\le 2}H_{ij}\cup \{O_{2m}, I_{2m}\}.$$
 The set $T$ is closed under multiplication and symplectic
 transposition whence $\mathcal{T}=\left<T,\cdot,{}^S\right>$ forms
 an involutory subsemigroup of
-$\left<\mathrm{M}_{2n}(\mathcal{K}),\cdot,{}^S\right>$. On the
+$\left<\mathrm{M}_{2m}(\mathcal{K}),\cdot,{}^S\right>$. On the
 other hand, the mapping
-$$H_{ij}\mapsto (i,j),\ I_{2n}\mapsto 1,\ O_{2n}
-\mapsto 0$$ is a homomorphism of $\mathcal{T}$ onto
+$$H_{ij}\mapsto (i,j),\ I_{2m}\mapsto 1,\ O_{2m} \mapsto 0$$
+is a homomorphism of $\mathcal{T}$ onto
 $\mathcal{TB}^1_2$. Altogether, the twisted Brandt monoid
 $\mathcal{TB}^1_2$ divides
-$\left<\mathrm{M}_{2n}(\mathcal{K}),\cdot,{}^S\right>$.
+$\left<\mathrm{M}_{2m}(\mathcal{K}),\cdot,{}^S\right>$.
 \end{proof}
 
 \subsection{Boolean matrices}
@@ -1855,10 +1880,10 @@ forming the matrix transpose then corresponds to the operation of
 forming the dual binary relation.
 
 \begin{Thm}
-\label{Theorem 3.7} For each integer $n\ge 2$, the involutory
-semigroup $\Bc_n=\langle B_n,\cdot,{}^T\rangle$ of all Boolean
-$n\times n$-matrices endowed with transposition is inherently
-non-finitely based.
+\label{Theorem 3.7}
+The involutory semigroup $\Bc_n=\langle B_n,\cdot,{}^T\rangle$
+of all Boolean $n\times n$-matrices endowed with transposition
+is inherently non-finitely based.
 \end{Thm}
 
 \begin{proof} Consider the Boolean matrices
@@ -1878,7 +1903,7 @@ $$ (i,j)\mapsto B_{ij},\ 0\mapsto O,\ 1\mapsto I$$
 is an isomorphism of involutory semigroups. By
 Corollary~\ref{twisted Brandt} $\mathcal{M}$ is inherently
 non-finitely based whence so is $\Bc_2$. Since $\Bc_2$ can be
-embedded as an involutory semigroup into $\Bc_n$ for each $n\ge 2$,
+embedded as an involutory semigroup into $\Bc_n$ for each $n$,
 the result follows.
 \end{proof}
 
@@ -1901,7 +1926,7 @@ $n\times n$-matrices is closed under multiplication and
 transposition. Since all the matrices $B_{11}, B_{12}, B_{21},
 B_{22},O,I$ from the above proof are Hall matrices, we readily
 conclude that the involutory semigroup $\langle HB_n,\cdot,{}^T\rangle$
-is inherently non-finitely based for each $n\ge 2$.
+is inherently non-finitely based.
 \end{Rmk}
 
 \begin{Rmk}
@@ -1915,11 +1940,11 @@ distributes over addition. From the proofs of
 Theorems~\ref{inherently degree 2} and~\ref{Theorem 3.7}
 we see that the involutory matrix semigroup
 $\langle\mathrm{M}_n(\mathcal{L}),\cdot,{}^T\rangle$ over a finite
-semiring is inherently non-finitely based whenever $n\ge 2$ and
+semiring is inherently non-finitely based whenever
 the semiring $\mathcal{L}$ has a zero 0 (that is, a neutral
 element for $\langle L,+\rangle$ which is at the same time an
 absorbing element for $\langle L,\cdot\rangle$) and satisfies
-either of the following two conditions:
+one of the following two conditions:
 \begin{enumerate}
 \item there exist (not necessarily distinct) elements $e,x\ne 0$
 such that $e^2=e$, $ex=xe=x$, $e+x^2=0$;
@@ -2014,7 +2039,7 @@ YX\mapsto\left(\begin{smallmatrix}
 \end{smallmatrix}\right). $$
 One easily checks that this bijection extends to an isomorphism
 between the Rees quotient $\mathcal{M}/\mathcal{N}$ and the \sm\
-$\TA$; moreover, this isomorphism respects the unary operations.
+$\TA$; moreover, this isomorphism respects the unary operation.
 We see that $\TA$ turns out to be an image of an involutory
 sub\sm\ in $\BT_n$ under an involutary \sm\ homomorphism whence
 $\TA$ belongs to the involutary \sm\ variety generated by $\BT_n$.
@@ -2027,8 +2052,8 @@ In \cite{VoGo04} it was shown that the \sm\ $\langle BT_n,\cdot\rangle$
 is inherently non-finitely based for $n\ge4$. However, the construction
 used there does not imply the same fact for the involutory case. Our
 proof of Theorem~\ref{Theorem 3.8} follows a different construction
-suggested for the plain \sm\ case by Jian Rong Li (unpublished). Jian Rong Li
-has also verified that the \sm\ $\langle BT_2,\cdot\rangle$ is finitely
+suggested for the plain \sm\ case by Li and Luo~\cite{LL}. Li and Luo
+have also verified that the \sm\ $\langle BT_2,\cdot\rangle$ is finitely
 based. We do not know whether or not the involutory semigroup $\BT_2$
 is finitely based.
 \end{Rmk}
@@ -2094,6 +2119,16 @@ J.\,Colombo and P.\,Koshlukov, \emph{Central polynomials in the matrix
 algebra of order two}, Linear Algebra and its Applications \textbf{377}
 (2004), 53--67.
 
+\bibitem{DaRa99}
+A.\,D'Amour and M.\,Racine, *-\emph{Polynomial identites of matrices with the
+transpose involution: the low degrees}, Trans.\ Amer.\ Math.\ Soc. \textbf{351}
+(1999), 5089--5106.
+
+\bibitem{DaRa04}
+A.\,D'Amour and M.\,Racine, *-\emph{Polynomial identites of matrices with thes
+ymplectic involution: the low degrees}, Commun.\ Algebra \textbf{32} (2004),
+895–-918.
+
 \bibitem{Dolinka}
 I.\,Dolinka, \emph{On identities of finite involution semigroups},
 Semigroup Forum \textbf{80} (2010), 105--120.
@@ -2113,6 +2148,11 @@ and Logic \textbf{20} (1982), 188--194].
 V.\,S.\,Drensky and E.\,Formanek, \emph{Polynomial Identity Rings},
 Birkh\"auser, Basel, 2004.
 
+\bibitem{DrGi95}
+V.\,S.\,Drensky and A. Giambruno, \emph{On the *-polynomial identities
+of minimal degree for matrices with involution}, Boll.\ Unione Math.\ Ital.
+Ser.\,A, \textbf{9} (1995), 471--482.
+
 \bibitem{Erdos}
 J.\,A.\,Erdos, \emph{On products of idempotent matrices}, Glasgow
 Math.\ J. \textbf{8} (1967), 118--122.
@@ -2126,6 +2166,14 @@ matrices over a finite field}, Algebra i Logika \textbf{20} (1981), 385--388
 G.\,K.\,Genov and P.\,N.\,Siderov, \emph{A basis of the identities of the fourth
 order matrix algebra over a finite field}. I,II,  Serdica \textbf{8} (1982),
 313--323, 351--366 [Russian].
+
+\bibitem{GePe85}
+J.\,A.\,Gerhard, M.\,Petrich, \emph{Free involutorial completely simple semigroups},
+Canad. J. Math. \textbf{37} (1985), 271--295.
+
+\bibitem{Gi90}
+A.\,Giambruno, \emph{On *-polynomial identities for $n\times n$-matrices}, J. Algebra
+\textbf{133} (1990), 433-–438.
 
 \bibitem{GiZa05}
 A.\,Giambruno and M.\,Zaicev, \emph{Polynomial Identities and Asymptotic
@@ -2171,6 +2219,10 @@ of order two over a field of characteristic $p\ne2$}, J. Algebra
 \bibitem{Kr73}
 R.\,L.\,Kruse, \emph{ Identities satisfied by a finite ring}, J. Algebra
 \textbf{26} (1973), 298--318.
+
+\bibitem{LL}
+Jian Rong Li and Yan Feng Luo, \emph{On the finite basis problem for
+the monoids of triangular boolean matrices}, submitted.
 
 \bibitem{LidlNiederreiter}
 R.\,Lidl and H.\,Niederreiter, \emph{Finite Fields},
@@ -2282,7 +2334,7 @@ and piecewise testable languages of a given height}, Int.\ J. Algebra
 and Computation \textbf{14} (2004), 817--827.
 
 \bibitem{VoGo04}
-M.\,V.\,Volkov, I.\,A.\,Goldberg, \emph{The finite basis problems
+M.\,V.\,Volkov, I.\,A.\,Goldberg, \emph{The finite basis problem
 for monoids of triangular boolean matrices}, pp.205--214 in Algebraic
 Systems, Formal Languages, and Conventional and Unconventional Computation
 Theory [Surikaisekikenkyusho Kokyuroku \textbf{1366}], Research Institute
