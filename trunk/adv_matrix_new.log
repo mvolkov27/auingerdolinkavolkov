@@ -1,35 +1,33 @@
-This is TeX, Version 3.14159 (Web2c 7.3.7x) (format=latex 2006.11.20)  9 SEP 2010 21:26
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=latex 2010.9.7)  10 SEP 2010 18:25
+entering extended mode
 **adv_matrix_new.tex
-(./adv_matrix_new.tex
-LaTeX2e <2001/06/01>
-Loading CZ hyphenation patterns: Pavel Sevecek, v3, 1995
-Loading SK hyphenation patterns: Jana Chlebikova, 1992
-Babel <v3.7h> and hyphenation patterns for english, dumylang, nohyphenation, cz
-ech, slovak, german, ngerman, spanish, catalan, french, ukenglish, italian, dut
-ch, polish, portuguese, russian, loaded.
-(c:/Program Files/TeXLive/texmf/tex/latex/amslatex/amsart.cls
-Document Class: amsart 2000/10/26 v2.08
+("D:\TeX Files\ADV Project\auingerdolinkavolkov\adv_matrix_new.tex"
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, ge
+rman, ngerman, german-x-2009-06-19, ngerman-x-2009-06-19, french, loaded.
+("C:\Program Files\MiKTeX 2.8\tex\latex\ams\classes\amsart.cls"
+Document Class: amsart 2009/07/02 v2.20.1
 \linespacing=\dimen102
 \normalparindent=\dimen103
 \normaltopskip=\skip41
-(c:/Program Files/TeXLive/texmf/tex/latex/amslatex/amsmath.sty
+("C:\Program Files\MiKTeX 2.8\tex\latex\ams\math\amsmath.sty"
 Package: amsmath 2000/07/18 v2.13 AMS math features
 \@mathmargin=\skip42
 
 For additional information on amsmath, use the `?' option.
-(c:/Program Files/TeXLive/texmf/tex/latex/amslatex/amstext.sty
+("C:\Program Files\MiKTeX 2.8\tex\latex\ams\math\amstext.sty"
 Package: amstext 2000/06/29 v2.01
 
-(c:/Program Files/TeXLive/texmf/tex/latex/amslatex/amsgen.sty
+("C:\Program Files\MiKTeX 2.8\tex\latex\ams\math\amsgen.sty"
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks14
 \ex@=\dimen104
 ))
-(c:/Program Files/TeXLive/texmf/tex/latex/amslatex/amsbsy.sty
+("C:\Program Files\MiKTeX 2.8\tex\latex\ams\math\amsbsy.sty"
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen105
 )
-(c:/Program Files/TeXLive/texmf/tex/latex/amslatex/amsopn.sty
+("C:\Program Files\MiKTeX 2.8\tex\latex\ams\math\amsopn.sty"
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count79
@@ -70,17 +68,17 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
 LaTeX Info: Redefining \[ on input line 2666.
 LaTeX Info: Redefining \] on input line 2667.
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 395.
+LaTeX Font Info:    Try loading font information for U+msa on input line 388.
 
-(c:/Program Files/TeXLive/texmf/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2002/01/19 v2.2g AMS font definitions
+("C:\Program Files\MiKTeX 2.8\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-(c:/Program Files/TeXLive/texmf/tex/latex/amsfonts/amsfonts.sty
-Package: amsfonts 2001/10/25 v2.2f
+("C:\Program Files\MiKTeX 2.8\tex\latex\amsfonts\amsfonts.sty"
+Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
-(Font)                  U/euf/m/n --> U/euf/b/n on input line 132.
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
 )
 \copyins=\insert233
 \abstractbox=\box28
@@ -106,48 +104,51 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 \thm@headsep=\skip50
 \dth@everypar=\toks24
 )
-(c:/Program Files/TeXLive/texmf-local/tex/latex/cite.sty
-Package: cite 1999/04/23  v 3.8
+("C:\Documents and Settings\Igor\Application Data\MiKTeX\2.8\tex\latex\cite\cit
+e.sty"
+LaTeX Info: Redefining \cite on input line 285.
+LaTeX Info: Redefining \nocite on input line 356.
+Package: cite 2009/08/29  v 5.2
+) ("C:\Program Files\MiKTeX 2.8\tex\latex\ltxmisc\url.sty"
+\Urlmuskip=\muskip11
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
 )
-(c:/Program Files/TeXLive/texmf-local/tex/latex/url.sty
-Package: url 1996/10/19  ver 1.2  Verb mode for urls, email addresses, and file
- names
+("C:\Program Files\MiKTeX 2.8\tex\latex\amsfonts\amssymb.sty"
+Package: amssymb 2009/06/22 v3.00
 )
-(c:/Program Files/TeXLive/texmf/tex/latex/amsfonts/amssymb.sty
-Package: amssymb 2002/01/22 v2.2d
-)
-(c:/Program Files/TeXLive/texmf/tex/latex/amslatex/amscd.sty
+("C:\Program Files\MiKTeX 2.8\tex\latex\ams\math\amscd.sty"
 Package: amscd 1999/11/29 v2.0
 \athelp@=\toks25
 \minaw@=\dimen114
 \bigaw@=\dimen115
 \minCDarrowwidth=\dimen116
 )
-(c:/Program Files/TeXLive/texmf/tex/latex/eepic/eepic.sty
+("C:\Documents and Settings\Igor\Application Data\MiKTeX\2.8\tex\latex\eepic\ee
+pic.sty"
 Extension to Epic and LaTeX. Version 1.1e - Released Dec 21, 1999
 \@gphlinewidth=\count99
 \@eepictcnt=\count100
 \@tempdimc=\dimen117
 \maxovaldiam=\dimen118
 \@filltype=\box29
-) (c:/Program Files/TeXLive/texmf/tex/latex/graphics/color.sty
-Package: color 1999/02/16 v1.0i Standard LaTeX Color (DPC)
+) ("C:\Program Files\MiKTeX 2.8\tex\latex\graphics\color.sty"
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
 
-(c:/Program Files/TeXLive/texmf/tex/latex/texlive/color.cfg
-File: color.cfg 2001/08/31 v1.1 color configuration of teTeX/TeXLive
+("C:\Program Files\MiKTeX 2.8\tex\latex\00miktex\color.cfg"
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
-Package color Info: Driver file: dvips.def on input line 125.
+Package color Info: Driver file: dvips.def on input line 130.
 
-(c:/Program Files/TeXLive/texmf/tex/latex/graphics/dvips.def
+("C:\Program Files\MiKTeX 2.8\tex\latex\graphics\dvips.def"
 File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
 )
-(c:/Program Files/TeXLive/texmf/tex/latex/graphics/dvipsnam.def
+("C:\Program Files\MiKTeX 2.8\tex\latex\graphics\dvipsnam.def"
 File: dvipsnam.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
 ))
-(c:/Program Files/TeXLive/texmf/tex/latex/amsfonts/eucal.sty
-Package: eucal 2001/10/01 v2.2d Euler Script fonts
+("C:\Program Files\MiKTeX 2.8\tex\latex\amsfonts\eucal.sty"
+Package: eucal 2009/06/22 v3.00 Euler Script fonts
 LaTeX Font Info:    Overwriting math alphabet `\EuScript' in version `bold'
-(Font)                  U/eus/m/n --> U/eus/b/n on input line 55.
+(Font)                  U/eus/m/n --> U/eus/b/n on input line 33.
 )
 \symrsfscript=\mathgroup6
 \c@Thm=\count101
@@ -155,9 +156,7 @@ LaTeX Font Info:    Overwriting math alphabet `\EuScript' in version `bold'
 \c@Rmk=\count103
 \c@Problem=\count104
 
-(./adv_matrix_new.aux)
-\openout1 = `adv_matrix_new.aux'.
-
+("D:\TeX Files\ADV Project\auingerdolinkavolkov\adv_matrix_new.aux")
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 166.
 LaTeX Font Info:    ... okay on input line 166.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 166.
@@ -172,25 +171,26 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 166.
 LaTeX Font Info:    ... okay on input line 166.
 LaTeX Font Info:    Try loading font information for U+msa on input line 166.
 
-(c:/Program Files/TeXLive/texmf/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2002/01/19 v2.2g AMS font definitions
+("C:\Program Files\MiKTeX 2.8\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 166.
 
-(c:/Program Files/TeXLive/texmf/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2002/01/19 v2.2g AMS font definitions
+("C:\Program Files\MiKTeX 2.8\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
 LaTeX Font Info:    Try loading font information for OMS+rsfs on input line 166
 .
 
-(c:/Program Files/TeXLive/texmf/tex/latex/calrsfs/omsrsfs.fd)
+("C:\Documents and Settings\Igor\Application Data\MiKTeX\2.8\tex\latex\calrsfs\
+omsrsfs.fd")
 Overfull \vbox (1.18742pt too high) has occurred while \output is active []
 
 
 [1] [2]
 LaTeX Font Info:    Try loading font information for U+eus on input line 279.
- (c:/Program Files/TeXLive/texmf/tex/latex/amsfonts/ueus.fd
-File: ueus.fd 2002/01/19 v2.2g AMS font definitions
+ ("C:\Program Files\MiKTeX 2.8\tex\latex\amsfonts\ueus.fd"
+File: ueus.fd 2009/06/22 v3.00 Euler Script
 )
 Underfull \vbox (badness 1270) has occurred while \output is active []
 
@@ -210,7 +210,7 @@ Overfull \vbox (1.30867pt too high) has occurred while \output is active []
 [13] [14] [15] [16]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 1237
 .
- (c:/Program Files/TeXLive/texmf/tex/latex/base/omscmr.fd
+ ("C:\Program Files\MiKTeX 2.8\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
@@ -219,8 +219,8 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 
 [17] [18] [19] [20] [21] [22] [23] [24] [25]
 Overfull \hbox (6.07343pt too wide) in paragraph at lines 1852--1873
-\OT1/cmr/m/n/10.95 see, e.g., [45, (5.1.1)]. The sym-plec-tic trans-pose is an 
-in-vo-lu-tion of $[]$
+[]\OT1/cmr/m/n/10.95 see, e.g., [45, (5.1.1)]. The sym-plec-tic trans-pose is a
+n in-vo-lu-tion of $[]$
  []
 
 [26] [27] [28] [29]
@@ -236,14 +236,14 @@ Missing character: There is no ’ in font cmr9!
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [31]
-[32] (./adv_matrix_new.aux) ) 
+[32] ("D:\TeX Files\ADV Project\auingerdolinkavolkov\adv_matrix_new.aux") ) 
 Here is how much of TeX's memory you used:
- 2373 strings out of 50491
- 26849 string characters out of 1189754
- 87278 words of memory out of 1500001
- 5135 multiletter control sequences out of 10000+15000
- 20968 words of font info for 81 fonts, out of 400000 for 1000
- 449 hyphenation exceptions out of 1000
- 34i,16n,32p,251b,444s stack positions out of 1500i,500n,1500p,200000b,5000s
+ 2517 strings out of 495270
+ 28986 string characters out of 3180137
+ 97064 words of memory out of 3000000
+ 5552 multiletter control sequences out of 15000+200000
+ 20187 words of font info for 80 fonts, out of 3000000 for 9000
+ 175 hyphenation exceptions out of 8191
+ 34i,16n,32p,251b,370s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on adv_matrix_new.dvi (32 pages, 161780 bytes).
+Output written on adv_matrix_new.dvi (32 pages, 186660 bytes).
