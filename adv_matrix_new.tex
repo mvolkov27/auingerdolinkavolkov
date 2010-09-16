@@ -4,7 +4,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Version of September 7th, 2010 %
+% Version of September 13th, 2010 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \documentclass[11pt,reqno]{amsart}
@@ -214,7 +214,7 @@ We present the corresponding results in Section~\ref{tools} while Section~\ref{p
 collects necessary preliminaries. Applications to the finite basis problem for matrix identities
 are presented in Section~\ref{applications}. Both methods of Section~\ref{tools} are used here,
 and it turns out that they in some sense complement one another since, in contrast to the case
-of purely multiplicative identities, none of them alone suffices to cover, say, identities
+of purely multiplicative identities, none of the methods alone suffices to cover, say, identities
 of matrices of every size over every finite field involving multiplication and the usual
 transposition of matrices.
 
@@ -262,7 +262,7 @@ Algebraic structures considered in this paper are mostly of types $(2,1)$ or $(2
 that they have one binary operation and one or two unary operations. Since binary
 operations involved are always assumed to satisfy the associative law, our
 structures are \emph{semigroups} equipped with one or two additional unary
-operations; for brevity, we will call such structures \emph{unary semigroups}.
+operations; for brevity, we shall call such structures \emph{unary semigroups}.
 
 We formally define notions related to unary semigroup identities
 only for the case of one unary operation leaving the straightforward
@@ -294,12 +294,12 @@ shows that this notion (which we have given a semantic definition) can be captur
 a very transparent set of inference rules. These rules in fact formalize the most
 natural things one does with identities: substitution of a term for a variable,
 application of operations to identities (such as, say, multiplying an identity
-through on the right by the same term) and using transitivity of equality.
+through on the right by the same term) and using symmetry and transitivity of equality.
 We need not going into more detail here because the completeness theorem
 is not utilized in this paper.
 
 Given a unary \sm\ $\mathcal{S}$, an \emph{\ib} for $\mathcal{S}$ is any set
-$\Sigma\subseteq\Id\mathcal{S}$ such that such that every identity of $\Id\mathcal{S}$
+$\Sigma\subseteq\Id\mathcal{S}$ such that every identity of $\Id\mathcal{S}$
 follows from $\Sigma$. A unary \sm\ $\mathcal{S}$ is said to be \emph{\fb} if it possesses
 a finite \ib; otherwise $\Sc$ is called \emph{\nfb}.
 
@@ -342,7 +342,7 @@ If the identities $(xy)^* = y^*x^*$ and $(x^*)^* = x$ happen to hold in $\mathca
 in other words, if the unary operation $x\mapsto x^*$ is an involutory anti-automorphism
 of the semigroup $\langle S,\cdot\rangle$, we call $\mathcal{S}$ an \emph{involutory semigroup}.
 If, in addition, the identity $x=xx^*x$ holds, $\mathcal{S}$ is said to be a \emph{regular
-$*$-semigroup}. Each group, subject to its inverse operation $x\mapsto x^{-1}$ is
+$*$-semigroup}. Each group, subject to its inverse operation $x\mapsto x^{-1}$, is
 an involutory semigroup, even a regular $*$-semigroup; throughout the paper,
 any group is considered as a unary semigroup with respect to this inverse unary
 operation.
@@ -436,7 +436,7 @@ $N(A)=\{x\in K^n\mid xA=0\}$ has dimension $n-1$ whence the generalized eigenspa
 of $A$ corresponding to the eigenvalue $0$ coincides with either $K^n$ or $N(A)$.
 In the former case $A^2=0$ and $A^2BA=0=ABA^2$ for any matrix $B$. In the latter
 case $K^n$ decomposes into the direct sum of $N(A)$ and the range $R(A)=\{xA\mid x\in K^n\}$,
-see \cite[Section~5.10]{Meyer}. Then $R(A)$ is in fact the root subspace of
+see \cite[Section~5.10]{Meyer}. Then $R(A)$ is in fact the generalized eigenspace of
 $A$ corresponding to a non-zero eigenvalue $\alpha\in K$ and the minimal polynomial
 of $A$ is $x(x-\alpha)$. Thus, $A$ satisfies the equation $A^2-\alpha A=0$, whence
 $A^2BA=\alpha ABA=AB\alpha A=ABA^2$, as required.
@@ -511,9 +511,9 @@ $\mathcal{K}_3\in\Vc$. If either
 \begin{itemize}
 \item there exists a group $\mathcal{G}$  such that $\mathcal{G}\in\Vc$ but
 $\mathcal{G}\notin\H(\Vc)$
-\end{itemize}
-or
-\begin{itemize}
+
+\hbox to 0 pt {or}
+
 \item there exist a positive integer $d$ and a group $\mathcal{G}$ of exponent
 dividing $d$ such that $\mathcal{G}\in\Vc$ but
 $\mathcal{G}\notin\P_d(\Vc)$,
@@ -831,7 +831,8 @@ finiteness of $\Vc$.
 We shall employ a construction invented by
 Sapir~\cite{sapirburnside}, see also his lecture
 notes~\cite{Sapir}. We fix $k$ and let $r=6k+2$. Consider the
-$r^2\times r$-matrix $M$ shown in Fig.~\ref{matrices} on the left.
+$r^2\times r$-matrix $M$ shown in the left hand part
+of Fig.~\ref{matrices}.
 \begin{figure}[b]
 $$M=\begin{pmatrix}
   1 & 1 & \cdots & 1 & 1\\
@@ -874,7 +875,7 @@ block $1,2,\dots,r$ occurs $r$ times.
 
 Now consider the alphabet $A=\{a_{ij}\mid 1\leq i,j\leq r\}$ of
 cardinality $r^2$. We convert the matrix $M$ to the matrix $M_{A}$
-(shown in Fig.~\ref{matrices} on the right) by replacing numbers
+(shown in the right hand part of Fig.~\ref{matrices}) by replacing numbers
 by letters according to the following rule: whenever the number
 $i$ occurs in the column $j$ of $M$, we substitute it with the
 letter $a_{ij}$ to get the corresponding entry in $M_A$.
@@ -1075,16 +1076,15 @@ $$\{(1,1),(1,2),(2,1),(2,2),0,1\}$$ endowed with the operations
  (i,j)^* = (j,i),\ 1^*=1,\ 0^*=0\notag.
 \end{gather}
 
-Suppose that $\mathcal{A}$ is a finite algebraic structure for
-which the variety $\var\mathcal{A}$ contains an inherently
-\nfb\ algebraic structure. Immediately from the
-definition it follows that $\mathcal{A}$ is also inherently
-\nfb. This observation is useful, in particular, for the
-justification of our second example of an involutory inherently
-\nfb\ semigroup. This is a `twisted version' $\TA$ of another
-6-element semigroup that often shows up under the name $A_2^1$ in
-the theory of semigroup varieties. The unary semigroup $\TA$ is
-formed by the 6 matrices
+Suppose that $\mathcal{S}$ is a finite unary semigroup for
+which the variety $\var\mathcal{S}$ contains an inherently
+\nfb\ unary semigroup. Immediately from the definition it
+follows that $\mathcal{S}$ is also inherently \nfb. This
+observation is useful, in particular, for the justification
+of our second example of an involutory inherently \nfb\ semigroup.
+This is a `twisted version' $\TA$ of another 6-element semigroup
+that often shows up under the name $A_2^1$ in the theory of semigroup
+varieties. The unary semigroup $\TA$ is formed by the 6 matrices
 $$\begin{pmatrix} 0 & 0\\ 0 & 0\end{pmatrix},\
 \begin{pmatrix} 1 & 0\\ 0 & 0\end{pmatrix},\
 \begin{pmatrix} 0 & 1\\ 0 & 0\end{pmatrix},\
@@ -1159,7 +1159,7 @@ a locally finite variety of involutory semigroups containing
 $\mathcal{S}$. The crucial step towards this goal consists in
 verifying that the identity $x=x\om(x)x$ allows one to express
 right divisibility in terms of equational logic. This being done,
-we will be in a position to closely follow powerful arguments
+we shall be in a position to closely follow powerful arguments
 developed by Margolis and Sapir in~\cite{margolissapir}.
 
 We say that elements $a,b\in S$ \emph{divide each other on the right}
@@ -1191,7 +1191,7 @@ Set $n=h+1$; Lemma~7 in~\cite{margolissapir} shows that under every
 evaluation of the letters $x_1,\dots,x_n$ in $\mathcal{S}$, the values
 of the words $Z_n'$ and $Z_n$ divide each other on the right. As explained
 in the previous paragraph, this can be restated as saying that the values
-of the involutory words $Z_n\om(Z_n)\cdot Z_n'\om(Z_n')$ and $Z_n'\om(Z_n')$
+of the terms $Z_n\om(Z_n)\cdot Z_n'\om(Z_n')$ and $Z_n'\om(Z_n')$
 coincide under every evaluation of $x_1,\dots,x_n$ in $\mathcal{S}$, that is,
 $\mathcal{S}$ satisfies the identity
 \begin{equation}
@@ -1235,9 +1235,9 @@ $\mathcal{S}$. By the Oates-Powell theorem~\cite{oatespowell}, see
 also \cite[\S5.2]{Ne}, the locally finite variety
 $\var\mathcal{G}$ generated by the finite group $\mathcal{G}$ can
 be defined by a single identity $v(x_1,\dots,x_m)=1$. The left
-hand side $v$ of this identity can be assumed to contain no
-negative letters, that is, $v$ is a plain semigroup word in the
-letters $x_1,\dots,x_m$. Now let $\mathcal{F}=\mathcal{F}(x_1,\dots,x_m)$
+hand side $v$ of this identity can be assumed to contain no occurrence
+of the inversion ${}^{-1}$, that is, we may assume that $v$ is a plain semigroup
+word in the letters $x_1,\dots,x_m$. Now let $\mathcal{F}=\mathcal{F}(x_1,\dots,x_m)$
 be the $m$-generated relatively free semigroup in the (locally finite)
 semigroup variety generated by the semigroup $\langle S,\cdot\rangle$.
 The semigroup $\mathcal{F}$ is finite and hence has a least
@@ -1472,11 +1472,11 @@ unary subsemigroup of $\Sc$. Moreover, since $AA^\dag$ is the
 identity matrix for every invertible matrix $A$, we conclude that,
 with the exception of the identity matrix, the Hermitian
 subsemigroup $\H(\Sc)$ contains only matrices of rank~1, that is,
-$\H(\Sc)\subseteq\mathrm{L}^1_2(\mathcal{K})$, the unary semigroup
+$\H(\Sc)\subseteq\mathrm{L}^1_2(\mathcal{K})$, the set
 of all matrices of rank at most~1 with the identity matrix
 adjoined. By Corollary~\ref{identity for rank 1} the semigroup
-$\mathrm{L}^1_2(\mathcal{K})$ satisfies the identity
-$x^2yx=xyx^2$. Consequently, each group in $\var\H(\Sc)$ is
+$\langle\mathrm{L}^1_n(\mathcal{K}),\cdot\rangle$ satisfies the
+identity $x^2yx=xyx^2$. Consequently, each group in $\var\H(\Sc)$ is
 abelian, while the group $\mathrm{GL}_2(\mathcal{K})$ is
 non-abelian. Thus, $\mathrm{GL}_2(\mathcal{K})$ is contained in
 $\var\Sc$ but is not contained in $\var\H(\Sc)$, as required.
@@ -1869,7 +1869,7 @@ a classic result by Khalezov~\cite{Kha54} that every involution
 of the semigroup $\left<\mathrm{M}_n(\mathcal{K}),\cdot\right>$
 automatically preserves addition.}.
 
-The definition of the symplectic transpose is similar to
+The definition of the symplectic transpose resembles
 that of the involution in the twisted Brandt monoid
 $\mathcal{TB}^1_2$ (defined in terms of $2\times 2$-matrices) and
 leads to the following application.
@@ -2098,7 +2098,7 @@ $\left(\begin{smallmatrix}
 0 & 0 \\ 0 & 0
 \end{smallmatrix}\right)$ yields an involutory \sm\
 homomorphism from $\mathcal{M}$ onto $\TA$. Thus, $\TA$ as
-an image of an involutory sub\sm\ in $\BT_n$ belongs to the
+a homomorphic image of an involutory sub\sm\ in $\BT_n$ belongs to the
 involutory \sm\ variety generated by $\BT_n$.
 Corollary~\ref{twisted A} implies that $\BT_n$ is inherently
 \nfb.
@@ -2183,8 +2183,8 @@ Algebra \textbf{32}, 895–-918 (2004)
 Dolinka, I.: On identities of finite involution semigroups. Semigroup Forum \textbf{80}, 105--120 (2010)
 
 \bibitem{D}
-Drazin, M. P.: Regular semigroups with involution. In: Proc. Symp. on Regular semigroups, pp. 29--46,  Northern
-Illinois University, De Kalb (1979)
+Drazin, M. P.: Regular semigroups with involution. In: Proceedings of the Symposium on Regular Semigroups,
+pp. 29--46,  Northern Illinois University, De Kalb (1979)
 
 \bibitem{Dr81}
 Drensky, V. S.: A minimal basis of identities for a second-order matrix algebra over a field of characteristic $0$.
