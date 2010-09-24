@@ -121,6 +121,7 @@
 \def\C{\mathfrak{C}}
 \def\B{\mathfrak{B}}
 \def\J{\mathfrak{J}}
+\def\K{\mathfrak{K}}
 \def\Sim{\mathfrak{S}}
 \def\ov{\overline}
 \def\inv{^{-1}}
@@ -130,6 +131,7 @@
 \def\TB{\ensuremath{\mathcal{T\kern-1pt B}_2^1}}
 \def\TA{\ensuremath{\mathcal{T\kern-1pt A}_2^1}}
 \def\FI{\ensuremath{\mathcal{FI}}}
+\def\nfb{non\-finitely based}
 
 \journal{Journal of Algebra}
 
@@ -153,9 +155,9 @@
 \begin{abstract}
 We employ the techniques developed in an earlier paper to show that involutory semigroups arising in various contexts
 do not have a finite basis for their identities. Among these are partition semigroups endowed with their natural
-involution, including the full partition semigroup $\C_n$ for $n\ge 2$, the Brauer semigroup $\B_n$ for $n\ge 4$ and
-the annular semigroup $\A_n$ for $n\ge 4$, $n$ even or a prime power. Also, all of these monoids, as well as the Jones
-monoid $\J_n$ for $n\ge 4$, turn out to be inherently nonfinitely based when equipped with another involution, the
+inverse involution, including the full partition semigroup $\C_n$ for $n\ge 2$, the Brauer semigroup $\B_n$ for $n\ge 4$ and
+the annular semigroup $\A_n$ for $n\ge 4$, $n$ even or a prime power. Also, all of these semigroups, as well as the Jones
+semigroup $\J_n$ for $n\ge 4$, turn out to be inherently nonfinitely based when equipped with another involution, the
 `skew' one. Finally, we show that similar techniques apply to the finite basis problem for existence varieties of
 locally inverse semigroups.
 \end{abstract}
@@ -171,11 +173,11 @@ locally inverse semigroups.
 \section*{Introduction}
 
 One of the most fundamental and widely studied questions of general (universal) algebra is whether the equational
-theory $\Id \mathcal{A}$ of an algebraic structure $A$ is finitely axiomatizable. Let $\Si$ be a set of identities
-holding in $\mathcal{A}$ such that every identity from $\Id \mathcal{A}$ is a consequence of $\Si$; such $\Si$ is
-called the \emph{(equational) basis} of $\mathcal{A}$. So, the question just formulated (usually referred to as the
-\emph{finite basis problem}) asks if there is a finite basis for the identities of $\mathcal{A}$. If this is indeed the
-case, then $\mathcal{A}$ is said to be \emph{finitely based}, while otherwise it is \emph{nonfinitely based}. Being
+theory $\Id \mathcal{A}$ of an algebraic structure $\mathcal A$ is finitely axiomatizable. Let $\Si$ be a set of
+identities holding in $\mathcal{A}$ such that every identity from $\Id \mathcal{A}$ is a consequence of $\Si$; such
+$\Si$ is called an \emph{(equational) basis} of $\mathcal{A}$. So, the question just formulated (usually referred to as
+the \emph{finite basis problem}) asks if there is a finite basis for the identities of $\mathcal{A}$. If this is indeed
+the case, then $\mathcal{A}$ is said to be \emph{finitely based}, while otherwise it is \emph{nonfinitely based}. Being
 very natural by itself, the finite basis problem has also revealed a number of interesting and unexpected relations to
 many issues of theoretical and practical importance ranging from feasible algorithms for membership in certain classes
 of formal languages (see \cite{Alm95}) to classical number-theoretic conjectures such as the Twin Prime, Goldbach,
@@ -190,10 +192,11 @@ binary operation) by McKenzie in \cite{McK2} and later solved in the negative \c
 the finite basis problem for various types of algebras particularly interesting and adds to its significance. Some
 classes of algebras have the property that all of its finite members are finitely based: for example, such are groups
 \cite{OP}, associative rings \cite{Kru,Lvov}, lattices \cite{McK1} and commutative semigroups \cite{Per69}. On the
-other hand, there are important classes of algebraic structures---such a semigroups---in which the instance of the
+other hand, there are important classes of algebraic structures ---such as semigroups---in which the instance of the
 Tarski problem is yet unsolved: it is not known if the set of isomorphism types of finite semigroups with a finite
 basis is recursive. For an overview of the rather diversified landscape of the finite basis problem for finite
-semigroups (as of the year 2000) we direct the reader to the survey article~\cite{volkovjaponicae} by the third author.
+semigroups (as of the year 2000) we direct the reader's attention to the survey article~\cite{volkovjaponicae} by the
+third author.
 
 This paper builds upon a previous publication \cite{adv} of the authors, where `unary versions' of two classical
 approaches to the finite basis problem for semigroups were developed, namely, the critical semigroup method and the
@@ -201,15 +204,19 @@ method of inherently nonfinitely based semigroups (both presented in the survey 
 of application in \cite{adv} was concerned with matrix semigroups over finite fields endowed with matrix transposition
 as unary operation. The authors were able to show that no such involutory semigroup (aside from the obvious trivial
 cases) does have a finite equational basis and, moreover, they completely classified the cases when these are
-inherently nonfinitely based. In this paper we exhibit further applications of methods from \cite{adv}. These methods
-will be briefly reviewed in the next section. Our main theme of application, presented in Section~2, involve partition
-semigroups endowed with a natural involution as a fundamental operation. Considered are the Brauer semigroup
-\cite{brauer}, the full partition semigroup, the annular monoid and the Jones monoid \cite{jones}, all of which arose
-in representation theory and gained much attention recently among semigroup theorists. Section~3 contains some other
-applications, including joins of unary semigroup varieties. Finally, in Section~4, we demonstrate how the same approach
-applies to so-called existence varieties of locally inverse semigroups.
+inherently nonfinitely based. In this paper we exhibit further applications of the methods from \cite{adv}. These
+methods will be briefly reviewed in the next section. Our main theme of application, presented in Section~2, involve
+partition semigroups endowed with their natural inverse involution as a fundamental operation. Considered are the
+Brauer semigroup \cite{brauer}, the full partition semigroup \cite{martin} and the annular semigroup \cite{jones}. In
+addition, these semigroups as well as the Jones semigroup \cite{temperleylieb} are also studied when equipped with
+another---`skew'---involution. All of these semigroups originally arose in representation theory and gained much
+attention recently among semigroup theorists. Section~3 contains some other applications, including joins of involutory
+semigroup varieties. Finally, in Section~4, we demonstrate how the approach of critical subsemigroups applies to
+so-called existence varieties of locally inverse semigroups.
 
-\section{Priliminaries}
+\section{Preliminaries}
+
+\subsection{Identity bases}
 
 Throughout the paper we assume reader's familiarity with the most basic concepts and results of the theory of varieties
 such as the HSP-theorem, see, e.g., \cite[Chapter~II]{BuSa81}. As far as semi\-group theory is concerned, we adopt the
@@ -249,9 +256,11 @@ semigroups satisfying all identities from a given set $\Sigma$ of involutory \sm
 \emph{variety defined by $\Sigma$}. A variety $\Vc$ is \emph{finitely based} if it can be defined by a finite set of
 identities, otherwise it is \emph{nonfinitely based}. Given an involutory \sm\ $\mathcal{S}$, the variety defined by
 $\Id\Sc$ is the \emph{variety generated by $\Sc$}; we denote this variety by $\var\Sc$. From the HSP-theorem it follows
-that every member of $\var\Sc$ is a homomorphic image of a involutory subsemigroup of a direct product of several
+that every member of $\var\Sc$ is a homomorphic image of an involutory subsemigroup of a direct product of several
 copies of $\Sc$. Observe also that an involutory \sm\ and the variety it generates are simultaneously finitely or
 nonfinitely based.
+
+\subsubsection{Critical subsemigroups}\label{critical}
 
 To formulate the first of the two tools from \cite{adv} that will be utilized here, we first need the `involutory
 version' of the well-known \Rm\ construction (see \cite[Section~3.1]{CP} for a description of the construction in the
@@ -298,13 +307,15 @@ $\H(\mathcal{S})$ the \emph{Hermitian subsemigroup} of $\mathcal{S}$. For any va
 let $\H(\Vc)$ be the subvariety of $\Vc$ generated by all Hermitian subsemigroups of members of $\Vc$. As is easy to
 verify (see \cite[Lemma 2.1]{adv}), for every involutiory semigroup $\Sc$ we have $\H(\var\Sc)=\var\H(\Sc)$.
 
-The next result is a Theorem 2.2 in \cite{adv}, specialized to the case of involutory \sm\ varieties (whereas the
+The next result is Theorem 2.2 in \cite{adv}, specialized to the case of involutory \sm\ varieties (whereas the
 original theorem holds for more general varieties of \emph{unary} semigroups).
 
 \begin{Thm}\label{Theorem 2.1}
 Let $\Vc$ be any involutiory semigroup variety such that $\mathcal{K}_3\in\Vc$. If  $\Vc$ contains a group which is not
 in $\H(\Vc)$ then $\Vc$ has no finite basis of identities.
 \end{Thm}
+
+\subsubsection{Inherently nonfinitely based structures}\label{INFB}
 
 Our second tool from \cite{adv} used in this paper involves a sufficient condition on a finite involutory semigroup to
 be \emph{inherently nonfinitely based}. Namely, a variety $\Vc$ is said to be \emph{locally finite} if every finitely
@@ -314,52 +325,93 @@ locally finite (this is an easy consequence of the HSP-theorem, see \cite[Theore
 being inherently nonfinitely based implies the property of being nonfinitely based; in fact, the former property is
 much stronger.
 
-Let $x_1,x_2,\dots,x_n,\dots$ be a sequence of letters. The sequence $\{Z_n\}_{n=1,2,\dots}$ of \emph{Zimin words} is
-defined inductively by $Z_1=x_1$ and $Z_{n+1}=Z_nx_{n+1}Z_n$ for all $n\geq 1$. We say that an involutory word $v$ is
-an \emph{involutory isoterm} for an involutory semigroup $\mathcal{S}$ if the only involutory word $v'$ such that
-$\mathcal{S}$ satisfies the identity $v=v'$ is the word $v$ itself.
+%Let $x_1,x_2,\dots,x_n,\dots$ be a sequence of letters. The sequence $\{Z_n\}_{n=1,2,\dots}$ of \emph{Zimin words} is
+%defined inductively by $Z_1=x_1$ and $Z_{n+1}=Z_nx_{n+1}Z_n$ for all $n\geq 1$. We say that an involutory word $v$ is
+%an \emph{involutory isoterm} for an involutory semigroup $\mathcal{S}$ if the only involutory word $v'$ such that
+%$\mathcal{S}$ satisfies the identity $v=v'$ is the word $v$ itself.
+%
+%\begin{Thm}[\cite{adv}]\label{Theorem 2.2}
+%Let $\mathcal{S}$ be a finite involutory semigroup. If all Zimin words are involutory isoterms for
+%$\mathcal{S}$, then $\mathcal{S}$ is inherently nonfinitely based.
+%\end{Thm}
+%
+%As shown by Sapir in \cite{sapirburnside} (see also \cite{sapirinherently}), an analogous condition for plain semigroup
+%words (of all Zimin words being isoterms, that is, the failure of any nontrivial semigroup identity of the form
+%$Z_n=w$) completely characterizes (ordinary) finite INFB semigroups. However, it is not known whether the converse of
+%the above theorem holds in the involutory case. Some partial results in this direction have been recently obtained by
+%the second author \cite{Dolinka}.
 
-\begin{Thm}[\cite{adv}]\label{Theorem 2.2}
-Let $\mathcal{S}$ be a finite involutory semigroup. If all Zimin words are involutory isoterms for
-$\mathcal{S}$, then $\mathcal{S}$ is inherently nonfinitely based.
+A particularly important example of an inherently nonfinitely based involutory semigroup and, in fact our main tool in this context,
+is the \emph{twisted Brandt monoid}  $\TB=\langle B_2^1,\cdot,{}^\si\rangle$, where $B_2^1$ is the set of the
+following six $2\times 2$-matrices:
+\begin{equation}\label{twisted brandt}
+\begin{pmatrix} 0 & 0\\ 0 & 0\end{pmatrix},\
+\begin{pmatrix} 1 & 0\\ 0 & 0\end{pmatrix},\
+\begin{pmatrix} 0 & 1\\ 0 & 0\end{pmatrix},\
+\begin{pmatrix} 0 & 0\\ 1 & 0\end{pmatrix},\
+\begin{pmatrix} 0 & 0\\ 0 & 1\end{pmatrix},\
+\begin{pmatrix} 1 & 0\\ 0 & 1\end{pmatrix},\end{equation}
+the binary operation $\cdot$ is the usual matrix multiplication and the unary operation ${}^\si$ fixes the matrices
+$$\begin{pmatrix} 0 & 0\\ 0 & 0\end{pmatrix},\
+\begin{pmatrix} 0 & 1\\ 0 & 0\end{pmatrix},\
+\begin{pmatrix} 0 & 0\\ 1 & 0\end{pmatrix},\
+\begin{pmatrix} 1 & 0\\ 0 & 1\end{pmatrix}$$
+and swaps each of the matrices
+$$\begin{pmatrix} 1 & 0\\ 0 & 0\end{pmatrix},\
+\begin{pmatrix} 0 & 0\\ 0 & 1\end{pmatrix}$$
+with the other one. The following result can be found as Corollary 2.7 in \cite{adv}.
+
+\begin{Thm}\label{TB2}
+The twisted Brandt monoid $\TB$ is inherently \nfb.
 \end{Thm}
 
-As shown by Sapir in \cite{sapirburnside} (see also \cite{sapirinherently}), an analogous condition for plain semigroup
-words (of all Zimin words being isoterms, that is, the failure of any nontrivial semigroup identity of the form
-$Z_n=w$) completely characterizes (ordinary) finite INFB semigroups. However, it is not known whether the converse of
-the above theorem holds in the involutory case. Some partial results in this direction have been recently obtained by
-the second author \cite{Dolinka}.
+%An equivalent way to define $\TB$ is to consider the 5-element unary \Rm\ semigroup over the trivial group
+%$\mathcal{E}=\{e\}$ with the sandwich matrix
+%$$\begin{pmatrix}
+%0 & e\\
+%e & 0
+%\end{pmatrix}$$
+%and then to adjoin to this unary \Rm\ semigroup an identity element. For convenience and later use we note that $\TB$
+%can thus be realized as the set
+%$$\{(1,1),(1,2),(2,1),(2,2),0,1\}$$ endowed with the operations
+%\begin{gather}
+%\label{operations in TB} (i,j)\cdot(k,\ell)=\left\{\begin{array}{cl}
+%(i,\ell)&\ \text{if}\ (j,k)\in \{(1,2),(2,1)\},\\
+%0 &\ \text{otherwise};
+%\end{array}\right.\\
+%1\cdot x=x=x\cdot 1,\ 0\cdot x=0=x\cdot 0 \text{ for all }x; \notag\\
+% (i,j)^\si = (j,i),\ 1^\si=1,\ 0^\si=0\notag.
+%\end{gather}
 
-\section{Applications to partition semigroups}
+\subsection{Partition semigroups}
 
 For each positive integer $n$ we are going to define:
 \begin{itemize}
-\item the \emph{partition monoid} $\C_n$,
-\item the \emph{Brauer monoid} $\B_n$,
-\item the \emph{partial} Brauer monoid $P\B_n$,
-\item the \emph{annular monoid} $\A_n$,
-\item the \emph{partial} annular monoid $P\A_n$,
-\item the \emph{Jones monoid} $\J_n$,
-\item the \emph{partial} Jones monoid $P\J_n$.
+\item the \emph{partition semigroup} $\C_n$,
+\item the \emph{Brauer semigroup} $\B_n$,
+\item the \emph{partial} Brauer semigroup $P\B_n$,
+\item the \emph{annular semigroup} $\A_n$,
+\item the \emph{partial} annular semigroup $P\A_n$,
+\item the \emph{Jones semigroup} $\J_n$,
+\item the \emph{partial} Jones semigroup $P\J_n$.
 \end{itemize}
-The monoids $\C_n$, $\B_n$, $\A_n$ and $\J_n$ arise as vector space bases of certain associative algebras which are
+The semigroups $\C_n$, $\B_n$, $\A_n$ and $\J_n$ arise as vector space bases of certain associative algebras which are
 relevant in representation theory \cite{brauer, xi, jones, grahamlehrer}. The semigroup structure and related questions
 for $\C_n$, $P\B_n$ and $\B_n$ have been studied recently by Mazorchuk et al., see, for example, \cite{Maz1, Maz2, KMM,
-KM2,malcevmazorchuk}. For each $n$ there are natural monoid embeddings
-$$\J_n \hookrightarrow \A_n \hookrightarrow  \B_n \hookrightarrow P\B_n \hookrightarrow \C_n\quad\mbox{and}\quad P\J_n\hookrightarrow
-P\A_n\hookrightarrow P\B_n.$$ Moreover, for each $n$ there are monoid embeddings
-$$\C_n \hookrightarrow \C_{n+1},\quad P\B_n\hookrightarrow P\B_{n+1},\quad \B_n\hookrightarrow\B_{n+1}.$$ For the annular
-monoid there is no obvious monoid embedding
-$$\A_n\hookrightarrow\A_{n+k}$$
-for any $n\ge 2,k\ge 1$, but $\A_n$ appears as a sub\emph{semigroup} of $\A_{n+2}$ for each $n$.
-
-\subsection{The full partition monoid}
+KM2,malcevmazorchuk, fitzgerald}.
+%For each $n$ there are natural monoid embeddings
+%$$\J_n \hookrightarrow \A_n \hookrightarrow  \B_n \hookrightarrow P\B_n \hookrightarrow \C_n\quad\mbox{and}\quad P\J_n\hookrightarrow
+%P\A_n\hookrightarrow P\B_n.$$ Moreover, for each $n$ there are monoid embeddings
+%$$\C_n \hookrightarrow \C_{n+1},\quad P\B_n\hookrightarrow P\B_{n+1},\quad \B_n\hookrightarrow\B_{n+1}.$$ For the annular
+%semigroup there is no obvious monoid embedding
+%$$\A_n\hookrightarrow\A_{n+k}$$
+%for any $n\ge 2,k\ge 1$, but $\A_n$ appears as a sub\emph{semigroup} of $\A_{n+2}$ for each $n$.
 
 We start with the definition of $\C_n$. For each positive integer $n$ let
 $$[n]=\{1,\dots,n\},\quad [n]'=\{1',\dots,n'\},\quad [n]''=\{1'',\dots,n''\}$$
 be three pairwise disjoint copies of the set of the first $n$ positive integers and put
 $$\widetilde{[n]}=[n]\cup [n]'.$$
-The base set of the partition monoid $\C_n$ is the set of all partitions of the set $\widetilde{[n]}$; throughout, we
+The base set of the partition semigroup $\C_n$ is the set of all partitions of the set $\widetilde{[n]}$; throughout, we
 consider a partition of a set and the corresponding equivalence relation on that set as two different views of the same
 thing and without further mention we freely switch between these views, whenever it seems to be convenient. For
 $\xi,\eta\in \C_n$, the product $\xi\eta$ is defined (and computed) in four steps:
@@ -414,24 +466,25 @@ $$\xi\eta\rule[-22.5mm]{0pt}{50mm}=
 \put(40,48){$1'$} \drawline[AHnb=0](0,5)(0,14)(25,14)(25,54)(46,54)(46,25)(34,25)(34,5)(0,5)
 \end{picture}\ .$$
 
-This multiplication is associative making $\C_n$ a monoid with identity $1$ where
+This multiplication is associative making $\C_n$ a semigroup with identity $1$ where
 $$1=\{\{k,k'\}\mid k\in [n]\}.$$
 The group of units of $\C_n$ is the symmetric group $\Sim_n$ (acting on $[n]$ on the right) with canonical embedding
 $\Sim_n\hookrightarrow \C_n$ given by
 $$\sigma\mapsto \{\{k,(k\si)'\}\mid k\in [n]\} \text{ for all } \si\in
-\Sim_n.$$ More generally, the monoid of all (partial) transformations of $[n]$ acting on the right is also naturally
+\Sim_n.$$ More generally, the semigroup of all (total) transformations of $[n]$ acting on the right is also naturally
 embedded in $\C_n$ by
 \begin{equation}
-\label{partialtransformations} \phi\mapsto \{\{k'\}\cup k\phi^{-1}\mid k\in [n]\}\cup\{\{k\}\mid k\in [n],k\notin\dom
-\phi\}
+\label{partialtransformations} \phi\mapsto \{\{k'\}\cup
+k\phi^{-1}\mid k\in [n]\}.
 \end{equation}
-where $\dom \phi$ is the domain of $\phi$. The equivalence classes of some $\xi\in \C_n$ are usually referred to as
-\emph{blocks}; the \emph{rank} $\rk\xi$ is the number of blocks of $\xi$ whose intersection with $[n]$ as well as with
-$[n]'$ is not empty --- this coincides with the usual notion of rank of a partial mapping on $[n]$ in case $\xi$ is in
-the image of the embedding \eqref{partialtransformations}. It is  known that the rank characterizes the $\Dc$-relation
-in $\C_n$ \cite{Maz1,KM2}: for any $\xi,\eta\in\C_n$, one has $\xi\mathrel{\Dc}\eta$ if and only if $\rk\xi=\rk\eta$.
+If $k$ is not in the image of $\phi$ then $\{k'\}$ forms by definition a singleton class. The equivalence classes of
+some $\xi\in \C_n$ are usually referred to as \emph{blocks}; the \emph{rank} $\rk\xi$ is the number of blocks of $\xi$
+whose intersection with $[n]$ as well as with $[n]'$ is not empty --- this coincides with the usual notion of rank of a
+mapping on $[n]$ in case $\xi$ is in the image of the embedding \eqref{partialtransformations}. It is  known that the
+rank characterizes the $\Dc$-relation in $\C_n$ \cite{Maz1,KM2}: for any $\xi,\eta\in\C_n$, one has
+$\xi\mathrel{\Dc}\eta$ if and only if $\rk\xi=\rk\eta$.
 
-The monoid $\C_n$ admits a natural involution making it a regular $*$-semi\-group: consider first the permutation $^*$
+The semigroup $\C_n$ admits a natural inverse involution making it a regular $*$-semi\-group: consider first the permutation $^*$
 on $\widetilde{[n]}$ that swaps primed with unprimed elements, that is, set
 \[
 k^*=k',\ (k')^*=k\text{ for all } k\in [n].
@@ -470,44 +523,35 @@ $A_1=\{3,4\}$, $A_2=\{5,8\}$, $A_3=\{7\}$ while $B_1=\{1,2\}$, $B_2=\{6\}$.
 From this it follows easily that the maximal subgroup of $\C_n$ with identity $\xi\xi^*$ is isomorphic to the symmetric
 group $\Sim_k$ where the isomorphism between $\Sim_k$ and the group $\Hc$-class of $\xi\xi^*$ is given by
 \begin{equation}\label{embeddingofSk}
-\si\mapsto\{A_1\cup A'_{1\si},\dots A_k\cup A'_{k\si},B_1,B'_1,\dots B_t,B'_t\},\ \si\in\Sim_k.
+\si\mapsto\{A_1\cup A'_{1\si},\dots, A_k\cup A'_{k\si},B_1,B'_1,\dots, B_t,B'_t\},\ \si\in\Sim_k.
 \end{equation}
 We note that in the group $\Hc$-class of any projection, the involution $^*$ coincides with the inverse operation in
 that group. Since $\xi\mathrel{\Rc}\xi\xi^*$, \emph{each} maximal subgroup of $\C_n$ is isomorphic to the symmetric
 group $\Sim_k$ for some $k\le n$.
 
-\subsection{The Brauer monoid and the partial Brauer monoid}
+Apart from the involution ${}^*$,  $\C_n$ admits another---`skew'---involution which is defined as follows: let
+$\alpha$ be the permutation of $[n]$ that reverses the order, considered as element of the group of units of $\C_n$.
+More precisely, let $\alpha$ be the partition
+$$\alpha=\{\{1,n'\}, \{2,(n-1)'\},\dots,\{n,1'\}\}$$ and define the unary operation $^\rho:\C_n\to \C_n$ by
+$$\xi^{\rho}:= \alpha\xi^*\alpha.$$
+Since $\alpha^*=\alpha$ and $\alpha^2=1$ we get that $^\rho$ is indeed an involution on $\C_n$. The intuitive meaning
+of $^\rho$ is that its application rotates the picture of a partition (as in the previous examples) by the angle of
+$\pi$ while the application of ${}^*$ is the reflection along the axis between $[n]$ and $[n]'$. The involution $^\rho$
+has not yet studied in the literature but has turned out to be of significant use in the first author's recent paper
+\cite{pseudovarieties}.
 
-The Brauer monoid and the partial Brauer monoid can be conveniently defined as submonoids of $\C_n$: namely, $\B_n$
-[respectively $P\B_n$] consists of all elements of $\C_n$ all of whose blocks have size~2 [at most~2]. Both monoids are
-closed under the involution $^*$ and in both cases, the group $\Hc$-class of a projection of rank $k$ is isomorphic (as
-a regular $*$-semigroup) with the symmetric group $\Sim_k$. Now let $\mathfrak{K}_n$ be any of $\C_n$, $P\B_n$ or
-$\B_n$. Each projection different from the identity of $\mathfrak{K}_n$ has rank less than $n$, whence the monoid
-$\H(\mathfrak{K}_n)$ contains, apart from the identity element, only elements of rank strictly less than $n$. This
-implies the following result.
+The Brauer semigroup and the partial Brauer semigroup can be conveniently defined as subsemigroups of $\C_n$: namely,
+$\B_n$ [respectively $P\B_n$] consists of all elements of $\C_n$ all of whose blocks have size~2 [at most~2]. Both
+semigroups are closed under both involutions $^*$ and ${}^\rho$. In both types of semigroups, the group $\Hc$-class of
+a projection $\xi\xi^*$ of rank $k$ is isomorphic (as a regular $*$-semigroup) with the symmetric group $\Sim_k$. For
+completeness we note that $\B_1$ is the trivial semigroup and $P\B_1\cong \C_1$ is isomorphic to the $2$-element
+semilattice semigroup $\{0,1\}$ (endowed with trivial involution).
 
-\begin{Prop}
-\label{groups in the gap} For each $n\ge 2$ and each $\mathfrak{K}_n\in \{\C_n,P\B_n,\B_n\}$ there exists a group in
-$\var\mathfrak{K}_n$ that is not in $\var\H(\mathfrak{K}_n)$.
-\end{Prop}
-\begin{proof}
-The group in question is the symmetric group $\Sim_n$ that is the group of units in $\mathfrak{K}_n$ and thus belongs
-to $\var\mathfrak{K}_n$. By the argument of Kim and Roush~\cite{KR}, each group in the variety $\var\H(\mathfrak{K}_n)$
-belongs to the group variety generated by the subgroups of the monoid $\H(\mathfrak{K}_n)$. As observed above, each
-subgroup of $\H(\mathfrak{K}_n)$ embeds into the symmetric group $\Sim_{n-1}$ whence it remains to check that $\Sim_n$
-does not belong to the group variety generated by $\Sim_{n-1}$. This follows from \cite[Theorem 51.2]{Ne} because the
-group $\Sim_n$ always has a chief factor of order larger than the maximum order of chief factors in $\Sim_{n-1}$.
-\end{proof}
 
-For completeness we note that $\B_1$ is the trivial monoid and $P\B_1\cong \C_1$ is isomorphic to the $2$-element
-semilattice monoid $\{0,1\}$ (endowed with trivial involution).
-
-\subsection{The annular monoid and the partial annular monoid}
-
-Next we define the annular monoid $\A_n$ \cite{jones}. It will be realized as a certain submonoid of the Brauer monoid.
-For this purpose it is convenient to first represent the elements of $\B_n$ as \emph{annular diagrams}. Consider an
-annulus $A$ in the complex plane, say $A=\{z\mid 1<|z|<2\}$ and identify the elements of $\wt{[n]}$ with certain points
-of the boundary of $A$ via
+Next we define the annular semigroup $\A_n$ \cite{jones}. It will be realized as a certain subsemigroup of the Brauer
+semigroup. For this purpose it is convenient to first represent the elements of $\B_n$ as \emph{annular diagrams}.
+Consider an annulus $A$ in the complex plane, say $A=\{z\mid 1<|z|<2\}$ and identify the elements of $\wt{[n]}$ with
+certain points of the boundary of $A$ via
 $$k\mapsto 2e^{\frac{2\pi i(k-1)}{n}}\ \text{ and }\ k'\mapsto
 e^{\frac{2\pi i(k-1)}{n}}\ \text{ for all }\ k\in [n].$$ For $\xi\in\B_n$ take a copy of $A$ and link any
 $x,y\in\wt{[n]}$ with $\{x,y\}\in \xi$ by a path (called \emph{string}) running entirely in $A$ (except for its
@@ -528,16 +572,15 @@ is then represented by the annular diagram in Fig.\,\ref{diagram}.
  a member of $\B_4$}\label{diagram}
 \end{figure}
 Paths representing blocks of the form $\{x,y'\}$ [$\{x,y\}$ and $\{x',y'\}$, respectively] for some $x,y\in[n]$ are
-called \emph{through strings} [\emph{outer} and \emph{inner strings}, respectively]. The \emph{annular monoid} $\A_n$
+called \emph{through strings} [\emph{outer} and \emph{inner strings}, respectively]. The \emph{annular semigroup} $\A_n$
 by definition consists of all elements of $\B_n$ that have a representation as an annular diagram any two of whose
 strings have empty intersection. One can compose annular diagrams in an obvious way, modelling the multiplication in
-$\B_n$ --- from this it follows easily that $\A_n$ is closed under the multiplication of $\B_n$. Clearly, $\A_n$ is
-closed under the involution~$^*$, as well.
+$\B_n$ --- from this it follows  that $\A_n$ is closed under the multiplication of $\B_n$. Clearly, $\A_n$ is
+closed under both involutions $^*$ and $^\rho$, as well.
 
-Analogously to the partial Brauer monoid $P\B_n$, one could also define the \emph{partial} annular monoid $P\A_n$  by
+Analogously to the partial Brauer semigroup $P\B_n$, one can also define the \emph{partial} annular semigroup $P\A_n$  by
 considering all elements of $P\B_n$ which admit a representation by an annular diagram in which any two distinct
-strings have empty intersection. Clearly, for each $n$, there is a unary semigroup embedding $P\A_n\hookrightarrow
-P\A_{n+1}$.
+strings have empty intersection. Again each $P\A_n$ is closed under both involutions $^*$ and $^\rho$.
 
 Although we shall not need it, we remark that the rank characterizes the $\Dc$-relation in $\A_n$, as well. Let
 $\xi\in\B_n$ be of rank $t$ with through strings
@@ -552,25 +595,90 @@ be the element having the same outer strings as $\ep$, the same inner strings as
 $$\{a_1,b'_1\},\dots,\{a_t,b'_t\}.$$
 Then $\alpha\in \A_n$, $\ep=\al\al^*$ and $\eta=\al^*\al$.
 
-\subsection{The Jones monoid and the partial Jones monoid}
+Finally, we shall give the definition of the \emph{Jones semigroup} $\J_n$\footnote{This is also called
+\emph{Temperley-Lieb semigroup}; following \cite{fitzgerald}, we use the term \emph{Jones semigroup}.}
+\cite{temperleylieb, fitzgerald} and the \emph{partial Jones semigroup} $P\J_n$. For this purpose, consider the
+rectangle $R=[0,1]\times[1,n]$ in the Euclidean plane, identify the elements $i\in [n]$ with the points $(0,i)$, the
+elements $i'\in [n]'$ with the points $(1,i)$ on the boundary of $R$. Analogously to annular diagrams, the members of
+$\B_n$ also admit representations by \emph{rectangular diagrams} which are defined in an obvious way --- if $\{x,y\}$
+is a block of $\xi\in \B_n$ then the corresponding points on the boundary of $R$ are connected by a \emph{string}
+running entirely of $R$. The set $\J_n$ then consists by definition of all members of $\B_n$ that admit a
+representation as a rectangular diagram any two of whose strings have empty intersection.  Similarly, $P\J_n$ may be
+defined to consist of those members of $P\B_n$ that have a representation as a rectangular diagram any two of whose
+strings have empty intersection. Both sets $\J_n$ and $P\J_n$ are closed under multiplication and both involutions $^*$
+and $^\rho$. It is well known that $\J_n$ is aperiodic (that is, all subgroups are trivial) \cite{fitzgerald} and easy
+to see that the same is true for $P\J_n$.
 
-\smallskip\hrule
+For each $n$ we have the following inclusions among the various involutory semigroups:
+\[
+\begin{CD}
+P\J_n @>>> P\A_n @>>> P\B_n @>>> \C_n\\
+@AAA        @AAA       @AAA\\
+\J_n @>>>   \A_n @>>> \B_n
+\end{CD}
+\]
+Here an arrow denotes an injective mapping respecting multiplication and both involutions, and the diagram can be assumed to commute.
+%$$\J_n\le \A_n\le \B_n\le \C_n$$
+%and
+%$$P\J_n\le P\A_n\le P\B_n\le \C_n$$
+%holds for each $n$ where $\le$ means involutory subsemigroup with respect to $^*$ as well as $^\rho$.
+Moreover, for each $n$ and $\K\in\{\J,P\J,\A,P\A,\B,P\B,\C\}$ we also have the inclusion $\K_n\le\K_{n+2}$ as
+involutory semigroup with respect to $^*$ as well as $^\rho$. With respect to $^*$ we have even $\K_n\le\K_{n+1}$ for
+all $n$ and all $\K$ except $\K=\A$.
 
-\medskip
+\section{The finite basis problem for partition semigroups with involution}
 
-\textsf{Here comes the brief passage defining the (partial) Jones monoid. Some basic properties, if need be, can be
-mentioned here.}
+\subsection{The inverse involution $^*$}\label{inverse involution}
 
-\medskip
+In this subsection we assume that each partition semigroup considered is endowed with the inverse involution  $^*$. In
+particular, for $\K\in \{\J,P\J,\A,P\A,\B,P\B,\C\}$, $\var \K_n$ always denotes the variety of involution semigroups
+generated by $\left<\K_n,\cdot,^*\right>$. It follows from Proposition 2.9 in \cite{adv} that a regular $*$-semigroup
+is never inherently nonfinitely based. Hence, for involution semigroups of this type the tool presented in subsection
+\ref{INFB} cannot be applied at all. So we are left with tool no. 1 presented in subsection \ref{critical} and we are
+going to examine the cases which this tool can be applied to. We need to check two things:
+\begin{enumerate}
+\item[(i)] Does there exist a (non trivial) group in $\var\K_n\setminus \var\H(\K_n)$?
+\item[(ii)] Is $\Kc_3$ contained in $\var\K_n$?
+\end{enumerate}
+We immediately see that for $\K\in\{\J,P\J\}$ condition (i) fails because  $\var P\J_n$ and thus also $\var\J_n$
+contains only trivial groups. Altogether we see that none of our tools can be applied to these cases. Direct inspection
+shows that $\left<P\J_1,\cdot,^*\right>$ and $\left<\J_n,\cdot,^*\right>$ are finitely based for $n\le 3$. So we are
+left with the following open problem.
+\begin{Problem}
+\begin{enumerate}
+\item Is the regular $^*$-semigroup $P\J_n$ nonfinitely based for each $n\ge 2$?
+\item Is the regular $^*$-semigroup $\J_n$ nonfinitely based for each $n\ge 4$?
+\end{enumerate}
+\end{Problem}
 
-\hrule\smallskip
+\subsubsection{Groups in $\var\K_n\setminus\var\H(\K_n)$}
 
-\subsection{Subgroups in annular monoids}
+We are going to check condition (i) mentioned above and shall distinguish between the cases $\K\in \{\B,P\B,\C\}$ on
+the one hand and $\K\in\{\A,P\A\}$ on the other. The first case turns out to be easy. Let $\mathfrak{K}_n$ be any of
+$\C_n$, $P\B_n$ or $\B_n$. Each projection different from the identity of $\mathfrak{K}_n$ has rank less than $n$,
+whence the semigroup $\H(\mathfrak{K}_n)$ contains, apart from the identity element, only elements of rank strictly
+less than $n$. This implies the following result.
 
-It was observed by Jones \cite{jones} that the maximal subgroup of $\A_n$ whose identity is a projection $\ep$ of rank
-$t$ is a cyclic group of order $t$. Indeed, suppose that $k_1<k_2<\dots<k_t$ are the elements of $\dom \ep$ and let
-$\xi\in \A_n$ be $\Hc$-related with $\ep$. In $\xi$ there exists a unique through string of the form $\{k_1,k'_\ell\}$.
-From the annular condition it follows that the remaining $t-1$ through strings of $\xi$ are precisely
+\begin{Prop}
+\label{groups in the gap} For each $n\ge 2$ and each $\mathfrak{K}_n\in \{\C_n,P\B_n,\B_n\}$ there exists a group in
+$\var\mathfrak{K}_n$ that is not in $\var\H(\mathfrak{K}_n)$.
+\end{Prop}
+\begin{proof}
+The group in question is the symmetric group $\Sim_n$ that is the group of units in $\mathfrak{K}_n$ and thus belongs
+to $\var\mathfrak{K}_n$. By the argument of Kim and Roush~\cite{KR}, each group in the variety $\var\H(\mathfrak{K}_n)$
+belongs to the group variety generated by the subgroups of the semigroup $\H(\mathfrak{K}_n)$. As observed above, each
+subgroup of $\H(\mathfrak{K}_n)$ embeds into the symmetric group $\Sim_{n-1}$ whence it remains to check that $\Sim_n$
+does not belong to the group variety generated by $\Sim_{n-1}$. This follows from \cite[Theorem 51.2]{Ne} because the
+group $\Sim_n$ always has a chief factor of order larger than the maximum order of chief factors in $\Sim_{n-1}$.
+\end{proof}
+
+
+In contrast, the cases $\K=\A$ and $\K=P\A$ turn out to be much more  complicated and require quite a bit of time and
+space. We start with $\K=\A$. It was observed by Jones \cite{jones} that the maximal subgroup of $\A_n$ whose identity
+is a projection $\ep$ of rank $t$ is a cyclic group of order $t$. Indeed, suppose that $k_1<k_2<\dots<k_t$ are the
+elements of $\dom \ep$ and let $\xi\in \A_n$ be $\Hc$-related with $\ep$. In $\xi$ there exists a unique through string
+of the form $\{k_1,k'_\ell\}$. From the annular condition it follows that the remaining $t-1$ through strings of $\xi$
+are precisely
 $$\{k_2,k'_{\ell+1}\},\dots,\{k_{t-\ell+1},k'_t\},\,\{k_{t-\ell+2},k'_1\}\dots,
 \{k_t,k'_{\ell-1}\}$$ while the inner and outer strings of $\xi$ are those of $\ep$. Taking into
 account~\eqref{embeddingofSk}, we observe that $\xi=\tau^{\ell-1}$, where $\tau$ consists of the through strings
@@ -630,7 +738,7 @@ number of summands in that sum and that number coincides with $j-i$.
 This allows us to obtain the principal result in this context.
 
 \begin{Cor} \label{maximalsubgroups}
-For each even number $n$, each maximal subgroup of $\H(\A_n)$ has order less than $n/2$.
+For each even number $n$, each maximal subgroup of $\H(\A_n)$ has order less than $\frac{n}{2}$.
 \end{Cor}
 
 \begin{proof}
@@ -737,7 +845,7 @@ same inner and outer strings as $\ep_{t+1}$ hence $\al\mathrel{\Hc}\ep_{t+1}$. M
 are
 $$\{1,3'\},\{2,4'\},\dots,\{t-1,1'\},\{t,2'\}.$$
 Via \eqref{embeddingofSk}, $\al$ realizes the cyclic permutation $k\mapsto k+2\!\pmod{t}$ which has order $t$ since $t$
-is odd. Thus, for each odd $t<n$, the monoid $\H(\A_n)$ contains a cyclic group of order $t$ as a unary subsemigroup.
+is odd. Thus, for each odd $t<n$, the semigroup $\H(\A_n)$ contains a cyclic group of order $t$ as an involutory subsemigroup.
 The maximal subgroups of $\A_n$ are precisely the cyclic groups of odd order at most $n$. So, we have already shown
 that $\var\H(\A_n)$ contains each maximal subgroup of $\A_n$, with the possible exception of the group of units of
 $\A_n$ which is cyclic of order $n$. Since $n$ is not a prime power, $n=k\ell$ for some co-prime numbers $k,\ell$. As
@@ -920,20 +1028,23 @@ of order $n-2=2^k$.
 
 Altogether, the cyclic group of order $2^k$ belongs to $\var P\A_n$ but not to $\var\H (P\A_n)$, just as required.
 \end{proof}
+Having thus completely examined when condition (i) mentioned in the introduction to Section \ref{inverse involution} is
+fulfilled we turn to condition (ii).
 
-\subsection{Membership of $\mathcal{K}_3$}
+\subsubsection{Membership of $\mathcal{K}_3$}
+
 In order to complete the results which make an application of Theorem \ref{Theorem 2.1} possible, we need to check
 membership of $\mathcal{K}_3$.
 
 \begin{Prop}\label{membershipofC3}
-The unary semigroup $\mathcal{K}_3$ is contained in
+The regular $^*$-semigroup $\mathcal{K}_3$ is contained in
 \begin{enumerate}
 \item $\var\C_n$ for each $n\ge 2$,
 \item $\var P\A_n\subseteq \var P\B_n$ for each $n\ge 3$,
 \item $\var \A_n\subseteq \var \B_n$ for each $n\ge 4$.
 \end{enumerate}
 \end{Prop}
-\begin{proof} In the first case, consider the unary subsemigroup $\mathcal{U}_1$ of $\C_2$
+\begin{proof} In the first case, consider the regular $^*$-subsemigroup $\mathcal{U}_1$ of $\C_2$
 generated by the projections of rank~1 --- these are
 \[
 \{\{1,1',2,2'\}\},\{\{1,1'\},\{2\},\{2'\}\}, \{\{1\},\{1'\},\{2,2'\}\}.
@@ -963,11 +1074,11 @@ $\star$.
 \caption{The upper $\Dc$-class of the subsemigroup $\mathcal{U}_1$ of $\C_2$}\label{C3inC2}
 \end{figure}
 
-Now it is clear that if one factors $\mathcal{U}_1$ by the ideal of all elements of rank~0, then the resulting unary
-semigroup is isomorphic to $\mathcal{K}_3$. Thus, $\mathcal{K}_3$ belongs to the variety $\var\C_2$, and hence, to the
-variety $\var\C_n$ for each $n\ge 2$.
+Now it is clear that if one factors $\mathcal{U}_1$ by the ideal of all elements of rank~0, then the resulting regular
+$^*$-semigroup is isomorphic to $\mathcal{K}_3$. Thus, $\mathcal{K}_3$ belongs to the variety $\var\C_2$, and hence, to
+the variety $\var\C_n$ for each $n\ge 2$.
 
-For the second case consider the unary subsemigroup $\mathcal{U}_2$ of $P\A_3$ generated by the projections
+For the second case consider the involutory subsemigroup $\mathcal{U}_2$ of $P\A_3$ generated by the projections
 \begin{gather*}
 \{\{1,1'\},\{2,3\},\{2',3'\}\},\\
 \{\{1,2\},\{1',2'\},\{3,3'\}\},\\
@@ -1004,7 +1115,7 @@ Again, it follows that the quotient of $\mathcal{U}_2$ by the ideal of all eleme
 $\mathcal{K}_3$. We see that $\mathcal{K}_3$ belongs to the variety $\var P\A_3$, and hence, to the varieties $\var
 P\A_n$ and $\var P\B_n$ for each $n\ge 3$.
 
-Finally, for the third case consider the unary subsemigroup $\mathcal{U}_3$ of $\A_4$ generated by the projections
+Finally, for the third case consider the involutory subsemigroup $\mathcal{U}_3$ of $\A_4$ generated by the projections
 \begin{gather*}
 \{\{1,1'\},\{2,3\},\{2',3'\},\{4,4'\}\},\\
 \{\{1,1'\},\{2,2'\},\{3,4\},\{3',4'\}\},\\
@@ -1045,15 +1156,15 @@ the top $\Dc$-class of $\mathcal{U}_3$ consisting of the partitions of rank~2.
 \caption{The upper $\Dc$-class of the subsemigroup $\mathcal{U}_3$ of $\A_4$}\label{C3inA4}
 \end{figure}
 
-Thus, factoring $\mathcal{U}_3$ by the ideal of all elements of rank $0$, one gets a unary semigroup isomorphic to
+Thus, factoring $\mathcal{U}_3$ by the ideal of all elements of rank $0$, one gets a regular $^*$-semigroup isomorphic to
 $\mathcal{K}_3$. Therefore, $\mathcal{K}_3$ belongs to the variety $\var\A_4$, and hence, to the varieties $\var\A_n$
-for all even $n\ge 4$ (recall that there is a unary semigroup embedding $\A_n\hookrightarrow\A_{n+2}$) and $\var\B_n$
+for all even $n\ge 4$ (recall that there is an embedding $\A_n\hookrightarrow\A_{n+2}$ of regular $*$-semigroups) and $\var\B_n$
 for each $n\ge 4$.
 
 It remains to verify that $\mathcal{K}_3$ belongs to the variety $\var\A_5$ (as then it also belongs to all the
 varieties $\var\A_n$ with odd $n\ge 5$). Here an obvious modification of the above construction works, namely, we add
 to each of the 13 partitions forming $\mathcal{U}_3$ the new through string $\{5,5'\}$. It is easy to see that the
-resulting 13 partitions lie in $\A_5$ and form a unary subsemigroup isomorphic to $\mathcal{U}_3$.
+resulting 13 partitions lie in $\A_5$ and form an involutory subsemigroup isomorphic to $\mathcal{U}_3$.
 \end{proof}
 
 We can summarize the results obtained so far in this section as follows.
@@ -1080,13 +1191,13 @@ Given this result, the question arises what happens in the cases not covered by 
 \ref{mainresultpartitionsemigroups}. First of all, we may formulate
 \begin{Problem}
 \begin{enumerate}
-\item  Is $\A_n$ finitely based for $n$ odd, not a prime power?
-\item Is $P\A_n$ finitely based for $n\notin\{2^k+2,p^k,p^k+1\}$
+\item  Is the regular $^*$-semigroup $\A_n$ nonfinitely based, where $n$ is odd, not a prime power?
+\item Is the regular $^*$-semigroup $P\A_n$ nonfinitely based for $n\notin\{2^k+2,p^k,p^k+1\}$
 ($p$  prime, $k\ge 1$)?
 \end{enumerate}
 \end{Problem}
 
-Remaining are now only some cases for small $n$. In case $n=1$ we have: $\B_1\cong \A_1$ is the trivial monoid which is
+Remaining are now only some cases for small $n$. In case $n=1$ we have: $\B_1\cong \A_1$ is the trivial semigroup which is
 of course finitely based and $P\B_1\cong P\A_1$ is the two element semilattice (with trivial involution) which is also
 finitely based. In case $n=2$, $\B_2\cong \A_2$ is a Clifford semigroup (a cyclic group of order $2$ with zero
 adjoined) which is finitely based, and $P\B_2\cong P\A_2$ which turns out to be an ideal extension of a $2\times 2$
@@ -1098,24 +1209,181 @@ involution) by the cyclic group of order $3$ --- in neither case we know the ans
 Are the regular $*$-semigroups $P\B_2\cong P\A_2$, $\B_3$, $\A_3$ finitely based?
 \end{Problem}
 
-\subsection{The case of the `skew' involution in partition monoids}
+\subsection{The `skew' involution $^\rho$}
 
-\smallskip\hrule
+In the case of the `skew' involution $^\rho$ we are in the lucky position to be able to apply  the tool presented in
+subsection \ref{INFB} (except for a few cases with small $n$).
 
-\medskip
+\begin{Thm}
+\begin{enumerate}
+\item For each $n\ge 2$ the involutory semigroups $P\J_n,P\A_n,P\B_n,\C_n$ are inherently nonfinitely based (with respect to $^\rho$).
+\item For each $n\ge 4$ the involutory semigroups $\J_n,\A_n,\B_n$ are inherently nonfinitely based (with respect to $^\rho$).
+\end{enumerate}
+\end{Thm}
 
-\textsf{Now, this would be the place for the discussion essentially contained in the `to-do' text. It should be
-explained why Theorem \ref{Theorem 2.1} is not applicable to Jones monoids. Then we introduce the `skew' involution
-${}^\rho$ and prove the INFB result for the (partial) Jones monoids, by using Theorem \ref{Theorem 2.2}. In fact, the
-$\TB$ can be introduced as late as here. Finally, we explain why the other $\rho$'s follow from the Jones case, and
-formulate the remaining open problems.}
+\begin{proof}
+(1) Since $P\J_n\le P\A_n\le P\B_n\le\C_n$ and $P\J_n\le P\J_{n+2}$ for all $n$, Theorem \ref{TB2} implies that it is
+sufficient to verify that $P\J_2$ as well as $P\J_3$ contains an involutory subsemigroup isomorphic with the twisted
+Brandt monoid. For the case $n=2$ consider the elements of $P\J_2$ depicted in Figure \ref{tbc2}.
+\begin{figure}[hb]
+\centering
+  \begin{picture}(0,0)%
+\special{psfile=tbc2.ps}%
+\end{picture}%
+\setlength{\unitlength}{1657sp}%
+%
+\begingroup\makeatletter\ifx\SetFigFont\undefined
+% extract first six characters in \fmtname
+\def\x#1#2#3#4#5#6#7\relax{\def\x{#1#2#3#4#5#6}}%
+\expandafter\x\fmtname xxxxxx\relax \def\y{splain}%
+\ifx\x\y   % LaTeX or SliTeX?
+\gdef\SetFigFont#1#2#3{%
+  \ifnum #1<17\tiny\else \ifnum #1<20\small\else
+  \ifnum #1<24\normalsize\else \ifnum #1<29\large\else
+  \ifnum #1<34\Large\else \ifnum #1<41\LARGE\else
+     \huge\fi\fi\fi\fi\fi\fi
+  \csname #3\endcsname}%
+\else
+\gdef\SetFigFont#1#2#3{\begingroup
+  \count@#1\relax \ifnum 25<\count@\count@25\fi
+  \def\x{\endgroup\@setsize\SetFigFont{#2pt}}%
+  \expandafter\x
+    \csname \romannumeral\the\count@ pt\expandafter\endcsname
+    \csname @\romannumeral\the\count@ pt\endcsname
+  \csname #3\endcsname}%
+\fi
+\fi\endgroup
+\begin{picture}(10036,1100)(833,-1028)
+\end{picture}
+\caption[Twisted Brandt Monoid]{The twisted Brandt monoid in $P\J_2$}\label{tbc2}
+\end{figure}
+%\centerline{insert tbc2}
 
-\medskip
+This set forms an involutory subsemigroup of $P\J_2$ with respect to $^\rho$. The mapping that sends each of these
+elements in the given order to the matrices given in  (\ref{twisted brandt}) (in the order given there) turns out to be
+an isomorphism of involutory semigroups. For the case $n=3$ the same can be done with the members of $P\J_3$ depicted
+in Figure \ref{tbc3}.
+\begin{figure}[hb]
+\centering
+\begin{picture}(0,0)%
+\special{psfile=tbc3.ps}%
+\end{picture}%
+\setlength{\unitlength}{1657sp}%
+%
+\begingroup\makeatletter\ifx\SetFigFont\undefined
+% extract first six characters in \fmtname
+\def\x#1#2#3#4#5#6#7\relax{\def\x{#1#2#3#4#5#6}}%
+\expandafter\x\fmtname xxxxxx\relax \def\y{splain}%
+\ifx\x\y   % LaTeX or SliTeX?
+\gdef\SetFigFont#1#2#3{%
+  \ifnum #1<17\tiny\else \ifnum #1<20\small\else
+  \ifnum #1<24\normalsize\else \ifnum #1<29\large\else
+  \ifnum #1<34\Large\else \ifnum #1<41\LARGE\else
+     \huge\fi\fi\fi\fi\fi\fi
+  \csname #3\endcsname}%
+\else
+\gdef\SetFigFont#1#2#3{\begingroup
+  \count@#1\relax \ifnum 25<\count@\count@25\fi
+  \def\x{\endgroup\@setsize\SetFigFont{#2pt}}%
+  \expandafter\x
+    \csname \romannumeral\the\count@ pt\expandafter\endcsname
+    \csname @\romannumeral\the\count@ pt\endcsname
+  \csname #3\endcsname}%
+\fi
+\fi\endgroup
+\begin{picture}(10036,1100)(833,-1028)
+\end{picture}
+\caption{The twisted Brandt monoid in $P\J_3$}\label{tbc3}
+\end{figure}
 
-\hrule\smallskip
+(2) Since $\J_n\le\A_n\le \B_n$ and $\J_n\le\J_{n+2}$ for all $n$, by Theorem\ref{TB2} it suffices to show that $\J_4$
+as well as $\J_5$ contains an involutory subsemigroup or divisor isomorphic with the twisted Brandt monoid; here
+``divisor'' means a homomorphic image of an involutory subsemigroup. In the case $n=4$, the same observation as in (1)
+applies to the elements of $\J_4$ depicted in Figure \ref{tbj4}.
+
+\begin{figure}[ht]
+\centering
+\begin{picture}(0,0)%
+\special{psfile=tbj4.ps}%
+\end{picture}%
+\setlength{\unitlength}{1865sp}%
+%
+\begingroup\makeatletter\ifx\SetFigFont\undefined
+% extract first six characters in \fmtname
+\def\x#1#2#3#4#5#6#7\relax{\def\x{#1#2#3#4#5#6}}%
+\expandafter\x\fmtname xxxxxx\relax \def\y{splain}%
+\ifx\x\y   % LaTeX or SliTeX?
+\gdef\SetFigFont#1#2#3{%
+  \ifnum #1<17\tiny\else \ifnum #1<20\small\else
+  \ifnum #1<24\normalsize\else \ifnum #1<29\large\else
+  \ifnum #1<34\Large\else \ifnum #1<41\LARGE\else
+     \huge\fi\fi\fi\fi\fi\fi
+  \csname #3\endcsname}%
+\else
+\gdef\SetFigFont#1#2#3{\begingroup
+  \count@#1\relax \ifnum 25<\count@\count@25\fi
+  \def\x{\endgroup\@setsize\SetFigFont{#2pt}}%
+  \expandafter\x
+    \csname \romannumeral\the\count@ pt\expandafter\endcsname
+    \csname @\romannumeral\the\count@ pt\endcsname
+  \csname #3\endcsname}%
+\fi
+\fi\endgroup
+\begin{picture}(10036,900)(-967,-803)
+\end{picture}
+\caption{The twisted Brandt monoid in $\J_4$}\label{tbj4}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\begin{picture}(0,0)%
+\special{psfile=tbj5.ps}%
+\end{picture}%
+\setlength{\unitlength}{1865sp}%
+%
+\begingroup\makeatletter\ifx\SetFigFont\undefined
+% extract first six characters in \fmtname
+\def\x#1#2#3#4#5#6#7\relax{\def\x{#1#2#3#4#5#6}}%
+\expandafter\x\fmtname xxxxxx\relax \def\y{splain}%
+\ifx\x\y   % LaTeX or SliTeX?
+\gdef\SetFigFont#1#2#3{%
+  \ifnum #1<17\tiny\else \ifnum #1<20\small\else
+  \ifnum #1<24\normalsize\else \ifnum #1<29\large\else
+  \ifnum #1<34\Large\else \ifnum #1<41\LARGE\else
+     \huge\fi\fi\fi\fi\fi\fi
+  \csname #3\endcsname}%
+\else \gdef\SetFigFont#1#2#3{\begingroup
+  \count@#1\relax \ifnum 25<\count@\count@25\fi
+  \def\x{\endgroup\@setsize\SetFigFont{#2pt}}%
+  \expandafter\x
+    \csname \romannumeral\the\count@ pt\expandafter\endcsname
+    \csname @\romannumeral\the\count@ pt\endcsname
+  \csname #3\endcsname}%
+\fi \fi\endgroup
+\begin{picture}(6436,1050)(833,-803)
+\end{picture}
+\caption{The twisted Brandt monoid in $\var\J_5$}\label{tbj5}
+\end{figure}
+
+In case $n=5$ consider the involutory subsemigroup of $\J_5$ generated by the elements of $\J_5$ depicted in Figure
+\ref{tbj5}, add the identity element of $\J_5$ and factor by the ideal consisting of all elements of rank one. The
+result is again an involutory semigroup isomorphic with $\TB$.
+\end{proof}
+
+For the remaining cases of small $n$ we note that $P\J_1\cong P\A_1\cong P\B_1\cong \C_1$ is a two element semilattice
+with trivial involution which is finitely based. Moreover, $\J_1\cong \A_1\cong \B_1$ is the trivial involutory
+semigroup; $\J_2\cong P\J_1$ is the two element semilattice with trivial involution; $\A_2\cong \B_2$ is a cyclic group
+of order $2$ with an extra zero element adjoined with trivial involution; $\J_3$ is a $2\times 2$ rectangular band with
+an extra identity adjoined, the involution satisfying the identity $x=xx^\rho x$ --- all of these are known to be
+finitely based. So we are left with the following two involutory semigroups:
+
+\begin{Problem} Are the involutory semigroups $\A_3$ and $\B_3$ (with respect to $^\rho$) finitely based?
+\end{Problem}
 
 \section{Further applications}
+
 \subsection{Unary Rees matrix semigroups}
+
 We had used in \cite{adv} unary Rees matrix semigroups as a tool in the proof of Theorem \ref{Theorem 2.1}; in turn,
 here we shall show that this theorem allows one to solve the finite basis problem for a large family of unary Rees
 matrix semigroups.
@@ -1132,7 +1400,7 @@ $*$-semigroup.)
 \begin{Thm}
 \label{Rees matrix} Let $P$ be an $I\times I$-matrix over $\mathcal{G}\cup\{0\}$, where $\mathcal{G}$ is a group.
 Suppose that $P$ is $*$-regular and not block-diagonalizable. If $\mathcal{G}$ does not belong to the group variety
-$\var\mathcal{H}$, where $\mathcal{H}$ is the subgroup generated by the non-zero entries of $P$, then the unary \Rm\
+$\var\mathcal{H}$, where $\mathcal{H}$ is the subgroup generated by the non-zero entries of $P$, then the involutory \Rm\
 \sm\ $\Mc^0(I,\mathcal{G},I;P)$ is not finitely based.
 \end{Thm}
 
@@ -1166,15 +1434,16 @@ A comprehensive treatment of the finite basis problem for unary \Rm\ semigroups 
 M.~Jackson and the third author \cite{jacksonvolkov}.
 
 \subsection{Varietal joins}
+
 Recall that the \emph{join} $\mathbf{V}\vee\mathbf{W}$ of two varieties $\mathbf{V}$ and $\mathbf{W}$ is the least
 variety containing both $\mathbf{V}$ and $\mathbf{W}$. We show how Theorem~\ref{Theorem 2.1} can be used to produce
-interesting examples of non-finitely based joins of varieties of unary semigroups.
+interesting examples of non-finitely based joins of varieties of involutory semigroups.
 
-Denote by $\mathbf{CSR^*}$ the variety generated by the unary semigroup $\mathcal{K}_3$ (that is, the variety of all
+Denote by $\mathbf{CSR^*}$ the variety generated by the regular $^*$-semigroup $\mathcal{K}_3$ (that is, the variety of all
 \emph{combinatorial strict regular $*$-semigroups}, see \cite{A1}) and let $\mathbf{I}$ be the variety of all inverse
 semigroups.
 \begin{Thm}
-\label{Theorem 3.2} Let $\pv K$ and $\pv A$ be varieties of unary semigroups such that:
+\label{Theorem 3.2} Let $\pv K$ and $\pv A$ be varieties of involutory semigroups such that:
 \begin{enumerate}
 \item $\pv K$ contains $\pv{CSR^*}$,
 \item $\pv A$ consists of inverse semigroups and contains
@@ -1197,7 +1466,9 @@ V$ that is not in $\H(\pv K)\supseteq \H(\pv V)$. Thus, Theorem~\ref{Theorem 2.1
 
 The conditions of Theorem~\ref{Theorem 3.2} are obviously fulfilled if $\pv{CSR^*}\subseteq \pv K$ and $\pv A$ contains
 a group that is not in $\pv K$; so, for example $\pv K=[x^m=x^{m+n}]$ for fixed $n\ge 1$ and $m\ge 2$ and $\pv A=\pv G$
-(the variety of all groups) meet the requirements.
+(the variety of all groups) meet the requirements. We mention that Theorem \ref{Theorem 3.2} holds more generally for
+varieties of \emph{unary} semigroups --- it is not really required that the unary operation in question be an
+involution.
 
 Recall that a variety $\Vc$ of algebraic structures is a \emph{Cross variety} if
 \renewcommand{\labelenumi}{\theenumi)}
@@ -1215,6 +1486,7 @@ thus have a simple example of two Cross varieties whose join is not a Cross vari
 kind found in~\cite[Corollary 2.1]{S} is much more involved (with 39 subvarieties).
 
 \section{Existence varieties of locally inverse semigroups}
+
 In this section we give an application to existence varieties of the method of proof of Theorem \ref{Theorem 2.1}.
 Recall that an \emph{existence variety} (shortly \emph{e-variety}) of regular semigroups is a class of regular
 semigroups closed under taking direct products, \emph{regular} subsemigroups and homomorphic images. This section
@@ -1237,7 +1509,7 @@ $z$). This gives rise to the \emph{sandwich operation} $\wedge$ that can be defi
 setting $x\wedge y$ to be the unique element of $xV(yx)y$, so that in this context, locally inverse semigroups are
 treated as algebras of type $(2,2)$.
 
-As explained in \cite{A2, A3}, the adequate concept of equational theory for e-varieties of locally inverse semigroups
+As explained in \cite{A2,A3}, the adequate concept of equational theory for e-varieties of locally inverse semigroups
 is based on the signature $\{\cdot,\wedge\}$ and is with respect to a doubled alphabet $X\cup X'$. Here $X$ is, as
 usual, a countably infinite set of variables and $X'=\{x'\mid x\in X\}$ is a disjoint copy of $X$; the elements of $X'$
 are devoted to represent inverses of the elements which are represented by the elements of $X$. The terms are over this
@@ -1267,13 +1539,15 @@ I)$ has been found in \cite{A3}. For more analogues between the theory of e-vari
 varieties of universal algebras see \cite{A2,A3,KS,Y1}.
 
 The objective of this section is to obtain an analogue of Theorem~\ref{Theorem 2.1} giving a sufficient condition for
-an e-variety $\pv V$ of locally inverse semigroups to have no finite basis of bi-identities. Let $\mathcal S$ be a
-locally inverse semigroup and $a_1,\dots,a_k\in \mathcal S$. For each $i$ take an element $a'_i\in V(a_i)$. Then the
-closure of the set $\{a_1,\dots,a_k,a'_1,\dots,a'_k\}$ under multiplication and sandwich operation  is a locally
-inverse subsemigroup of $\mathcal S$, and is the least locally inverse subsemigroup of $\mathcal S$ containing the set
+an e-variety $\pv V$ of locally inverse semigroups to have no finite basis of bi-identities.\footnote{The reader may
+note that by an argument similar to that in the proof of Proposition 2.9 in \cite{adv} it can be shown that there do
+not exist inherently nonfinitely based e-varieties of locally inverse semigroups.} Let $\mathcal S$ be a locally
+inverse semigroup and $a_1,\dots,a_k\in \mathcal S$. For each $i$ take an element $a'_i\in V(a_i)$. Then the closure of
+the set $\{a_1,\dots,a_k,a'_1,\dots,a'_k\}$ under multiplication and sandwich operation  is a locally inverse
+subsemigroup of $\mathcal S$, and is the least locally inverse subsemigroup of $\mathcal S$ containing the set
 $\{a_1,\dots,a_k,a'_1,\dots,a'_k\}$ (by \cite{Y1}). We call such a subsemigroup a {\it $k$-generated} locally inverse
 subsemigroup of $\mathcal S$. Define the {\it content} $c(t)$ of a term $t$ inductively by $c(x)=c(x')=\{x\}$ and
-$c(uv)=c(u\we v)=c(u)\cup c(v)$. In order to prove that an e-variety $\pv V$ has no a finite basis of bi-identities it
+$c(uv)=c(u\we v)=c(u)\cup c(v)$. In order to prove that an e-variety $\pv V$ has no  finite basis of bi-identities it
 is sufficient to prove for each natural number $k$ the existence of a locally inverse semigroup $\mathcal{T}_k$ such
 that $\mathcal{T}_k\not\in \pv V$ but $\mathcal{T}_k$ satisfies each bi-identity $u=v$ that holds in $\pv V$ and for
 which $\vert c(u)\cup c(v)\vert \le k$. The latter is equivalent to the property that each $k$-generated locally
@@ -1353,13 +1627,16 @@ J. Almeida, Finite Semigroups and Universal Algebra, World Scientific, Singapore
 
 \bibitem{A1}
 K. Auinger, Strict regular $*$-semigroups, in: J. M. Howie, W. D. Munn, H.-J. Weinert (eds.), Proc. Conf. on Semigroups
-with Applications, World Scientific, Singapore, 1992., pp. 190--204.
+with Applications, World Scientific, Singapore, 1992, pp. 190--204.
 
 \bibitem{A2}
 K. Auinger, The bifree locally inverse semigroup on a set, J. Algebra 166 (1994) 630--650.
 
 \bibitem{A3}
 K. Auinger, A system of bi-identities for locally inverse semigroups, Proc. Amer. Math. Soc. 123 (1995) 979--988.
+
+\bibitem{pseudovarieties}
+K. Auinger, Pseudovarieties generated by Brauer-type monoids, preprint.
 
 \bibitem{adv}
 K. Auinger, I. Dolinka, M. V. Volkov, Matrix indentities involving multiplication and transposition, J. Eur. Math. Soc.
@@ -1374,8 +1651,8 @@ S. Burris, H. P. Sankappanavar, A Course in Universal Algebra, Springer-Verlag, 
 \bibitem{CP}
 A. H. Clifford, G. B. Preston, The Algebraic Theory of Semigroups, Vol. I, Amer. Math. Soc., Providence, 1961.
 
-\bibitem{Dolinka}
-I. Dolinka, On identities of finite involution semigroups, Semigroup Forum 80 (2010) 105--120.
+%\bibitem{Dolinka}
+%I. Dolinka, On identities of finite involution semigroups, Semigroup Forum 80 (2010) 105--120.
 
 \bibitem{grahamlehrer}
 J. J. Graham, G. I. Lehrer, Cellular algebras, Invent. Math. 123 (1996) 1--34.
@@ -1413,18 +1690,24 @@ Semigroup Forum 72 (2006) 223--248.
 \bibitem{KM2}
 G. Kudryavtseva, V. Mazorchuk, On presentations of Brauer-type monoids, Central Eur. J. Math. 4 (2006) 413--434.
 
+\bibitem{fitzgerald}
+K. W. Lau, D. G. Fitzgerald, Ideal structure of the Kauffman and related monoids, Comm. Algebra 34 (2006) 2617--2629.
+
 \bibitem{Lvov}
-I. V. L'vov, Varieties of associative rings. I, II, Algebra i Logika 12 (1973), 269--297, 363; ibid. 667--688, 735
+I. V. L'vov, Varieties of associative rings. I, II, Algebra i Logika 12 (1973) 269--297, 363; ibid. 667--688, 735
 (Russian).
 
 \bibitem{malcevmazorchuk}
 V. Maltcev, V. Mazorchuk, Presentation of the singular part of the Brauer monoid, Math. Bohem. 132 (2007) 297--323.
 
+\bibitem{martin}
+P. Martin, The structure of partition algebras, J. Algebra 183 (1996) 319--358.
+
 \bibitem{Maz1}
 V. Mazorchuk, On the structure of Brauer semigroups and its partial analogue, Problems in Algebra 13 (1998) 29--45.
 
 \bibitem{Maz2}
-V. Mazorchuk, Endomorphisms of $\B_n$, ${\mathcal P}\B_n$ and $\C_n$, Comm.\ Algebra 30 (2002) 3489--3513.
+V. Mazorchuk, Endomorphisms of $\B_n$, ${\mathcal P}\B_n$ and $\C_n$, Comm. Algebra 30 (2002) 3489--3513.
 
 \bibitem{McK1}
 R. McKenzie, Equational bases for lattice theories,  Math. Scand. 27 (1970) 24--38.
@@ -1454,16 +1737,21 @@ P. Perkins, Bases for equational theories of semigroups, J. Algebra 11 (1969) 29
 P. Perkins, Finite axiomatizability for equational theories of computable groupoids, J. Symbolic Logic 54 (1989)
 1018--1022.
 
-\bibitem{sapirinherently}
-M. V. Sapir, Inherently non-finitely based finite semigroups, Mat. Sb. 133 (1987) 154--166 (Russian; English transl.
-Math. USSR-Sb. 61 (1988) 155--166).
+%\bibitem{sapirinherently}
+%M. V. Sapir, Inherently non-finitely based finite semigroups, Mat. Sb. 133 (1987) 154--166 (Russian; English transl.
+%Math. USSR-Sb. 61 (1988) 155--166).
 
-\bibitem{sapirburnside}
-M. V. Sapir, Problems of Burnside type and the finite basis property in varieties of semigroups, Izv. Akad. Nauk SSSR,
-Ser. Mat. 51 (1987) 319--340 (Russian; English transl. Math. USSR-Izv. 30 (1987) 295--314).
+%\bibitem{sapirburnside}
+%M. V. Sapir, Problems of Burnside type and the finite basis property in varieties of semigroups, Izv. Akad. Nauk SSSR,
+%Ser. Mat. 51 (1987) 319--340 (Russian; English transl. Math. USSR-Izv. 30 (1987) 295--314).
 
 \bibitem{S}
 M. V. Sapir, On Cross semigroup varieties and related questions, Semigroup Forum 42 (1991) 345--364.
+
+\bibitem{temperleylieb}
+H. N. V. Temperley, E. H. Lieb, Relations between the `percolation' and `coloring' problem and other graph-theoretic
+problems associated with regular planar lattices: some exact results for the `percolation' problem, Proc. Roy. Soc.
+London Ser.~A  322 (1971) 251--280.
 
 \bibitem{V}
 M. V. Volkov, On finite basedness of semigroup varieties, Mat. Zametki 45 (1989) 12--23 (Russian; English transl. Math.
