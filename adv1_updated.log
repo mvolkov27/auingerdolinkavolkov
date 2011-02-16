@@ -1,4 +1,4 @@
-This is TeX, Version 3.14159 (Web2c 7.3.7x) (format=latex 2006.11.20)  16 FEB 2011 19:01
+This is TeX, Version 3.14159 (Web2c 7.3.7x) (format=latex 2006.11.20)  16 FEB 2011 20:48
 **adv1_updated.tex
 (./adv1_updated.tex
 LaTeX2e <2001/06/01>
@@ -235,7 +235,7 @@ tands for the complex-
 
 [24] [25] [26] [27] [28] [29]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1921.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1922.
  [30]
 Missing character: There is no – in font ptmr7t!
 Missing character: There is no – in font ptmr7t!
@@ -243,7 +243,7 @@ Missing character: There is no – in font ptmr7t!
 Missing character: There is no ’ in font ptmr7t!
 Missing character: There is no ’ in font ptmr7t!
  [32]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 2104
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 2105
 .
 
 (c:/Program Files/TeXLive/texmf/tex/latex/psnfss/ot1pcr.fd
@@ -259,4 +259,4 @@ Here is how much of TeX's memory you used:
  288 hyphenation exceptions out of 1000
  27i,16n,24p,225b,387s stack positions out of 1500i,500n,1500p,200000b,5000s
 
-Output written on adv1_updated.dvi (33 pages, 172512 bytes).
+Output written on adv1_updated.dvi (33 pages, 172500 bytes).
