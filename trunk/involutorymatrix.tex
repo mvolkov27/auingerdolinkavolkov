@@ -1,0 +1,186 @@
+%A correction suggested by Don Beyer [www-admin at arXiv.org]
+%implemented on 16/02/2009 (it doesn't affect the output ps or
+%pdf file)
+%
+% new subsection on symplectic transpose and a corresponding
+%subsection inserted on 24/04/2009
+%
+%A few typos in Section 5 corrected on 25/04/2009
+%
+\documentclass[11pt,reqno]{amsart}
+\usepackage{cite}
+\usepackage{url}
+\usepackage{amssymb}
+\usepackage{amscd}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{eepic}
+\usepackage{gastex}
+\usepackage{rotating}
+\usepackage{amsthm}
+\usepackage{amsgen}
+\usepackage{amsmath}
+\usepackage[dvips]{color}
+\usepackage{epsfig,psfrag,graphicx,color}
+\usepackage{float}
+\usepackage{eucal}
+\DeclareMathOperator{\dom}{dom} \DeclareMathOperator{\ran}{ran}
+\DeclareMathOperator{\rk}{rk} \DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\pvar}{\mathsf{pvar}}
+
+\DeclareSymbolFont{rsfscript}{OMS}{rsfs}{m}{n}
+\DeclareSymbolFontAlphabet{\mathrsfs}{rsfscript}
+%\def\softd{{\leavevmode\setbox1=\hbox{d}%
+%    \hbox to 1.05\wd1{d\kern-0.4ex{\char039}\hss}}}
+
+%\numberwithin{equation}{section}
+\renewcommand{\baselinestretch}{1.2}
+%\def\bb{\mathbb}
+
+\newtheorem{Thm}{Theorem}%[section]
+\newtheorem{Prop}[Thm]{Proposition}
+\newtheorem{Lemma}[Thm]{Lemma}
+\newtheorem{Def}{Definition}[section]
+\newtheorem{Res}[Thm]{Result}
+\newtheorem{Cor}[Thm]{Corollary}
+
+
+\theoremstyle{remark}
+\newtheorem{Rmk}{Remark}[section]
+\newtheorem{Problem}{Problem}[section]
+
+
+
+\begin{document}
+%\maketitle
+We obtain an involutory analogue of a result from \cite{GoMi78}; the proof given there does not immediately show the intended result, but the ideas below are inspired by the arguments in \cite{GoMi78}.
+Let us start with some auxiliary constructions and consider
+first, for an arbitrary field $F$, the involutory semigroup
+$\mathcal{M}_2(F[X])=\langle \mathbf{M}_2(F[X]),\cdot,{}^T\rangle$
+of all $2\times 2$-matrices over the polynomial ring $F[X]$. Let
+$\mathbf{A}$  be the set of all
+matrices
+$$\begin{pmatrix}
+p_{11} & p_{12}\\ p_{21}& p_{22} \end{pmatrix}$$ with $p_{ij}$
+non-zero members of $F[X]$ such that
+$$i+j < k+ l\Longrightarrow  \mathrm{deg}(p_{ij})< \mathrm{deg}(p_{kl}),$$ and $\mathbf{B}$ those satisfying
+$$i+j <k+ l\Longrightarrow  \mathrm{deg}(p_{ij})> \mathrm{deg}(p_{kl}).$$ It is straightforward to see that $\mathbf{A}$ and $\mathbf{B}$
+ are disjoint and both of them are closed under
+multiplication (and transposition). Set
+$$A=\begin{pmatrix} 1 & 0\\ X^2 &X\end{pmatrix};$$ by induction one
+obtains that
+$$A^n=\begin{pmatrix} 1 & 0 \\p_{n+1}&p_n\end{pmatrix}$$ for polynomials
+$p_n$ and $p_{n+1}$
+with $\mathrm{deg}(p_{n+1})=n+1$  and $\mathrm{deg}(p_n)=n$. Moreover,
+set $B=A^T$; then for any $n,m\ge 1$ one gets
+$$A^nB^m=\begin{pmatrix} 1 & s_{12}\\ s_{21} & s_{22}\end{pmatrix}$$ where
+$\mathrm{deg}(s_{12})=m+1$, $\mathrm{deg}(s_{21})=n+1$ and
+$\mathrm{deg}(s_{22})=m+n+2$, while
+$$B^mA^n=\begin{pmatrix} r_{11} & r_{12} \\ r_{21} &
+r_{22}\end{pmatrix}$$ where $\mathrm{deg}(r_{11})=m+n+2$,
+$\mathrm{deg}(r_{12})=\mathrm{deg}(r_{21})=m+n+1$ and
+$\mathrm{deg}(r_{22})=m+n$. In particular, $A^nB^m\in \mathbf{A}$
+while $B^mA^n\in\mathbf{B}$. The last of our auxiliary statements is
+formulated as follows.
+\begin{Lemma}\label{lemma} For all $m,n\ge 1$, the sets $\mathbf{A}A^n$ and
+$\mathbf{B}B^m$ are disjoint.
+\end{Lemma}
+\begin{proof} Let $a,b,c,d,p,q$ be non-zero polynomials with
+$$\mathrm{deg}(a)<\min\{\mathrm{deg}(b),\mathrm{deg}(c)\},\ \max\{\mathrm{deg}(b),\mathrm{deg}(c)\}<\mathrm{deg}(d)$$
+and
+$$\mathrm{deg}(p)<\mathrm{deg}(q).$$
+Then
+$\left(\begin{smallmatrix} a& b\\ c & d\end{smallmatrix}\right)$ is a
+typical matrix in $\mathbf{A}$, $\left(\begin{smallmatrix} d& b\\ c &
+a\end{smallmatrix}\right)$ is such in $\mathbf{B}$, $A^n$ is of the form
+$\left(\begin{smallmatrix} 1 & 0\\q  & p\end{smallmatrix}\right)$
+and $B^m$ is of the form $\left(\begin{smallmatrix} 1 & q\\0 &
+p\end{smallmatrix}\right)$. Now
+$$\begin{pmatrix} a & b\\c & d\end{pmatrix} \begin{pmatrix}1 &0\\ q
+& p\end{pmatrix} =\begin{pmatrix} a+bq& bp\\ c+dq&
+dp\end{pmatrix}.$$ Since $\mathrm{deg}(a)<\mathrm{deg}(b)$ and
+$\mathrm{deg}(p)<\mathrm{deg}(q)$ we obtain
+$$\mathrm{deg}(a+bq)=\mathrm{deg}(bq)> \mathrm{deg}(bp).$$
+In particular, for any $C=(c_{ij})\in\mathbf{A}A^n$ we get
+\begin{equation}\label{A}
+\mathrm{deg}(c_{11})>\mathrm{deg}(c_{12})
+\end{equation}
+
+On the other hand,
+$$\begin{pmatrix} d & b\\c & a\end{pmatrix} \begin{pmatrix}1 &q\\
+0 & p\end{pmatrix} =\begin{pmatrix} d& dq+bp\\
+c&cq+ap\end{pmatrix}.$$ Here we have that
+$$\mathrm{deg}(d)<\mathrm{deg}(dq)=
+\mathrm{deg}(dq+bp).$$  Again, this shows that for any $D=(d_{ij})\in\mathbf{B}B^m$,
+\begin{equation}\label{B}
+\mathrm{deg}(d_{11})<\mathrm{deg}(d_{12}).
+\end{equation}
+Conditions (\ref{A}) and (\ref{B}) immediately imply that $\mathbf{A}A^n\cap \mathbf{B}B^m=\emptyset$.
+\end{proof}
+The reader will easily observe that the ordering among the degrees
+of the entries of $C$ is precisely the opposite to those of $D$.
+We are able to draw our first conclusion.
+\begin{Prop}\label{freesubsemigroup} The matrices
+$\left(\begin{smallmatrix} 1 &0\\ X^2 & X\end{smallmatrix}\right)$
+and $\left(\begin{smallmatrix} 1 &X^2\\ 0 &
+X\end{smallmatrix}\right)$ generate a free subsemigroup of $\langle
+\mathbf{M}_2(F[X]),\cdot\rangle$; in particular the matrix $\left(\begin{smallmatrix} 1 &0\\ X^2 &
+X\end{smallmatrix}\right)$ generates a free involutory subsemigroup of
+$\mathcal{M}_2(F[X])$.
+\end{Prop}
+\begin{proof} Again we set $A=\left(\begin{smallmatrix} 1 &0\\ X^2 &
+X\end{smallmatrix}\right)$ and $B=A^T=\left(\begin{smallmatrix} 1 &X^2\\
+0 & X\end{smallmatrix}\right)$. The semigroup $\mathbf{S}$ generated by $\{A,B\}$ is a
+subsemigroup of the general linear group $\mathbf{GL}_2(F(X))$ over the field of rational
+functions over $F$, hence $\mathbf{S}$ is cancellative. Let $\{a,b\}$ be a two letter alphabet,
+ let $u=u(a,b),v=v(a,b)\in\{a,b\}^+$ be two distinct nonempty words and suppose that in $\mathbf{S}$ the equality
+$u(A,B)=v(A,B)$ holds. Since $\mathbf{S}$ is cancellative, we may assume that $u$ and $v$ start and end
+with different symbols and, in particular, that the words $u,v$ in the identity $u=v$ are of either
+of the following two forms:
+\begin{equation}\label{eqI}
+u=a^{n_1}b^{m_1}\cdots a^{n_s}b^{m_s}\mbox{ and }v=b^{l_1}a^{k_1}\cdots b^{l_t}a^{k_t}
+\end{equation}
+or
+\begin{equation}\label{eqII}
+ u=a^{n_1}b^{m_1}\cdots a^{n_{s-1}}b^{m_{s-1}}a^{n_s}\mbox{ and }v=b^{l_1}a^{k_1}\cdots b^{l_{t-1}}a^{k_{t-1}}b^{k_t}
+ \end{equation}
+with $s,t\ge 1$ and all $n_i,m_i,k_i,l_i\ge 1$. In case (\ref{eqI}), $u(A,B)\in \mathbf{A}$ and $v(A,B)\in
+\mathbf{B}$ while in case (\ref{eqII}) $u(A,B)\in \mathbf{A}A^{n_s}$ and $v(A,B)\in\mathbf{B}B^{k_t}$.
+In any case, using Lemma \ref{lemma} we obtain $u(A,B)\ne v(A,B)$, a contradiction.
+\end{proof}
+\begin{Cor} Let $F$ be any infinite field; then the involutory semigroup $\mathcal{GL}_2(F)=\langle
+\mathbf{GL}_2(F),\cdot,{}^T\rangle$ does not satisfy any non-trivial involutory identity.
+\end{Cor}
+\begin{proof} Since the free $1$-generator involutory semigroup generates the variety of all involutory semigroups,
+it is sufficient to consider involutory identities in one letter $x$. Since $\mathcal{GL}_2(F)$ is
+cancellative it suffices to consider identities of the form
+$u(x,x^T)=v(x,x^T)$ with $u$ and $v$ as in (\ref{eqI}) or (\ref{eqII}). Setting
+$$u(A,B)=\begin{pmatrix} u_{11}&u_{12}\\u_{21} & u_{22}\end{pmatrix}\mbox{ and }v(A,B)=\begin{pmatrix}
+v_{11} & v_{12}\\ v_{21} & v_{22}\end{pmatrix},$$ we see that the inequality $u(A,B)\ne v(A,B)$ shown in the
+proof of Proposition \ref{freesubsemigroup}  means that for some indices $i$ and $j$ the polynomials
+$u_{ij}$ and $v_{ij}$ are distinct; in particular, $u_{ij}-v_{ij}$ is a non-zero polynomial. Now take any
+$\lambda\in F$
+and set $x(\lambda)=\left(\begin{smallmatrix} 1 & 0\\ \lambda^2 & \lambda\end{smallmatrix}\right)$. If the equality
+\begin{equation}\label{lambda}
+u(x(\lambda),x(\lambda)^T)=v(x(\lambda),x(\lambda)^T)
+\end{equation} holds then $\lambda$ must be a root of the non-zero polynomial
+$u_{ij}-v_{ij}$ whence (\ref{lambda}) can hold only for finitely many elements $\lambda$ of $F$. Since $F$ is
+infinite, equality (\ref{lambda}) fails for all but finitely many $\lambda$, and so, in particular, the identity
+$u(x,x^T)=v(x,x^T)$ fails in $\mathcal{GL}_2(F)$.
+\end{proof}
+In combination with results from \cite{adv1} we obtain the following.
+\begin{Cor} For a field $F$ and any $n\ge 2$, the involutory semigroup $\langle\mathbf{M}_n(F),\cdot,{}^T\rangle$
+is finitely based if
+and only if $F$ is infinite.
+\end{Cor}
+\begin{Cor} For a field $F$ and any $n\ge 2$, the involutory semigroup $\langle \mathbf{M}_{2n}(F),\cdot,{}^S\rangle$ is
+finitely based if and only if $F$ is infinite.
+\end{Cor}
+The case $\langle \mathbf{M}_{2}(F),\cdot,{}^S\rangle$ is open for infinite $F$.
+\begin{thebibliography}{99}
+\bibitem{adv1} K.~Auinger, I.~Dolinka and M.~V.~Volkov \emph{Matrix identities involving multiplication and transposition}. preprint.
+\bibitem{GoMi78}
+Golubchik, I. Z., Mikhalev, A. V.: A note on varieties of semiprime rings with semigroup identities. J. Algebra
+\textbf{54}, 42--45 (1978)
+\end{thebibliography}
+\end{document}
