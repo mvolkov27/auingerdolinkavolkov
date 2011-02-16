@@ -508,7 +508,7 @@ Let $\Vc$ be any unary semigroup variety such that $\mathcal{K}_3\in\Vc$. If eit
 \item there exists a group $\mathcal{G}$  such that $\mathcal{G}\in\Vc$ but
 $\mathcal{G}\notin\H(\Vc)$
 
-\hbox to 0 pt {or}
+\hbox to 10.66788 pt {or}
 \item there exist a positive integer $d$ and a group $\mathcal{G}$ of exponent
 dividing $d$ such that $\mathcal{G}\in\Vc$ but $\mathcal{G}\notin\P_d(\Vc)$,
 \end{itemize}
@@ -765,41 +765,35 @@ Fig.~\ref{matrices}.
 \begin{figure}[ht]
 $$M=\begin{pmatrix}
   1 & 1 & \cdots & 1 & 1\\
-
   \vdots & \vdots & \ddots & \vdots & \vdots \\
   1 & r & \cdots & 1 & r\\
   2 & 1 & \cdots & 2 & 1\\
-
   \vdots & \vdots & \ddots & \vdots & \vdots\\
   2 & r & \cdots & 2 & r\\
   \vdots & \vdots & \ddots & \vdots & \vdots\\
   r & 1 & \cdots & r & 1\\
-
   \vdots & \vdots & \ddots & \vdots & \vdots\\
   r & r & \cdots & r & r
 \end{pmatrix} \qquad
  M_{A}=\begin{pmatrix}
   a_{11} & a_{12} & \cdots & a_{1r-1} & a_{1 r} \\
-
   \vdots & \vdots & \ddots & \vdots & \vdots \\
   a_{11} & a_{r2} & \cdots & a_{1r-1} & a_{rr}\\
   a_{21} & a_{12} & \cdots & a_{2r-1} & a_{1r}\\
-
   \vdots & \vdots & \ddots & \vdots & \vdots \\
   a_{21} & a_{r2} & \cdots & a_{2r-1} & a_{rr}\\
   \vdots & \vdots & \ddots & \vdots & \vdots \\
   a_{r1} & a_{12} & \cdots & a_{rr-1} & a_{1r}\\
-
   \vdots & \vdots & \ddots & \vdots & \vdots \\
   a_{r1} & a_{r2} & \cdots & a_{rr-1} & a_{rr}
 \end{pmatrix}$$
 \caption{The matrices $M$ and $M_A$}\label{matrices}
 \end{figure}
 All odd columns of $M$ are identical and equal to the transpose of the row
-$(1,1,\ldots,1,2,2,\ldots,2,\ldots,r,r,\ldots,r)$ where each number occurs $r$
-times. All even columns of $M$ are identical and equal to the transpose of the
-row $(1,2,\ldots,r,\ldots,1,2,\ldots,r)$ in which the block $1,2,\dots,r$
-occurs $r$ times.
+$(1,\ldots,1,2,\ldots,2,\ldots,r,\ldots,r)$ where each number occurs $r$ times.
+All even columns of $M$ are identical and equal to the transpose of the row
+$(1,2,\ldots,r,\ldots,1,2,\ldots,r)$ in which the block $1,2,\dots,r$ occurs
+$r$ times.
 
 Now consider the alphabet $A=\{a_{ij}\mid 1\leq i,j\leq r\}$ of
 cardinality $r^2$. We convert the matrix $M$ to the matrix $M_{A}$
@@ -1322,10 +1316,13 @@ It is known that $\langle\mathrm{M}_n(\mathcal{K}),\cdot,{}^\dag\rangle$ satisfi
 connection with Problem \ref{problem on Moore-Penrose}, we also observe that the proofs of Theorem~\ref{Theorem 3.5}
 and Corollary~\ref{identity for rank 1} readily yield the following:
 \begin{Rmk}
-\label{rank 1 + invertible} For each conjugation-closed subfield $\mathcal{K}$ of $\bb C$  and for all $n>2$, the unary
-semigroup $\langle\mathrm{L}_n(\mathcal{K})\cup\mathcal{G},\cdot,{}^\dag\rangle$ consisting of all matrices of rank at
-most~1 and all matrices from some non-abelian subgroup $\mathcal{G}$ of $\mathrm{GL}_n(\mathcal{K})$ has no finite
-identity basis.
+\label{rank 1 + invertible} For each conjugation-closed subfield $\mathcal{K}$
+of $\bb C$  and for all $n>2$, the unary semigroup
+$\langle\mathrm{L}_n(\mathcal{K})\cup G,\cdot,{}^\dag\rangle$ consisting of all
+matrices of rank at most~1 and all matrices from some non-abelian subgroup
+$\langle G,\cdot,{}^{-1}\rangle$ of
+$\langle\mathrm{GL}_n(\mathcal{K}),\cdot,{}^{-1}\rangle$ has no finite identity
+basis.
 \end{Rmk}
 
 Another natural related structure is the semigroup $\textrm{M}_n(\mathcal{K})$
@@ -1422,8 +1419,8 @@ $$B^mA^n=\begin{pmatrix} r_{11} & r_{12} \\ r_{21} &
 r_{22}\end{pmatrix}$$ where $\deg(r_{11})=m+n+2$,
 $\deg(r_{12})=\deg(r_{21})=m+n+1$ and $\deg(r_{22})=m+n$. In particular,
 $A^nB^m\in \mathrm{Asc}$ while $B^mA^n\in\mathrm{Desc}$.
-\begin{Lemma}\label{lemma:disjoint} For all $m,n\ge 1$, the sets $\mathrm{Asc}A^n$ and
-$\mathrm{Desc}B^m$ are disjoint.
+\begin{Lemma}\label{lemma:disjoint} For all $m,n\ge 1$, the sets $\mathrm{Asc}\cdot A^n$ and
+$\mathrm{Desc}\cdot B^m$ are disjoint.
 \end{Lemma}
 \begin{proof} Let $a,b,c,d,p,q$ be non-zero polynomials with
 $$\deg(a)<\min\{\deg(b),\deg(c)\},\ \max\{\deg(b),\deg(c)\}<\deg(d) \
@@ -1438,7 +1435,7 @@ $$\begin{pmatrix} a & b\\c & d\end{pmatrix} \begin{pmatrix}1 &0\\ q
 & p\end{pmatrix} =\begin{pmatrix} a+bq& bp\\ c+dq& dp\end{pmatrix}.$$ Since
 $\deg(a)<\deg(b)$ and $\deg(p)<\deg(q)$ we obtain
 $$\deg(a+bq)=\deg(bq)> \deg(bp).$$
-In particular, for any $C=(c_{ij})\in\mathrm{Asc}A^n$ we get
+In particular, for any $C=(c_{ij})\in\mathrm{Asc}\cdot A^n$ we get
 \begin{equation}\label{A}
 \deg(c_{11})>\deg(c_{12})
 \end{equation}
@@ -1448,12 +1445,13 @@ $$\begin{pmatrix} d & b\\c & a\end{pmatrix} \begin{pmatrix}1 &q\\
 0 & p\end{pmatrix} =\begin{pmatrix} d& dq+bp\\
 c&cq+ap\end{pmatrix}.$$ Here we have that
 $$\deg(d)<\deg(dq)=
-\deg(dq+bp).$$  Again, this shows that for any $D=(d_{ij})\in\mathrm{Desc}B^m$,
+\deg(dq+bp).$$  Again, this shows that for any $D=(d_{ij})\in\mathrm{Desc}\cdot
+B^m$,
 \begin{equation}\label{B}
 \deg(d_{11})<\deg(d_{12}).
 \end{equation}
-Conditions (\ref{A}) and (\ref{B}) immediately imply that $\mathrm{Asc}A^n\cap
-\mathrm{Desc}B^m=\varnothing$.
+Conditions \eqref{A} and \eqref{B} immediately imply that $\mathrm{Asc}\cdot
+A^n\cap \mathrm{Desc}\cdot B^m=\varnothing$.
 \end{proof}
 We are able to draw our first conclusion.
 \begin{Prop}
@@ -1468,7 +1466,7 @@ invertible as  matrices over the field of rational functions over $\mathcal{K}$
 whence we can cancel the longest common prefix and the longest common suffix of
 the words $u$ and $v$ obtaining new words $u'$ and $v'$ that still fulfil
 $u'(A,B)=v'(A,B)$. Observe that none of the words $u'$ and $v'$ are empty
-because otherwise $A$ and $B$ would be invertible over the polynomial ring
+because otherwise $A$ and/or $B$ would be invertible over the polynomial ring
 $\mathcal{K}[x]$ which is not true. Thus, we may assume that $u$ and $v$ start
 and end with different symbols and this means that the words are of either of
 the following two forms:
@@ -1481,9 +1479,9 @@ b^{\ell_t}a^{k_t}\\
 \end{gather}
 with $s,t\ge 1$ and all $n_i,m_i,k_i,\ell_i\ge 1$. In case \eqref{eqI},
 $u(A,B)\in \mathrm{Asc}$ and $v(A,B)\in \mathrm{Desc}$ while in case
-\eqref{eqII} $u(A,B)\in \mathrm{Asc}A^{n_s}$ and
-$v(A,B)\in\mathrm{Desc}B^{k_t}$. In any case, using Lemma \ref{lemma:disjoint}
-we obtain $u(A,B)\ne v(A,B)$, a contradiction.
+\eqref{eqII} $u(A,B)\in \mathrm{Asc}\cdot A^{n_s}$ and
+$v(A,B)\in\mathrm{Desc}\cdot B^{k_t}$. In any case, using Lemma
+\ref{lemma:disjoint} we obtain $u(A,B)\ne v(A,B)$, a contradiction.
 \end{proof}
 
 \begin{Thm}
@@ -1505,7 +1503,7 @@ It is known (and easy to verify) that the free involutory semigroup on one
 generator $z$, say, contains as a unary subsemigroup a free involutory
 semigroup on countably many generators, namely, $\FI(Z)$ where
 $$Z=\{zz^*z,\ z(z^*)^2z,\ \dots,\ z(z^*)^nz,\ \dots\}.$$
-Therefore we only need verifying that $\mathcal{GL}_2(\mathcal{K})$ satisfies
+Therefore we only need to verify that $\mathcal{GL}_2(\mathcal{K})$ satisfies
 no non-trivial involutory identity in one letter $z$. Such an identity can be
 written as $u(z,z^T)=v(z,z^T)$ with $u$ and $v$ being two distinct words.
 Proposition~\ref{freesubsemigroup} implies that $u(A,B)\ne v(A,B)$ in
@@ -1558,7 +1556,7 @@ $\langle\mathrm{M}_2(\mathcal{K}),\cdot,{}^T\rangle$ for each finite field
 $\mathcal{K}$ except $\mathcal{K}=\mathbb{F}_2$, the $2$-element field. (The
 exception is due to the fact that the involutory semigroup
 $\langle\mathrm{M}_2(\bb F_2),\cdot,{}^T\rangle$ satisfies the identity
-$$(xx^*)^3(yy^*)^3=(yy^*)^3(xx^*)^3$$
+$$(xx^T)^3(yy^T)^3=(yy^T)^3(xx^T)^3$$
 which does not hold in $\mathcal{K}_3$; consequently, $\mathcal{K}_3$ is not in
 $\var\langle\mathrm{M}_2(\bb F_2),\cdot,{}^T\rangle$ and Theorem~\ref{Theorem
 2.1} does not apply here.) In the following theorem, we shall demonstrate the
