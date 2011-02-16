@@ -1,0 +1,190 @@
+%A correction suggested by Don Beyer [www-admin at arXiv.org]
+%implemented on 16/02/2009 (it doesn't affect the output ps or
+%pdf file)
+%
+%A new subsection on symplectic transpose and a corresponding
+%subsection inserted on 24/04/2009
+%
+%A few typos in Section 5 corrected on 25/04/2009
+%
+\documentclass[11pt,reqno]{amsart}
+\usepackage{cite}
+\usepackage{url}
+\usepackage{amssymb}
+\usepackage{amscd}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{eepic}
+\usepackage{gastex}
+\usepackage{rotating}
+\usepackage{amsthm}
+\usepackage{amsgen}
+\usepackage{amsmath}
+\usepackage[dvips]{color}
+
+
+\DeclareMathOperator{\dom}{dom} \DeclareMathOperator{\ran}{ran}
+\DeclareMathOperator{\rk}{rk} \DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\var}{\mathsf{var}}
+\DeclareMathOperator{\Id}{Eq}
+
+\DeclareSymbolFont{rsfscript}{OMS}{rsfs}{m}{n}
+\DeclareSymbolFontAlphabet{\mathrsfs}{rsfscript}
+
+\def\softd{{\leavevmode\setbox1=\hbox{d}%
+    \hbox to 1.05\wd1{d\kern-0.4ex{\char039}\hss}}}
+
+\numberwithin{equation}{section}
+
+\def\bb{\mathbb}
+
+\newtheorem{Thm}{Theorem}[section]
+\newtheorem{Prop}[Thm]{Proposition}
+\newtheorem{Lemma}[Thm]{Lemma}
+\newtheorem{Def}{Definition}[section]
+\newtheorem{Res}[Thm]{Result}
+\newtheorem{Cor}[Thm]{Corollary}
+\newtheorem{Example}[Thm]{Example}
+\newtheorem{Examples}[Thm]{Examples}
+\newtheorem{Conjecture}[Thm]{Conjecture}
+\newtheorem{Not}[Thm]{Notation}
+
+\theoremstyle{remark}
+\newtheorem{Rmk}{Remark}[section]
+\newtheorem{Problem}{Problem}[section]
+
+\def\eq{\simeq}
+\def\La{\Lambda}
+\def\om{\omega}
+\def\cd{\cdot}
+\def\wh{\widehat}
+\def\pv#1{{\bf #1}}
+\def\cal{\mathcal}
+\def\Ac{{\cal A}}
+\def\Bc{{\cal B}}
+\def\Cc{{\cal C}}
+\def\Dc{\mathrsfs{D}}
+\def\Ec{{\cal E}}
+\def\Fc{{\cal F}}
+\def\Gc{{\cal G}}
+\def\Hc{\mathrsfs{H}}
+\def\Ic{{\cal I}}
+\def\Jc{{\cal J}}
+\def\Kc{{\cal K}}
+\def\Lc{\mathrsfs{L}}
+\def\Mc{{\cal M}}
+\def\Nc{{\cal N}}
+\def\Oc{{\cal O}}
+\def\Pc{{\cal P}}
+\def\Qc{{\cal Q}}
+\def\Rc{\mathrsfs{R}}
+\def\Sc{{\cal S}}
+\def\Tc{{\cal T}}
+\def\Uc{{\cal U}}
+\def\Vc{\mathbf{V}}
+\def\Wc{\mathbf{W}}
+\def\Xc{{\cal X}}
+\def\Yc{{\cal Y}}
+\def\Zc{{\cal Z}}
+\def\es{{\Ec\Sc}}
+\def\cs{{\Cc\Sc}}
+\def\si{\sigma}
+\def\Si{\Sigma}
+\def\al{\alpha}
+\def\ga{\gamma}
+\def\de{\delta}
+\def\ep{\varepsilon}
+\def\be{\beta}
+\def\la{\lambda}
+\def\te{\theta}
+\def\ka{\kappa}
+\def\rh{\rho}
+\def\ta{\tau_\alpha}
+
+\def\m{\mathrel}
+\def\ol{\overline}
+\def\mo{\models}
+
+
+\def\s{\sigma}
+\def\De{\Delta}
+
+\def\ze{\zeta}
+\def\io{\iota}
+\def\fx{F(X)}
+\def\ka{\kappa}
+\def\we{\wedge}
+
+\def\bp{\bar\phi}
+\def\bps{\bar\psi}
+\def\Co{{\mathrm C}}
+\def\Ko{\Cal K}
+\def\H{\mathrm H}
+\def\P{\mathrm P\!}
+
+\def\he#1{#1#1^*}
+\def\re{regular $*$-}
+\def\wi{weakly invertible}
+\def\ig{idempotent-generated}
+\def\Rm{Rees matrix}
+\def\sm{semi\-group}
+\def\va{variet}
+\def\evar{\mathsf{evar}}
+\def\A{\mathfrak{A}}
+\def\C{\mathfrak{C}}
+\def\B{\mathfrak{B}}
+\def\J{\mathfrak{J}}
+\def\Sim{\mathfrak{S}}
+\def\ov{\overline}
+\def\inv{^{-1}}
+\def\wt{\widetilde}
+\def\id{identit}
+\def\fb{finitely based}
+\def\TB{\ensuremath{\mathcal{T\kern-1pt B}_2^1}}
+\def\TA{\ensuremath{\mathcal{T\kern-1pt A}_2^1}}
+
+\title[Todos]{Todos in advII}
+
+
+
+\begin{document}
+
+\maketitle
+In addition to the partition semigroups listed so far we can also consider the \emph{Jones monoids} $\J_n$; $\J_n$ is the set of all members of $\A_n$ that can be drawn inside the rectangle spanned by $1---n---n'---1'$ without intersections, in other words, those members of $\A_n$ for which we can cut the annulus between the lines $1---1'$ and $n---n'$ without violating a string (e.g. the diagrams in Fig 7 belong to $\J_4$). Likewise we can define $P\J_n$ as those members of $P\A_n$ for which we can cut the annulus between these lines without violating a string (the diagrams in Fig 6 are in $P\J_3$).
+
+All $P\J_n$ are aperiodic and so are the $\J_n$s; hence our version of the critical substructure method does not apply to these. The involution $\xi\mapsto \xi^*$ makes partition semigroups a regular $*$-semigroup whence the INFB things don't apply. Therefore, neither did the $P\J_n$s and $\J_n$s  occur in our work nor did the INFB method occur in the paper containing the partition semigroups.
+
+However, each of the listed 7 series of monoids admits another involution which I have denoted $\xi\mapsto \xi^\rho$ and which is defined by switching the elements $[n]$ with the corresponding ones of $[n]'$ \textbf{and} reversing the order of the elements of $[n]$. In other words, ${}^\rho=J\circ{}^*\circ J$ where $J$ is the permutation of $[n]$ which reverses the order. Or, if you wish, ${}^\rho$ is the operation that rotates  each diagram by the angle of $\pi$. In a sense, the involutions ${}^*$ and ${}^\rho$ relate to each other just as the usual inverse operation and Igor's involution on $B_2^1$. I did not see that ${}^\rho$ has been considered in the literature so far. Nevertheless it was of substantial use for me in a paper that I have just completed (I can forward it if you wish). Because of this and the results below I think it should be included in advII.
+
+\begin{Thm}\begin{enumerate}
+\item  $\left<P\J_n,\cdot,{}^\rho\right>$ is INFB for each $n\ge 2$.
+\item $\left<\J_n,\cdot,{}^\rho\right>$ is INFB for each $n\ge 4$.
+\end{enumerate}
+\end{Thm}
+For the proof of (1) just factor $P\J_2$ by the ideal of all rank $0$ elements and you get the twisted Brandt monoid $\mathcal{TB}_2^1$. Draw a picture! To get the result for $P\J_3$ take the diagrams of the preceding involutory semigroup and add on both sides one extra isolated vertex in the middle --- this gives a realization of $\mathcal{TB}_2^1$ as an involutory subsemigroup (w.r.t. ${}^\rho$) of $P\J_3$. Since we can always embed $P\J_n$ into $P\J_{n+2}$ as (adding strings on bottom and on top)  ${}^\rho$-semigroups we are done. (Note that I cannot see how to embed $P\J_{2n-1}$ into $P\J_{2n}$ as a ${}^\rho$-semigroup).
+
+For a proof of (2) look at Figure 7 in the paper and omit the elements of the first row and column, add the identity element and the element of rank $0$ that is obtained by multiplying the two idempotents. Again you get the twisted Brandt monoid. This gives the result for $\J_4$. For $\J_5$ add an extra string (between and parallel to the two existing ones) to each rank 2 diagram of the preceding example, take the ${}^\rho$-semigroup generated by these and factor by the rank $1$ elements. Since we can embed $\J_n$ into $\J_{n+2}$ as a ${}^\rho$-semigroup we are done.
+
+For each $n$ we have the inclusions
+
+$$P\J_n\hookrightarrow P\A_n\hookrightarrow P\B_n\hookrightarrow \C_n$$
+and 
+$$ \J_n\hookrightarrow\A_n\hookrightarrow\B_n.$$
+
+So we have almost a complete picture of the situation for the various types: $P\J_1\cong \cdots\cong \C_1$ is a $2$-element semilattice with trivial involution, so this is f.b.; $\J_1\cong\A_1\cong\B_1$ is the trivial (one element) involutory semigroup, again f.b. $\J_2$ is the $2$-element semilattice with trivial involution (isomorphic with $\C_1$), f.b.; $\A_2\cong \B_2$ is the $2$ element group with a $0$ adjoined --- here the involutions ${}^*$ and ${}^\rho$ coincide, f.b. Finally $\J_3$ is $2\times 2$ rectangular band with identity adjoined --- here $\rho$ satisfies $x=xx^\rho x$ (since $x$ can be evaluated either as the identity element or an element in the rectangular band kernel), so $\J_3$ is a  $*$-band which is known to be f.b.
+
+Remaining are $\A_3$ and $\B_3$, just as in the $*$-regular case; they consist of a $3\times 3$ rectangular band in the kernel with group of units equal to $C_3$ (for $\A_3$) resp. $S_3$ (for $\B_3$) on top. The involution $\rho$ is somehow funny. On $C_3$ it is the identity mapping, on $S_3$ it swaps the transpositions $(12)$ and $(23)$ and fixes everything else. If one arranges the elements in the bottom rectangular band properly then ${}^*$ is the reflection along the main diagonal while ${}^\rho$ is the reflection along the secondary diagonal.
+
+My main questions are:
+
+(1) What is the best way to organize this new material into the old one? Here I mean: should we just open a new subsection and include everything new (definitions, tools, results) there, or should we include everything at its proper place?  I guess, including the work of polishing, perhaps drawing some pictures, this requires some work. Therefore I would prefer to submit advI separately, by the way.
+ 
+(2) What shall we do with the remaining items $\left<\A_3,\cdot,{}^*\right>$,  $\left<\A_3,\cdot,{}^\rho\right>$, $\left<\B_3,\cdot,{}^*\right>$, $\left<\B_3,\cdot,{}^*\rho\right>$?
+
+
+Kudryavtseva has announced that $\left<\A_3,\cdot,{}^*\right>$ is f.b. Although I believe there are some gaps, or, at least, I did not fully understand the arguments, I think the idea works. When I read it, I thought IF it works, then it works for $\left<\B_3,\cdot,{}^*\right>$ as well. What about the cases with ${}^\rho$? I personally believe all these are f.b. Still, a complete resolutions seems to require some work. In case it does work, how should we then handle the case anyway (I think Kudryavtseva has not yet published nor put it on arXiv yet)? Should
+we  put some effort at all to handle these singular cases or rather leave them open? A quick observation is that $\left<\A_3,\cdot,{}^\rho\right>$ is not INBF since it satisfies $x=x(x^\rho)^2x$.
+
+In any case, if we proceed with this work via the modern technology of google project hosting I must ask one of you  guys to maintain this, otherwise I'm afraid it would take an unreasonable period of time.
+
+\end{document}

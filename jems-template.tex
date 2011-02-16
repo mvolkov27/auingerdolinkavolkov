@@ -1,0 +1,251 @@
+
+
+% Modif. April 30, 2010
+% Send comments to publ@impan.pl
+
+\documentclass[12pt, twoside]{article}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{times}
+\usepackage{enumerate}
+
+\pagestyle{myheadings}
+\def\titlerunning#1{\gdef\titrun{#1}}
+\makeatletter
+\def\author#1{\gdef\autrun{\def\and{\unskip, }#1}\gdef\@author{#1}}
+\def\address#1{{\def\and{\\\hspace*{18pt}}\renewcommand{\thefootnote}{}%
+\footnote {#1}}%
+\markboth{\autrun}{\titrun}}
+\makeatother
+\def\email#1{e-mail: #1}
+\def\subjclass#1{{\renewcommand{\thefootnote}{}%
+\footnote{\emph{Mathematics Subject Classification (2010):} #1}}}
+\def\keywords#1{\par\medskip
+\noindent\textbf{Keywords.} #1}
+
+
+%% Numbered objects of "theorem" style (text italicized).
+%% The optional parameters indicate that all objects are numbered together, and "by section".
+%% However, you are welcome to use any other numbering system of your choice.
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prob}[thm]{Problem}
+
+
+%% A numbered theorem with a fancy name:
+
+\newtheorem{mainthm}[thm]{Main Theorem}
+
+%% Numbered objects of "non-theorem" style (text roman):
+
+\theoremstyle{definition}
+\newtheorem{defin}[thm]{Definition}
+\newtheorem{rem}[thm]{Remark}
+\newtheorem{exa}[thm]{Example}
+
+%% An unnumbered remark:
+
+\newtheorem*{xrem}{Remark}
+
+
+%% Equations numbered by section:
+
+\numberwithin{equation}{section}
+
+
+%%%%%%%%%%% For JEMS
+\frenchspacing
+
+\textwidth=15cm
+\textheight=23cm
+\parindent=16pt
+\oddsidemargin=-0.5cm
+\evensidemargin=-0.5cm
+\topmargin=-0.5cm
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%% Put your macros here:
+
+
+
+
+
+
+%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%%%%% To ease editing, add:
+
+\baselineskip=17pt
+
+%%%%%%%%%%%%%%%%
+
+%% In the running head, give an abbreviation of the title. 
+\titlerunning{JEMS template}
+
+\title{A template for submissions to JEMS}
+
+\author{Firstname1 Surname1
+\and 
+Firstname2 Surname2}
+
+\date{}
+
+\maketitle
+
+\address{F1. Surname1: address1; \email{xx1@yy1}
+\and
+F2. Surname2: address2; \email{xx2@yy2}}
+
+
+\subjclass{Primary XXXX; Secondary YYYY}
+
+%%%%%%%%
+
+\begin{abstract}
+A template for submissions to JEMS. For the subject classification, use
+the 2010 Mathematics Subject Classification available at www.ams.org/msc.
+
+%% Keywords are optional
+\keywords{Aaaa, bbbb, cccc}
+\end{abstract}
+
+\section{Introduction}
+You can use this file as a template when submitting your paper to JEMS.
+
+The format of the file is \textbf{not} the exact final printed format (the latter is scaled down), but it is convenient for editing purposes.
+
+Put all acknowledgments (including those concerning grants) just before references.
+
+\subsection{Theorems etc.}
+The statements of theorems, lemmas etc. are set in
+italics. In definitions, only the term being defined is italicized. Remarks
+and examples are set in roman type. 
+
+
+
+\begin{defin}
+A system $S$ is said to be \emph{self-extensional} if 
+$S \in B$.
+\end{defin}
+
+\begin{thm}[Maximum Principle, see also {\cite[Theorem 5]{Shchepin}}]
+If (\ldots), then the following conditions are equivalent: 
+
+\begin{enumerate}[\upshape (i)]
+\item first item,
+\item second item.
+\end{enumerate}
+\end{thm}
+
+\begin{proof} Observe that
+\begin{align}\label{E:1}
+AAAAAAAAAA &= BBBBBBBBBBB\notag\\
+           &\quad + CCCCCCCCCC\notag\\
+           &= DDDDDDDDDDDDD.
+\end{align}
+Now apply induction on $n$ to \eqref{E:1}.
+\end{proof}
+
+%%%%
+%%%% For many examples of codes of complicated multiline formulas, see
+%%%%   http://journals.impan.pl  ("For authors")
+
+If you want to put the end-of-proof sign after a (non-numbered) formula, use $\backslash$qedhere:
+
+\begin{proof} This follows from
+\begin{gather*}
+BBBBBBBBBBBBBBBB=CCCCCCCCCCCCC,\\
+DDDDDDD-EEEEEEEEEE=0.\qedhere
+\end{gather*}
+\end{proof}
+
+
+
+\begin{prob}
+Is AAAA true?
+\end{prob}
+
+
+
+
+\begin{xrem}
+An unnumbered remark.
+\end{xrem}
+
+
+\begin{mainthm} 
+Here comes the statement of a numbered theorem with a fancy name.
+\end{mainthm}
+
+
+\subsection{Figures}
+Figures must be prepared as eps or pdf files.
+All figures will be printed black and white; the colours will only appear in the online version.
+
+\bigskip
+\footnotesize
+\noindent\textit{Acknowledgments.}
+This research was partly supported by NSF (grant no. XXXX).
+
+\begin{thebibliography}{SK}
+
+%% Use the widest label as parameter.
+
+%% Reference items may be numbered or have labels of your choice.
+%% The author's surname PRECEDES the initial of the first name
+%% The issue number is only given when the issues are paginated separately.
+%% In book titles, first letters are capitalized.
+%% Only journal volume numbers are boldfaced.
+
+%%%%%%%%%%% To ease editing, use normal size:
+
+\normalsize
+\baselineskip=17pt
+
+%%%%%%%%%%%%%
+
+\bibitem[B]{Barlow} 
+Barlow, M. T.: 
+Diffusions on fractals.  
+In: Lectures on Probability Theory and Statistics (Saint-Flour, 1995), 
+Lecture Notes in Math. 1690, Springer, Berlin, 1--121 (1998)
+
+
+\bibitem[G]{Gratzer} 
+Gr\"atzer, G.:
+More Math into \LaTeX.
+4th ed., Springer, Berlin (2007)
+
+
+\bibitem[SK]{SatoKashiwaraKawai}
+Sato, M., Kashiwara, M., Kawai, M.: 
+Linear differential equations of infinite order and theta functions.
+Adv. Math. \textbf{47}, 300--325 (1983)
+
+
+\bibitem[Sh]{Shchepin}
+Shchepin, E. V.:
+On mappings of the two-dimensional sphere.  
+Uspekhi Mat. Nauk \textbf{58}, no.~2, 169--170 (2003) (in Russian); 
+English transl.: Russian Math. Surveys \textbf{58}, 1218--1219 (2003)
+
+\bibitem[S]{Smith} 
+Smith, J.:
+A new upper bound on the cross number.
+arXiv:2056.7895.
+
+
+\bibitem[V]{Verkaar}
+Verkaar, M.:
+Continuous local martingales and stochastic integration in Banach spaces.
+PhD thesis, Univ. of Helsinki (2001)
+\end{thebibliography}
+
+
+\end{document}
