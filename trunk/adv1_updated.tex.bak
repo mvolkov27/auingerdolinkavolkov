@@ -1240,23 +1240,21 @@ semigroup $\mathcal{T}'=\left<T,\cdot,{}^\dag\right>$. Now comparing \eqref{mult
 in M2} with the multiplication and inversion rules in $\mathcal{K}_3$ (see \eqref{operations in C3}), we conclude that
 $\mathcal{T}'/\Hc$ and $\mathcal{K}_3$ are isomorphic as unary semigroups. Hence $\mathcal{K}_3$ is in $\var\Sc$.
 
-For 2) we merely let $\mathrm{GL}_2(\mathcal{K})$, the group of
-all invertible $2\times 2$-matrices over $\mathcal{K}$, play the
-role of $\mathcal{G}$. Since Moore-Penrose inversion on
-$\mathrm{GL}_2(\mathcal{K})$ coincides with usual matrix
-inversion, we observe that $\mathrm{GL}_2(\mathcal{K})$  is a
-unary subsemigroup of $\Sc$. Moreover, since $AA^\dag$ is the
-identity matrix for every invertible matrix $A$, we conclude that,
-with the exception of the identity matrix, the Hermitian
-subsemigroup $\H(\Sc)$ contains only matrices of rank~1, that is,
-$\H(\Sc)\subseteq\mathrm{L}^1_2(\mathcal{K})$, the set of all
-matrices of rank at most~1 with the identity matrix adjoined. By
+For 2) we merely let $\mathrm{GL}_2(\mathcal{K})$, the group of all invertible
+$2\times 2$-matrices over $\mathcal{K}$, play the role of $\mathcal{G}$. Since
+Moore-Penrose inversion on $\mathrm{GL}_2(\mathcal{K})$ coincides with usual
+matrix inversion, we observe that $\mathrm{GL}_2(\mathcal{K})$  is a unary
+subsemigroup of $\Sc$. Moreover, since $AA^\dag$ is the identity matrix for
+every invertible matrix $A$, we conclude that, with the exception of the
+identity matrix, the Hermitian subsemigroup $\H(\Sc)$ contains only matrices of
+rank at most~1, that is, $\H(\Sc)\subseteq\mathrm{L}^1_2(\mathcal{K})$, the set
+of all matrices of rank at most~1 with the identity matrix adjoined. By
 Corollary~\ref{identity for rank 1} the semigroup
-$\langle\mathrm{L}^1_2(\mathcal{K}),\cdot\rangle$ satisfies the
-identity $x^2yx=xyx^2$. Consequently, each group in $\var\H(\Sc)$
-is abelian, while the group $\mathrm{GL}_2(\mathcal{K})$ is
-non-abelian. Thus, $\mathrm{GL}_2(\mathcal{K})$ is contained in
-$\var\Sc$ but is not contained in $\var\H(\Sc)$, as required.
+$\langle\mathrm{L}^1_2(\mathcal{K}),\cdot\rangle$ satisfies the identity
+$x^2yx=xyx^2$. Consequently, each group in $\var\H(\Sc)$ is abelian, while the
+group $\mathrm{GL}_2(\mathcal{K})$ is non-abelian. Thus,
+$\mathrm{GL}_2(\mathcal{K})$ is contained in $\var\Sc$ but is not contained in
+$\var\H(\Sc)$, as required.
 \end{proof}
 
 \begin{Rmk}\label{remark on MP inverse}
@@ -1909,10 +1907,11 @@ solved by the third author~\cite{Vo04}.
 
 \bigskip
 
-\footnotesize \noindent\textit{Acknowledgments.} The second author was supported by Grant No.\ 174019 of the Ministry
-of Science and Technological Development of the Republic of Serbia. The third author acknowledges support from the
-Federal Education Agency of Russia, grant 2.1.1/3537, and from the Russian Foundation for Basic Research, grants
-09-01-12142 and 10-01-00524.
+\footnotesize \noindent\textit{Acknowledgments.} The second author was
+supported by Grant No.\ 174019 of the Ministry of Science and Technological
+Development of the Republic of Serbia. The third author acknowledges support
+from the Ministry for Education and Science of Russia, grant 2.1.1/13995, and
+from the Russian Foundation for Basic Research, grants 10-01-00524.
 
 \begin{thebibliography}{99}
 \frenchspacing
