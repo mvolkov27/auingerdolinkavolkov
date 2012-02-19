@@ -2,7 +2,7 @@
 
 \usepackage{amsmath,amsthm,amssymb}
 \usepackage{url}
-\usepackage{amscd}
+\usepackage{longtable}
 \usepackage{amsfonts}
 \usepackage{eepic}
 \usepackage{amsgen}
@@ -12,13 +12,13 @@
 \usepackage{pstricks,pst-node,pst-text,pst-3d}
 \usepackage[usenames]{color}
 
-\textwidth=16.5cm
+\textwidth=16.75cm
 \oddsidemargin=-1.5cm
 \parindent=0pt
 
 \begin{document}
 
-\begin{tabular}{|p{2cm}|p{1.8cm}|p{4.2cm}|p{4.2cm}|p{4.2cm}|}
+\begin{tabular}{|p{2.2cm}|p{1.8cm}|p{4.2cm}|p{4.2cm}|p{4.2cm}|}
 \hline
 \textbf{Location} & \textbf{Type} & \textbf{In the proofs} & \textbf{In the original} & \textbf{Should be} \\
 \hhline{|=|=|=|=|=|}
@@ -50,11 +50,21 @@ the identities of \dots & As in the proofs
 
 (we accept the change)\\
 \hline
-P.2, line~+18 & Editor's intervention & \dots then so is $u^*$. & \dots then so is $(u)^*$. & As in the original
-(we do not  accept the change)\\
+P.3, line~+18 & Editor's intervention & \dots then so is $u^*$. & \dots then so is $(u)^*$. & As in the original
+(we  \textbf{do not} accept the change)\\
 \hline
-P.2, line~+20 & Editor's intervention &  $u\mapsto u^*$. & $u\mapsto (u)^*$. & As in the original
-(we do not  accept the change)\\
+P.3, line~+20 & Editor's intervention &  $u\mapsto u^*$. & $u\mapsto (u)^*$. & As in the original
+(we \textbf{do not} accept the change)\\
+\hline
+P.5, line~+1 after display (1.1) & Editor's intervention & \dots semigroup that will be quite useful is \dots &
+\dots semigroup that will be quite useful in the sequel is \dots & As in the proofs
+
+(we accept the change)\\
+\hline
+P.5, line~$-$5 & Editor's intervention & \dots has dimension $n-1${\red,} whence \dots &
+\dots has dimension $n-1$ whence \dots & As in the proofs
+
+(we accept the change)\\
 \hline
 \end{tabular}
 
