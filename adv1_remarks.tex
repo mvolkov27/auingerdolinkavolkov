@@ -12,7 +12,39 @@
 \usepackage{pstricks,pst-node,pst-text,pst-3d}
 \usepackage[usenames]{color}
 
-\textwidth=16.75cm
+\DeclareMathOperator{\var}{\mathsf{var}}
+
+\def\cal{\mathcal}
+\def\Ac{{\cal A}}
+\def\Bc{{\cal B}}
+\def\Cc{{\cal C}}
+\def\Dc{\mathrsfs{D}}
+\def\Ec{{\cal E}}
+\def\Fc{{\cal F}}
+\def\Gc{{\cal G}}
+\def\Hc{\mathrsfs{H}}
+\def\Ic{{\cal I}}
+\def\Jc{{\cal J}}
+\def\Kc{{\cal K}}
+\def\Lc{\mathrsfs{L}}
+\def\Mc{{\cal M}}
+\def\Nc{{\cal N}}
+\def\Oc{{\cal O}}
+\def\Pc{{\cal P}}
+\def\Qc{{\cal Q}}
+\def\Rc{\mathrsfs{R}}
+\def\Sc{{\cal S}}
+\def\Tc{{\cal T}}
+\def\Uc{{\cal U}}
+\def\Vc{\mathbf{V}}
+\def\Wc{\mathbf{W}}
+\def\Xc{{\cal X}}
+\def\Yc{{\cal Y}}
+\def\Zc{{\cal Z}}
+
+\def\H{\mathrm H}
+
+\textwidth=17.75cm
 \oddsidemargin=-1.5cm
 \parindent=0pt
 
@@ -50,22 +82,84 @@ the identities of \dots & As in the proofs
 
 (we accept the change)\\
 \hline
+P.3, line +5 & Editor's intervention & $\langle$displayed formula$\rangle$ & $\langle$inline formula$\rangle$
+& As in the proofs
+
+(we accept the change)\\
+\hline
 P.3, line~+18 & Editor's intervention & \dots then so is $u^*$. & \dots then so is $(u)^*$. & As in the original
 (we  \textbf{do not} accept the change)\\
 \hline
 P.3, line~+20 & Editor's intervention &  $u\mapsto u^*$. & $u\mapsto (u)^*$. & As in the original
 (we \textbf{do not} accept the change)\\
 \hline
+P.4, lines 1--2 & Editor's intervention & \dots forming direct products {\red and} taking unary
+subsemigroups \dots & \dots forming direct products, taking unary subsemigroups \dots
+& As in the proofs
+
+(we accept the change)\\
+\hline
+P.4, line $-$2 & Editor's intervention & if $p_{jk}=0$\red{,} & if $p_{jk}=0$;
+& As in the proofs
+
+(we accept the change)\\
+\hline
+P.5, line~+4 & Editor's intervention & If the group $\mathcal G$ involved &
+If the involved group $\mathcal G$ & As in the proofs
+
+(we accept the change)\\
+\hline
+P.5, display (1.1) & Editor's intervention & otherwise\red{,} & otherwise; & As in the proofs
+
+(we accept the change)\\
+\hline
 P.5, line~+1 after display (1.1) & Editor's intervention & \dots semigroup that will be quite useful is \dots &
 \dots semigroup that will be quite useful in the sequel is \dots & As in the proofs
 
 (we accept the change)\\
 \hline
+\end{tabular}
+
+\begin{tabular}{|p{2.2cm}|p{1.8cm}|p{4.2cm}|p{4.2cm}|p{4.2cm}|}
+\hline
+\textbf{Location} & \textbf{Type} & \textbf{In the proofs} & \textbf{In the original} & \textbf{Should be} \\
+\hhline{|=|=|=|=|=|}
 P.5, line~$-$5 & Editor's intervention & \dots has dimension $n-1${\red,} whence \dots &
 \dots has dimension $n-1$ whence \dots & As in the proofs
 
 (we accept the change)\\
 \hline
-\end{tabular}
+P.6, line~$-$16 & Editor's intervention & The following easy observation will be useful as it helps \dots &
+The following easy observation will be useful in the sequel as it helps \dots & As in the proofs
 
+(we accept the change)\\
+\hline
+P.6, line~$-$8 & Editor's intervention & $\H(\Tc)\in\var\H(\Sc)$, and so $\H(\var\Sc)\subseteq\var\H(\Sc)$. &
+$\H(\Tc)\in\var\H(\Sc)$. Since this holds for an arbitrary $\Tc\in\var\Sc$, we conclude that $\H(\var\Sc)\subseteq\var\H(\Sc)$.
+& As in the proofs
+
+(we accept the change)\\
+\hline
+P.7, line~+1 & Editor's intervention & \dots there exists a group $\mathcal{G}\in\Vc\setminus\H(\Vc)$ &
+\dots there exists a group $\mathcal{G}\in\Vc$ for which $\mathcal{G}\notin\H(\Vc)$.
+& As in the proofs
+
+(we accept the change)\\
+\hline
+P.7, line~$-$10 & Editor's intervention & denotes the $n\times n$-matrix & denotes the $n\times n$-matrix of the form
+& As in the proofs
+
+(we accept the change)\\
+\hline
+P.7, matrix $M_n(g)$, entry (4,4) & Editor's intervention & \rule{0pt}{1pt}{\red $\vdots$} (produced by \verb+\vdots+) &
+$\ddots$ (produced by \verb+\ddots+) &
+As in the original (we \textbf{do not} accept the change)\\
+\hline
+P.7, line~$-$8 & Editor's intervention & (This construction is in a sense a combination of those of [3] and [53].) &
+(This construction is in a sense a combination of those of the first and the third authors' papers [3] and [53].)
+& As in the proofs
+
+(we accept the change)\\
+\hline
+\end{tabular}
 \end{document}
