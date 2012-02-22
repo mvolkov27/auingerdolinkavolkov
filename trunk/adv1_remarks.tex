@@ -51,10 +51,25 @@
 
 \begin{document}
 
-\begin{tabular}{|p{2.2cm}|p{1.8cm}|p{4.2cm}|p{4.2cm}|p{4.2cm}|}
+\setlongtables
+\begin{longtable}{|p{2.2cm}|p{1.8cm}|p{4.2cm}|p{4.2cm}|p{4.2cm}|}
+\caption*{\textbf{Proof reading for ``Matrix identities involving multiplication and transposition'' by Auinger et al}}\\
 \hline
 \textbf{Location} & \textbf{Type} & \textbf{In the proofs} & \textbf{In the original} & \textbf{Should be} \\
 \hhline{|=|=|=|=|=|}
+\endfirsthead
+\hline
+\multicolumn{5}{|l|}{\slshape continued from previous page}\\
+\hline
+\textbf{Location} & \textbf{Type} & \textbf{In the proofs} & \textbf{In the original} & \textbf{Should be} \\
+\hhline{|=|=|=|=|=|}
+\endhead
+\hline
+\multicolumn{5}{|r|}{\slshape continued on next page}\\
+\hline
+\endfoot
+\hline
+\endlastfoot
 Throughout the text & Editor's intervention & non{\red-}finitely based &
 nonfinitely based & As in the proofs
 
@@ -116,12 +131,6 @@ P.5, display (1.1) & Editor's intervention & otherwise\red{,} & otherwise; & As 
 
 (we accept the change)\\
 \hline
-\end{tabular}
-
-\begin{tabular}{|p{2.2cm}|p{1.8cm}|p{4.2cm}|p{4.2cm}|p{4.2cm}|}
-\hline
-\textbf{Location} & \textbf{Type} & \textbf{In the proofs} & \textbf{In the original} & \textbf{Should be} \\
-\hhline{|=|=|=|=|=|}
 P.5, line~+1 after display (1.1) & Editor's intervention & \dots semigroup that will be quite
 useful is \dots & \dots semigroup that will be quite useful in the sequel is \dots & As in the proofs
 
@@ -187,6 +196,5 @@ These words already have been used \dots
 & As in the proofs
 
 (we accept the change)\\
-\hline
-\end{tabular}
+\end{longtable}
 \end{document}
