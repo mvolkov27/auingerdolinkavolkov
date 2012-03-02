@@ -14,6 +14,8 @@
 
 \DeclareMathOperator{\var}{\mathsf{var}}
 
+\DeclareSymbolFont{rsfscript}{OMS}{rsfs}{m}{n} \DeclareSymbolFontAlphabet{\mathrsfs}{rsfscript}
+
 \def\cal{\mathcal}
 \def\Ac{{\cal A}}
 \def\Bc{{\cal B}}
@@ -281,10 +283,34 @@ P.15, line~+10 & Editor's intervention &  \dots have recently been obtained &
 
 (we accept the change)\\
 \hline
-P.15, line~$-$15 & Editor's intervention &  \dots for each $a\in S$. &
+P.15, lines $-$20 and $-$19 & Update & We say that $b$ \emph{strictly divides} $a$ and write
+$a\mathrel{{<}_{\Rc}}b$ if $a=bs$ for some $s\in S$ but $b\ne a$ and $b\ne at$ for any $t\in S$. &
+We say that $b$ \emph{strictly divides} $a$ and write $a\mathrel{{<}_{\Rc}}b$ if $a=bs$ for some $s\in S$
+but $b\ne a$ and $b\ne at$ for any $t\in S$. & Remove the whole sentence\\
+\hline
+P.15, lines $-$18 and $-$17 & Update & $\Rc$ is an equivalence relation (known as the \emph{right Green relation}
+in semigroup theory) and $<_{\Rc}$ is transitive and anti-reflexive. &
+$\Rc$ is an equivalence relation (known as the \emph{right Green relation}
+in semigroup theory) and $<_{\Rc}$ is transitive and anti-reflexive. &
+$\Rc$ is an equivalence relation (known as the \emph{right Green relation}
+in semigroup theory).
+
+(Remove the part of the sentence after the clause in parentheses.)\\
+\hline
+P.15, line~$-$16 & Editor's intervention &  \dots for each $a\in S$. &
 \dots for each element $a\in S$. & As in the proofs
 
 (we accept the change)\\
+\hline
+P.15, lines $-$9, $-$8, and $-$7 & Update & Further let $h$ denote the length of the longest possible chain of the form
+$$s_1\mathrel{{<}_{\Rc}}s_2\mathrel{{<}_{\Rc}}\cdots\mathrel{{<}_{\Rc}}s_k.$$ &
+Further let $h$ denote the length of the longest possible chain of the form
+$$s_1\mathrel{{<}_{\Rc}}s_2\mathrel{{<}_{\Rc}}\cdots\mathrel{{<}_{\Rc}}s_k.$$ &
+Remove the whole sentence\\
+\hline
+P.15, line $-$6 & Update & Set $n=h+1$; Lemma~7 in~[37] shows \dots &
+Set $n=h+1$; Lemma~7 in~[37] shows \dots  &
+Set $n={\red |S|}+1$; Lemma~7 in~[37] {\red implies} \dots \\
 \hline
 P.16, line~+3 & Editor's intervention &  This implies that such {\red a} $\mathcal{T}$ \dots &
 This implies that such $\mathcal{T}$ \dots  & As in the proofs
@@ -310,6 +336,9 @@ P.18, line~+1 & Editor's intervention & \rule{0pt}{1pt}{\red A \emph{ring}} \emp
 An \emph{involution of the ring} \dots  & As in the proofs
 
 (we accept the change)\\
+\hline
+P.18, line~+5 & Update & \dots admits an involution \dots &
+\dots admits an involution \dots  & \dots admits a {\red ring} involution \dots\\
 \hline
 P.19, line~$-$1 & Editor's intervention & $\mathrm{GL}_2(\mathcal{K})$ is contained in $\var\Sc$ but not in
 $\var\H(\Sc)$ & $\mathrm{GL}_2(\mathcal{K})$ is contained in $\var\Sc$ but is not contained in
@@ -451,6 +480,9 @@ $A$ is said to be a \emph{Hall matrix} & As in the proofs
 
 (we accept the change)\\
 \hline
+P.29, line~+17 & Update & the name suggested in~\verb+\cite{Kim}+ &
+the name suggested in~\verb+\cite{Kim}+ & the name suggested in~\verb+\cite{Schwarz}+\\
+\hline
 P.30, line~+6 & Editor's intervention & (from the top right to the bottom left corner). &
 (the diagonal from the top right to the bottom left corner). & As in the proofs
 
@@ -464,7 +496,27 @@ P.31, line~+12 & Editor's intervention &  \dots in the latter. &
 P.31, Acknow\-ledgements, line~$-$1 & Typo (our fault) & \dots grant{\red s} 10-01-00524. &
 \dots grant{\red s} 10-01-00524. & \dots grant 10-01-00524.\\
 \hline
-P.32, item [27], line~+1 & Typo (our fault) & The semigroup{\red s} of Hall relations. &
-The semigroup{\red s} of Hall relations. & The semigroup of Hall relations.\\
+P.32, item [27] & Update & \verb+\bibitem{Kim}+
+
+Kim, K. H.: The semigroups of Hall relations. Semigroup Forum \textbf{9}, 253--260 (1974)
+Zbl 0292.20061 MR 0376910&
+\verb+\bibitem{Kim}+
+
+Kim, K. H.: The semigroups of Hall relations. Semigroup Forum \textbf{9}, 253--260 (1974)&
+Remove this item\\
+\hline
+P.33, item [45], line +2 & Typo (our fault) & (200{\red 6}) &
+(200{\red 6})& (2007)\\
+\hline
+P.33, between items [51] and [52]& Update &\multicolumn{3}{p{12.6cm}|}{Insert new item:
+
+{\tt $\backslash$bibitem\{Schwarz\}}
+
+Schwarz, \v{S}.: The semigroup of fully indecomposable relations and
+Hall relations. Czechoslovak Math. J. \textbf{23}, 151--163 (1973) Zbl 0261.20057  MR 0316612}\\
+\hline
+P.34, item [55], line +2 & Typo & Zb{\red k} 1074.20036 &
+&
+Zbl 1074.20036\\
 \end{longtable}
 \end{document}
