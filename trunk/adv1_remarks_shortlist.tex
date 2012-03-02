@@ -1,0 +1,180 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{url}
+\usepackage{longtable}
+\usepackage{amsfonts}
+\usepackage{eepic}
+\usepackage{amsgen}
+\usepackage{eucal}
+\usepackage{times}
+\usepackage{hhline}
+\usepackage{pstricks,pst-node,pst-text,pst-3d}
+\usepackage{color}
+
+\DeclareMathOperator{\var}{\mathsf{var}}
+
+\DeclareSymbolFont{rsfscript}{OMS}{rsfs}{m}{n} \DeclareSymbolFontAlphabet{\mathrsfs}{rsfscript}
+
+\def\cal{\mathcal}
+\def\Ac{{\cal A}}
+\def\Bc{{\cal B}}
+\def\Cc{{\cal C}}
+\def\Dc{\mathrsfs{D}}
+\def\Ec{{\cal E}}
+\def\Fc{{\cal F}}
+\def\Gc{{\cal G}}
+\def\Hc{\mathrsfs{H}}
+\def\Ic{{\cal I}}
+\def\Jc{{\cal J}}
+\def\Kc{{\cal K}}
+\def\Lc{\mathrsfs{L}}
+\def\Mc{{\cal M}}
+\def\Nc{{\cal N}}
+\def\Oc{{\cal O}}
+\def\Pc{{\cal P}}
+\def\Qc{{\cal Q}}
+\def\Rc{\mathrsfs{R}}
+\def\Sc{{\cal S}}
+\def\Tc{{\cal T}}
+\def\Uc{{\cal U}}
+\def\Vc{\mathbf{V}}
+\def\Wc{\mathbf{W}}
+\def\Xc{{\cal X}}
+\def\Yc{{\cal Y}}
+\def\Zc{{\cal Z}}
+
+\def\H{\mathrm H}
+\def\P{\mathrm P}
+
+\textwidth=18.71cm
+\oddsidemargin=-1.5cm
+\parindent=0pt
+
+\begin{document}
+
+\setlongtables
+\begin{longtable}{|p{2.2cm}|p{1.8cm}|p{4.2cm}|p{4.2cm}|p{4.2cm}|}
+\caption*{\textbf{Proof reading for ``Matrix identities involving multiplication and transposition'' by Auinger et al}}\\
+\hline
+\textbf{Location} & \textbf{Type} & \textbf{In the proofs} & \textbf{In the original} & \textbf{Should be} \\
+\hhline{|=|=|=|=|=|}
+\endfirsthead
+\hline
+\multicolumn{5}{|l|}{\slshape continued from previous page}\\
+\hline
+\textbf{Location} & \textbf{Type} & \textbf{In the proofs} & \textbf{In the original} & \textbf{Should be} \\
+\hhline{|=|=|=|=|=|}
+\endhead
+\hline
+\multicolumn{5}{|r|}{\slshape continued on next page}\\
+\hline
+\endfoot
+\hline
+\endlastfoot
+P.1, footnote, line~+4 & Update & 21000 & 21000 & 21101\\
+\hline
+P.1, footnote, line~+5 & Update & Faculty of Mathematics and Mechanics, Ural State University &
+Faculty of Mathematics and Mechanics, Ural State University & Institute of Mathematics and Computer Science, Ural Federal University\\
+\hline
+P.1, footnote, line~+6 & Update & 620083 & 620083 & 620000\\
+\hline
+P.2, line~+21 & Typo (our fault) & \dots may be {\red a} summarized \dots &
+\dots may be {\red a} summarized \dots & \dots may be summarized \dots\\
+\hline
+P.2, Theorem, line~+1 & Editor's intervention & \rule{0pt}{1pt}{\red None} of {\red the} following sets of matrix identities admits
+{\red a} finite identity basis: &
+Each of following sets of matrix identities admits no finite identity basis: & We quite agree with moving the negation
+into the subject but according to standards of English grammar, when the sense is plural (as indicated by a plural noun
+or pronoun in the following prepositional phrase---``none of [plural entity]"), ``none'' is plural. So the phrase should be:
+
+None of the following sets of matrix identities admit a finite identity basis: \\
+\hline
+P.3, line~+18 & Editor's intervention & \dots then so is $u^*$. & \dots then so is $(u)^*$. & As in the original
+(we  \textbf{\red do not} accept the change)\\
+\hline
+P.3, line~+20 & Editor's intervention &  $u\mapsto u^*$. & $u\mapsto (u)^*$. & As in the original
+(we \textbf{\red do not} accept the change)\\
+\hline
+P.3, line~$-$3 & Typo (our fault) & A variety is {\red is} said to be \dots &
+A variety is {\red is} said to be \dots & A variety is said to be \dots\\
+\hline
+P.7, matrix $M_n(g)$, entry (4,4) & Editor's intervention & \rule{0pt}{1pt}{\red $\vdots$} (produced by \verb+\vdots+) &
+$\ddots$ (produced by \verb+\ddots+) &
+As in the original (we \textbf{\red do not} accept the change)\\
+\hline
+P.11, line~+5 & Editor's intervention & \dots to
+${\red (1,2,\ldots,r,\ldots,1,2,\ldots,r)^t}$ {\red where} the block $1,2,\dots,r$ occurs
+$r$ times.
+
+& \dots to the transpose of the row
+$(1,2,\ldots,r,\ldots,1,2,\ldots,r)$ in which the block $1,2,\dots,r$ occurs
+$r$ times.
+& We \textbf{\red do not} accept the change in the proposed form. The notation $(\dots)^t$
+for the transpose is inconsistent with the notation elsewhere in the paper. We suggest:
+
+\dots to the transpose of $(1,2,\ldots,r,\ldots,1,2,\ldots,r)$ where the block $1,2,\dots,r$ occurs
+$r$ times.\\
+\hline
+P.15, lines $-$20 and $-$19 & Update & We say that $b$ \emph{strictly divides} $a$ and write
+$a\mathrel{{<}_{\Rc}}b$ if $a=bs$ for some $s\in S$ but $b\ne a$ and $b\ne at$ for any $t\in S$. &
+We say that $b$ \emph{strictly divides} $a$ and write $a\mathrel{{<}_{\Rc}}b$ if $a=bs$ for some $s\in S$
+but $b\ne a$ and $b\ne at$ for any $t\in S$. & Remove the whole sentence\\
+\hline
+P.15, lines $-$18 and $-$17 & Update & $\Rc$ is an equivalence relation (known as the \emph{right Green relation}
+in semigroup theory) and $<_{\Rc}$ is transitive and anti-reflexive. &
+$\Rc$ is an equivalence relation (known as the \emph{right Green relation}
+in semigroup theory) and $<_{\Rc}$ is transitive and anti-reflexive. &
+$\Rc$ is an equivalence relation (known as the \emph{right Green relation}
+in semigroup theory).
+
+(Remove the part of the sentence after the clause in parentheses.)\\
+\hline
+P.15, lines $-$9, $-$8, and $-$7 & Update & Further let $h$ denote the length of the longest possible chain of the form
+$$s_1\mathrel{{<}_{\Rc}}s_2\mathrel{{<}_{\Rc}}\cdots\mathrel{{<}_{\Rc}}s_k.$$ &
+Further let $h$ denote the length of the longest possible chain of the form
+$$s_1\mathrel{{<}_{\Rc}}s_2\mathrel{{<}_{\Rc}}\cdots\mathrel{{<}_{\Rc}}s_k.$$ &
+Remove the whole sentence\\
+\hline
+P.15, line $-$6 & Update & Set $n=h+1$; Lemma~7 in~[37] shows \dots &
+Set $n=h+1$; Lemma~7 in~[37] shows \dots  &
+Set $n={\red |S|}+1$; Lemma~7 in~[37] {\red implies} \dots \\
+\hline
+P.18, line~+5 & Update & \dots admits an involution \dots &
+\dots admits an involution \dots  & \dots admits a {\red ring} involution \dots\\
+\hline
+P.24, line~+7 & Typo (our fault) + Editor's intervention & \rule{0pt}{12pt}$b^{\ell_1}a^{k_1}\cdots b^{\ell_{t-1}}a^{k_{t-1}}b^{{\red k}_t}${\red,} &
+\rule{0pt}{12pt}$b^{\ell_1}a^{k_1}\cdots b^{\ell_{t-1}}a^{k_{t-1}}b^{{\red k}_t}$ &
+\rule{0pt}{1pt}$b^{\ell_1}a^{k_1}\cdots b^{\ell_{t-1}}a^{k_{t-1}}b^{\ell_t}$,
+\\
+\hline
+P.29, line~+17 & Update & the name suggested in~\verb+\cite{Kim}+ &
+the name suggested in~\verb+\cite{Kim}+ & the name suggested in~\verb+\cite{Schwarz}+\\
+\hline
+P.31, Acknow\-ledgements, line~$-$1 & Typo (our fault) & \dots grant{\red s} 10-01-00524. &
+\dots grant{\red s} 10-01-00524. & \dots grant 10-01-00524.\\
+\hline
+P.32, item [27] & Update & \verb+\bibitem{Kim}+
+
+Kim, K. H.: The semigroups of Hall relations. Semigroup Forum \textbf{9}, 253--260 (1974)
+Zbl 0292.20061 MR 0376910&
+\verb+\bibitem{Kim}+
+
+Kim, K. H.: The semigroups of Hall relations. Semigroup Forum \textbf{9}, 253--260 (1974)&
+Remove this item\\
+\hline
+P.33, item [45], line +2 & Typo (our fault) & (200{\red 6}) &
+(200{\red 6})& (2007)\\
+\hline
+P.33, between items [51] and [52]& Update &\multicolumn{3}{p{12.6cm}|}{Insert new item:
+
+{\tt $\backslash$bibitem\{Schwarz\}}
+
+Schwarz, \v{S}.: The semigroup of fully indecomposable relations and
+Hall relations. Czechoslovak Math. J. \textbf{23}, 151--163 (1973) Zbl 0261.20057  MR 0316612}\\
+\hline
+P.34, item [55], line +2 & Typo & Zb{\red k} 1074.20036 &
+&
+Zbl 1074.20036\\
+\end{longtable}
+\end{document}
