@@ -1,4 +1,4 @@
-% Version of May 13, 2012
+% Version of May 16, 2012
 
 \documentclass[preprint,1p,times]{elsarticle}
 
@@ -47,6 +47,7 @@
 \newtheorem{Problem}{Problem}[section]
 
 % DEFINITIONS
+\def\red#1{\textcolor{red}{#1}}
 \def\rrbb{{-\!\!\!-\!\!\!-\!\!\!-\!\!\!-}}
 \def\softd{{\leavevmode\setbox1=\hbox{d}%
      \hbox to 1.05\wd1{d\kern-0.4ex{\char039}\hss}}}
@@ -659,11 +660,13 @@ that
 where $\mathbf{u}:=\underset{k}{\bullet}\!\!\!{\rrbb}\!\!\!\underset{u'_1}{\bullet}$ is a  through string of $\alpha$,
 $\mathbf{v}:=\underset{u_s}{\bullet}\!\!\!{\rrbb}\!\!\!\underset{l'}{\bullet}$ is a  through string of $\beta$, all
 $\underset{u_i}{\bullet}\!\!\!{\rrbb}\!\!\!\underset{v_i}{\bullet}$ are  outer strings of $\beta$ and all
-$\underset{v'_{i}}{\bullet}\!\!\!{\rrbb}\!\!\!\!\underset{u'_{i+1}}{\bullet}$ are inner strings of $\alpha$. It follows that $u_i\nequiv
-v_i\nequiv u_{i+1} \bmod\ 2$ and therefore $u_i\equiv u_{i+1} \bmod\ 2$ for all $i$ whence $u_1\equiv u_s\bmod\ 2$. Consequently,
-$\mathbf{s}$ is even if and only of $\mathbf u$ and $\mathbf v$ are both even or both odd while $\mathbf s$ is odd if and only if exactly
-one of $\mathbf u$ and $\mathbf v$ is even. In particular, the set $\mathfrak{EA}_n$ of all even members of $\A_n$ forms a submonoid of
-$\A_n$. Since each projection is even, $\mathfrak{EA}_n$ contains the Hermitian subsemigroup $\H(\A_n)$.
+$\underset{v'_{i}}{\bullet}\!\!\!{\rrbb}\!\!\!\!\underset{u'_{i+1}}{\bullet}$ are inner strings of $\alpha$. It is easy to see that for
+each outer string $\{i,j\}$ and each inner string $\{k',l'\}$ of any element $\gamma$ of $\A_n$ the inequalities $i\nequiv j\bmod\ 2$ and
+$k\not\equiv l\bmod\ 2$ hold. It follows that $u_i\nequiv v_i\nequiv u_{i+1} \bmod\ 2$ and therefore $u_i\equiv u_{i+1} \bmod\ 2$ for all
+$i$ whence $u_1\equiv u_s\bmod\ 2$. Consequently, $\mathbf{s}$ is even if and only if $\mathbf u$ and $\mathbf v$ are both even or both odd
+while $\mathbf s$ is odd if and only if exactly one of $\mathbf u$ and $\mathbf v$ is even. In particular, the set $\mathfrak{EA}_n$ of all
+even members of $\A_n$ forms a submonoid of $\A_n$. Since each projection is even, $\mathfrak{EA}_n$ contains the Hermitian subsemigroup
+$\H(\A_n)$.
 
 
 Next we are going to determine the maximal subgroups of $\mathfrak{EA}_n$. For this purpose we first note that the rank characterizes
