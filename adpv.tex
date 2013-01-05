@@ -1,0 +1,494 @@
+\documentclass[smallextended]{svjour3}
+\usepackage{mathptmx}      % use Times fonts if available on your TeX system
+%
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{url}
+\usepackage{eucal}
+
+\journalname{Semigroup Forum}
+
+\def\om{\omega}
+\def\Rc{\mathrel{\mathscr{R}}}
+\def\Lc{\mathrel{\mathscr{L}}}
+
+\newcommand{\sgp}{semi\-group}
+\newcommand{\sgps}{semi\-groups}
+\newcommand{\is}{involutory semi\-group}
+\newcommand{\iss}{involutory semi\-groups}
+\newcommand{\fis}{finite involutory semi\-group}
+\newcommand{\fiss}{finite involutory semi\-groups}
+\newcommand{\fs}{finite \sgp}
+\newcommand{\fss}{finite \sgps}
+\newcommand{\fus}{finite unary \sgp}
+\newcommand{\fuss}{finite unary \sgps}
+\newcommand{\fb}{finitely based}
+\newcommand{\fbp}{finite basis problem}
+\newcommand{\fg}{finitely generated}
+\newcommand{\nfb}{non\-finitely based}
+\newcommand{\infb}{inherently non\-finitely based}
+\newcommand{\TSL}{\ensuremath{\mathcal{T\kern-.5pt S\kern-.5pt L}}}
+\newcommand{\TB}{\ensuremath{\mathcal{T\kern-.5pt B}_2^1}}
+\newcommand{\FI}{\ensuremath{\mathcal{F\kern-.3pt I}}}
+
+
+\newtheorem{Thm}{Theorem}[section]
+\newtheorem{Prop}[Thm]{Proposition}
+\newtheorem{Lemma}[Thm]{Lemma}
+\newtheorem{Def}{Definition}[section]
+\newtheorem{Res}[Thm]{Result}
+\newtheorem{Cor}[Thm]{Corollary}
+\newtheorem{Example}[Thm]{Example}
+\newtheorem{Examples}[Thm]{Examples}
+\newtheorem{Conjecture}[Thm]{Conjecture}
+\newtheorem{Not}[Thm]{Notation}
+
+\renewcommand{\theThm}{\thesection.\arabic{Thm}}
+
+\DeclareMathOperator{\var}{\mathsf{var}}
+
+\begin{document}
+
+\title{Unary enhancements\\ of inherently non-finitely based semigroups}
+\author{K.~Auinger \and I.~Dolinka \and T.~V.~Pervukhina \and M.~V.~Volkov}
+
+\institute{K.~Auinger \at Fakult\"at f\"ur Mathematik, Universit\"at Wien, Nordbergstrasse 15,  A-1090 Wien, Austria\\
+\email{karl.auinger@univie.ac.at} \and
+I.~Dolinka \at Department of Mathematics and Informatics, University of Novi Sad, Trg Dositeja Obradovi\'ca 4, 21101 Novi Sad, Serbia\\
+\email{dockie@dmi.uns.ac.rs} \and
+T.~V.~Pervukhina \at Institute of Mathematics and Computer Science, Ural Federal University, Lenina 51, 620000 Ekaterinburg, Russia\\
+\email{tsungirl@yandex.ru} \and
+M.~V.~Volkov \at Institute of Mathematics and Computer Science, Ural Federal University, Lenina 51, 620000 Ekaterinburg, Russia\\
+\email{mikhail.volkov@usu.ru}}
+
+
+\date {Received: / Accepted}
+
+\maketitle
+
+\begin{abstract}
+This paper is a supplement to~\cite{ADV:2012}, more precisely, to Subsection 2.2 of~\cite{ADV:2012} dealing with \infb\ \iss. We exhibit a
+simple condition under which a finite \is\ whose \sgp\ reduct is \infb\ is also \infb\ as a unary \sgp. As applications, we get both
+already known and new examples of \infb\ \iss. We also show that for finite regular semigroups, our condition is not only sufficient but
+also necessary for the property of being \infb\ to persist. This leads to an algorithmic description of regular \infb\ \iss.
+
+\keywords{\is\ \and \infb\ \sgp\ \and twisted semilattice \and twisted Brandt monoid \and regular semigroup \and matrix semigroup}
+\subclass{20M07 \and 20M17 \and 20M25}
+\end{abstract}
+
+\section{Background and overview}
+
+The \fbp, that is the problem of classifying \sgps\ according to the finite basability of their identities, has been intensively explored
+since the 1960s. Since the 1970s, the same problem has become investigated for \sgps\ endowed with an additional unary operation $x\mapsto
+x^*$; such structures are commonly called \emph{unary \sgps}.
+
+If $\mathcal{S}=\langle S,\cdot,{}^*\rangle$ is a unary \sgp, then the (plain) \sgp\ $\langle S,\cdot\rangle$ is called the (\emph{\sgp})
+\emph{reduct} of $\mathcal{S}$. It is quite natural to ask how the answer to the \fbp\ for a given unary \sgp\ relates to the finite
+basability of the identities of its reduct. The question turns out to be somewhat delicate. On the one hand, when we enhance the vocabulary
+of the equational language by adding a unary operation, the expressive power of the language increases. Hence $\mathcal{S}$ usually has
+more identities than $\langle S,\cdot\rangle$ so that the former may have more chance to become \nfb. On the other hand, the inference
+power of the language increases too. Hence one can imagine the situation when some identity of $\langle S,\cdot\rangle$  does not follow
+from an identity system $\Sigma$ as a plain identity but follows from $\Sigma$ when treated as a unary identity. This indicates that
+$\mathcal{S}$ may be \fb\ even if $\langle S,\cdot\rangle$ is not. The cumulative effect of the trade-off between increased expressivity
+and increased inference power is hard to predict in general, and both possible outcomes indeed occur. This means that there exist unary
+\sgps, even groups $\mathcal{G}=\langle G;\cdot,{}^{-1}\rangle$ with inversion as the unary operation, such that $\mathcal{G}$ is \fb\
+[\nfb] as a group while its reduct $\langle G;\cdot\rangle$ is \nfb\ [respectively, \fb] as a plain \sgp. See \cite[Section~2]{Volkov:2001}
+for concrete examples (known since the 1970s), references and a discussion.
+
+Much attention has been paid to the restriction of the \fbp\ to the class of \fss, in both plain and unary settings, see, e.g., the survey
+\cite{Volkov:2001}. Therefore it appears a bit surprising that the above question about the relation between the finite basability of a
+unary \sgp\ and of its reduct has not been systematically explored in the realm of \fss. To the best of our knowledge, the first example of
+a \nfb\ \fus\ whose reduct is \fb\ was constructed only in~1998, see~\cite{Lawrence&Willard:1998}. The unary operation used
+in~\cite{Lawrence&Willard:1998} was rather ad hoc, and similar examples with well behaved unary operations (including an example of a \nfb\
+\fis\ with \fb\ reduct) have only recently appeared in \cite{Jackson&Volkov:2010}. The `opposite' examples (of \fb\ \fuss\ with \nfb\
+reducts) are not yet known.
+
+For \fss, the following strengthening of the property of being \nfb\ have been successfully studied. Recall that a variety $\mathbf{V}$ of
+[unary] \sgps\ is called \emph{locally finite} if every \fg\ [unary] \sgp\ in $\mathbf{V}$ is finite. A finite [unary] \sgp\ is said to be
+\emph{\infb} (INFB for short) if it is not contained in any locally finite \fb\ variety of [unary] \sgps. Since the variety generated by a
+finite [unary] \sgp\ is known to be locally finite, an INFB [unary] \sgp\ certainly is \nfb. In fact, the property of being INFB is much
+stronger than the property of being \nfb\ and also behaves more regularly, see \cite{Volkov:2001} for details.
+
+Sapir~\cite{Sapir:1987} has given an efficient (in the algorithmic sense of the word) description of INFB \sgps. INFB unary \sgps\ have
+been investigated in~\cite{Dolinka:2010,ADV:2012} where some sufficient conditions for a \fis\ to be INFB have been found. Again, in this
+situation it is quite natural to ask what happens when one passes from a \fus\ to its reduct. The aforementioned example
+of~\cite{Lawrence&Willard:1998} is in fact INFB so that in general an INFB unary \sgp\ may have a \fb\ reduct. This is however impossible
+for a \fis; moreover, it is easy to verify (see Lemma~\ref{easy} below) that the reduct of an INFB \is\ must be INFB. The converse is not
+true as first observed in~\cite{Sapir:1993}, and it is this circumstance that gives rise to the specific question addressed in the present
+paper: when does an involution $x\mapsto x^*$ defined on an INFB \sgp\ $\langle S,\cdot\rangle$ preserve the property of being INFB in the
+sense that the resulting \is\ $\mathcal{S}=\langle S,\cdot,{}^*\rangle$ is INFB as a unary \sgp?  We show (Theorem~\ref{twisted}) that this
+is the case whenever the variety generated by $\mathcal{S}$ contains a certain 3-element \is\ $\TSL$ (twisted semilattice). This result has
+several applications: first, we give new, easy and uniform proofs for some examples of INFB \iss\ found in~\cite{ADV:2012}; second, we
+exhibit a further series of INFB \iss. We also show (Theorem~\ref{regular}) that if $\langle S,\cdot\rangle$ is a finite regular \sgp, then
+the presence of the 3-element twisted semilattice $\TSL$ in the variety generated by $\mathcal{S}$ is not only sufficient but also
+necessary for the property of being INFB to persist. Combined with Sapir's result, this leads to an efficient description of regular INFB
+\iss.
+
+\section{Preliminaries}
+\label{sec:preliminaries}
+
+We assume the reader's acquaintance with basic concepts of universal algebra such as the notion of a variety and the HSP-theorem, see,
+e.g., \cite[Chapter~II]{BuSa81}. Section~\ref{sec:regular} also requires some knowledge of Green's relations, cf.~\cite[Chapter~2]{how}.
+
+A unary \sgp\ $\mathcal{S}=\langle S,\cdot,{}^*\rangle$ is called an \emph{\is} if it satisfies the identities
+\begin{equation}
+\label{eq:invlution} (xy)^*=y^*x^* \quad \text{ and  }\quad (x^*)^*=x,
+\end{equation}
+in other words, if the unary operation $x\mapsto x^*$ is an involutory anti-automorphism of the reduct $\langle S,\cdot\rangle$.
+
+The \emph{free \is} $\FI(X)$ on a given alphabet $X$ can be constructed as follows.  Let $\overline{X}=\{x^*\mid x\in X\}$ be a disjoint
+copy of $X$. We refer to the elements of $X$ as \emph{plain letters} and to the elements of $\overline{X}$ as \emph{starred letters}.
+Define $(x^*)^*=x$ for all $x^*\in \overline{X}$. Then $\FI(X)$ is the free \sgp\ $(X\cup\overline{X})^+$ endowed with the involution
+defined by
+$$(x_1\cdots x_m)^* = x_m^*\cdots x_1^*$$
+for all $x_1,\dots,x_m\in X\cup \overline{X}$. We refer to elements of $\FI(X)$ as \emph{involutory words over $X$} while elements of the
+free semigroup $X^+$ will be referred to as \emph{plain words over $X$}.
+
+If an \is\ $\mathcal{T}=\langle T,\cdot,{}^*\rangle$ is generated by a set $Y\subseteq T$, then every element in $\mathcal{T}$ can be
+represented by an involutory word over $Y$ and thus by a plain word over $Y\cup\overline{Y}$ where $\overline{Y}=\{y^*\mid y\in Y\}$. Hence
+the reduct $\langle T,\cdot\rangle$ is generated by the set $Y\cup\overline{Y}$; in particular, $\mathcal{T}$ is \fg\ if and only if so is
+$\langle T,\cdot\rangle$. This observation immediately leads to the following fact already mentioned in the introduction.
+
+\begin{Lemma}
+\label{easy} If an \is\ $\mathcal{S}=\langle S,\cdot,{}^*\rangle$ is \infb, then so is its reduct $\langle S,\cdot\rangle$.
+\end{Lemma}
+
+\begin{proof}
+Arguing by contradiction, assume that $\langle S,\cdot\rangle$ is not INFB. Then $\langle S,\cdot\rangle$ belongs to a locally finite plain
+\sgp\ variety defined by a finite identity system $\Sigma$. Consider the variety $\mathbf{V}$ of \iss\ defined by the identities
+\eqref{eq:invlution} and $\Sigma$. Clearly, $\mathbf{V}$ is \fb\ and $\mathcal{S}\in\mathbf{V}$. If $\mathcal{T}=\langle
+T,\cdot,{}^*\rangle$ is a \fg\ \is\ from $\mathbf{V}$, the reduct $\langle T,\cdot\rangle$ is a \fg\ plain \sgp\ by the observation
+preceding the formulation of the lemma. Since the reduct satisfies the identities in $\Sigma$ and $\Sigma$ defines a locally finite plain
+\sgp\ variety, we conclude that the base set $T$ is finite. Hence the variety $\mathbf{V}$ is locally finite and $\mathcal{S}$ belongs to a
+locally finite \fb\ variety, a contradiction.
+\end{proof}
+
+As mentioned, the converse of Lemma~\ref{easy} is not true in general. For an example, consider the well known \emph{Brandt monoid}
+$\langle B_2^1,\cdot\rangle$, where $B_2^1$ is the set of the following six integer $2\times 2$-matrices:
+$$\begin{pmatrix} 0 & 0\\ 0 & 0\end{pmatrix},\
+\begin{pmatrix} 1 & 0\\ 0 & 0\end{pmatrix},\
+\begin{pmatrix} 0 & 1\\ 0 & 0\end{pmatrix},\
+\begin{pmatrix} 0 & 0\\ 1 & 0\end{pmatrix},\
+\begin{pmatrix} 0 & 0\\ 0 & 1\end{pmatrix},\
+\begin{pmatrix} 1 & 0\\ 0 & 1\end{pmatrix},$$
+and the binary operation $(A_1,A_2)\mapsto A_1\cdot A_2$ is the usual matrix multiplication. It is known
+\cite[Corollary~6.1]{sapirburnside} that the Brandt monoid is INFB (this was in fact the very first example of an INFB \sgp). The Brandt
+monoid admits a natural involution, namely, the usual matrix transposition $A\mapsto A^T$. However, the \is\ $\langle
+B_2^1,\cdot,{}^T\rangle$ is not INFB as shown in~\cite{Sapir:1993}. Further examples can be found in~\cite{ADV:2012}: if $\mathcal{K}$ is a
+finite field and $\mathrm{M}_n(\mathcal{K})$ stands for the set of all $n\times n$-matrices over $\mathcal{K}$, then the \sgp\
+$\langle\mathrm{M}_n(\mathcal{K}),\cdot\rangle$ is INFB for any $n\ge 2$ by \cite[Corollary~6.2]{sapirburnside} while the \is\
+$\langle\mathrm{M}_2(\mathcal{K}),\cdot,{}^T\rangle$ is not INFB if the number of elements in $\mathcal{K}$ leaves reminder~3 when divided
+by~4.
+
+Thus, not every involution defined on an INFB \sgp\ preserves the property of being INFB, and we are looking towards a classification of
+`INFB-preserving' involutions. Our main tool is the following result, which is Theorem 2.3 in~\cite{ADV:2012}. Recall the notions that
+appear in its formulation. Let $x_1,x_2,\dots,x_n,\dots$ be a sequence of letters. The sequence $\{Z_n\}_{n=1,2,\dots}$ of \emph{Zimin
+words} is defined inductively by $Z_1=x_1$, $Z_{n+1}=Z_nx_{n+1}Z_n$. We say that an involutory word $v$ is an \emph{involutory isoterm for
+a unary semigroup $\mathcal{S}$} if the only involutory word $v'$ such that $\mathcal{S}$ satisfies the \is\ identity $v=v'$ is the word
+$v$ itself.
+
+\begin{Thm}
+\label{Theorem 2.2} Let $\mathcal{S}$ be a \fis. If all Zimin words are involutory isoterms for $\mathcal{S}$, then $\mathcal{S}$ is \infb.
+\end{Thm}
+
+\section{Main result and its applications}
+\label{sec:main}
+
+Recall that \sgps\ satisfying both $xy=yx$ and $x^2=x$ are called \emph{semilattices}. An \is\ $\mathcal{S}=\langle S,\cdot,{}^*\rangle$
+whose reduct $\langle S,\cdot\rangle$ is a semilattice with 0 is said to be a \emph{twisted semilattice} if 0 is the only fixed point of
+the involution $x\mapsto x^*$. This class of \iss\ was first considered in~\cite{Fajt}. It is easy to see that the minimum non-trivial
+object in this class is the 3-element twisted semilattice $\TSL=\langle\{e,f,0\},\cdot,{}^*\rangle$ in which $e^2=e$, $f^2=f$ and all other
+products are equal to $0$, while the unary operation is defined by $e^*=f$, $f^*=e$, and $0^*=0$.
+
+If $ \mathcal{S}$ is an \is, we denote by $\var\mathcal{S}$ the variety generated by $\mathcal{S}$.
+
+\begin{Thm}
+\label{twisted} Let $\mathcal{S}=\langle S,\cdot,{}^*\rangle$ be a \fis\ such that $\TSL\in\var\mathcal{S}$. If the reduct $\langle
+S,\cdot\rangle$ is \infb, then so is $\mathcal{S}$.
+\end{Thm}
+
+\begin{proof}
+By Theorem~\ref{Theorem 2.2} we only have to show that $\mathcal{S}$ satisfies no non-trivial \is\ identity of the form $Z_n=z$. If $z$ is
+a plain word, we can refer to~\cite[Proposition~7]{sapirburnside} according to which the INFB \sgp\ $\langle S,\cdot\rangle$ satisfies no
+non-trivial plain \sgp\ identity of the form $Z_n=z$. Now suppose that $\mathcal{S}$ satisfies an identity $Z_n=z$ such that the involutory
+word $z$ is not a plain word. This means that $z$ contains a starred letter. Since $\TSL\in\var\mathcal{S}$, the identity $Z_n=z$ holds in
+$\TSL$. Substitute the element $e$ of $\TSL$ for all plain letters occurring in $Z_n$ and $z$. Since $e^2=e$, the value of the word $Z_n$
+under this substitution equals $e$. On the other hand, since $z$ contains a starred letter, the value of $z$ is a product involving
+$e^*=f$, and every such product is equal to either $f$ or 0. This is a contradiction.
+\end{proof}
+
+As for applications of Theorem~\ref{twisted}, we first give simplified and uniform proofs for two important results from \cite{ADV:2012}.
+To start with, consider the \emph{twisted Brandt monoid} $\TB=\langle B_2^1,\cdot,{}^D\rangle$ arising when one endows the Brandt monoid
+$\langle B_2^1,\cdot\rangle$ with the unary operation $A\mapsto A^D$ that fixes the matrices $\left(\begin{smallmatrix} 0 & 0\\ 0 &
+0\end{smallmatrix}\right),\ \left(\begin{smallmatrix} 0 & 1\\ 0 & 0\end{smallmatrix}\right),\ \left(\begin{smallmatrix} 0 & 0\\ 1 &
+0\end{smallmatrix}\right),\ \left(\begin{smallmatrix} 1 & 0\\ 0 & 1\end{smallmatrix}\right)$ and swaps each of the matrices
+$\left(\begin{smallmatrix}1 & 0\\ 0 & 0\end{smallmatrix}\right),\ \left(\begin{smallmatrix} 0 & 0\\ 0 & 1\end{smallmatrix}\right)$ with the
+other one. Observe that this unary operation is just the reflection with respect to the secondary diagonal (from the top right to the
+bottom left corner). The reflection (called the \emph{skew transposition}) makes sense for every square matrix and is in fact an involution
+of the \sgp\ $\langle\mathrm{M}_n(\mathcal{K}),\cdot\rangle$; this follows, for instance, from the observation that for every matrix
+$A\in\mathrm{M}_n(\mathcal{K})$, one has $A^D=JA^TJ$, where $J$ is the $n\times n$-matrix with 1s on the secondary diagonal and 0s
+elsewhere. It is a bit surprising that even though the \iss\ $\langle\mathrm{M}_n(\mathcal{K}),\cdot,{}^D\rangle$ and
+$\langle\mathrm{M}_n(\mathcal{K}),\cdot,{}^T\rangle$ are isomorphic (under the map $A\mapsto JAJ$) and the set $B_2^1$ is closed under both
+the usual transposition and the skew one, the involutary sub\sgps\ $\TB=\langle B_2^1,\cdot,{}^D\rangle$ and $\langle
+B_2^1,\cdot,{}^T\rangle$ are essentially different. Indeed, the latter is not INFB (see Section~\ref{sec:preliminaries}) while the former
+is, as the following corollary reveals.
+
+\begin{Cor}[{\mdseries\cite[Corollary 2.7]{ADV:2012}}]
+\label{twisted Brandt} The twisted Brandt monoid $\TB$ is inherently \nfb.
+\end{Cor}
+
+\begin{proof}
+As already mentioned, the reduct $\langle B_2^1,\cdot\rangle$ of $\TB$ is INFB by~\cite[Corollary~6.1]{sapirburnside}. The matrices
+$\left(\begin{smallmatrix}1 & 0\\ 0 & 0\end{smallmatrix}\right)$, $\left(\begin{smallmatrix}0 & 0\\ 0 & 1\end{smallmatrix}\right)$, and
+$\left(\begin{smallmatrix}0 & 0\\ 0 & 0\end{smallmatrix}\right)$ form an involutory sub\sgp\ in $\TB$ and, obviously, this sub\sgp\ is
+isomorphic to the 3-element twisted semilattice $\TSL$. Thus, Theorem~\ref{twisted} applies.
+\end{proof}
+
+Now consider the matrix \iss\ $\langle\mathrm{M}_n(\mathcal{K}),\cdot,{}^T\rangle$ where $\mathcal{K}$ is a finite field.
+
+\begin{Cor}[{\mdseries\cite[Theorems 3.9 and 3.10]{ADV:2012}}]
+\label{matrices} The \is\ $\langle\mathrm{M}_n(\mathcal{K}),\cdot,{}^T\rangle$, where $\mathcal{K}$ is a finite field, is \infb\ if $n\ge
+3$ or if $n=2$ and the number of elements in $\mathcal{K}$ is not of the form $4k+3$.
+\end{Cor}
+
+\begin{proof}
+The reduct $\langle\mathrm{M}_n(\mathcal{K}),\cdot\rangle$ is INFB for each $n\ge2$ and each finite field $\mathcal{K}$
+by~\cite[Corollary~6.2]{sapirburnside}. To invoke Theorem~\ref{twisted}, it only remains to show that, under the condition of the
+corollary, the 3-element twisted semilattice $\TSL$ belongs to the variety $\var\langle\mathrm{M}_n(\mathcal{K}),\cdot,{}^T\rangle$.
+
+First let $n\ge3$. By the Chevalley-Warning theorem \cite[Corollary~2 in \S1.2]{Serre}, the field $\mathcal{K}$ contains some elements
+$x,y$ satisfying $1+x^2+y^2=0$. Then the $n\times n$-matrices
+$$e=\begin{pmatrix}
+1 & 0 & 0 & \cdots & 0\\
+x & 0 & 0 & \cdots & 0\\
+y & 0 & 0 & \cdots & 0\\
+\vdots & \vdots & \vdots &\ddots & \vdots\\
+0 & 0 & 0 & \cdots & 0
+\end{pmatrix},\ \ f=
+\begin{pmatrix} 1 & x & y & \cdots & 0\\
+0 & 0 & 0 & \cdots & 0\\
+0 & 0 & 0 & \cdots & 0\\
+\vdots & \vdots & \vdots &\ddots & \vdots\\
+0 & 0 & 0 & \cdots & 0
+\end{pmatrix},\ \text{ and }\
+g=
+\begin{pmatrix} 1 & x & y & \cdots & 0\\
+x & x^2 & xy & \cdots & 0\\
+y & xy & y^2 & \cdots & 0\\
+\vdots & \vdots & \vdots &\ddots & \vdots\\
+0 & 0 & 0 & \cdots & 0
+\end{pmatrix}$$
+satisfy
+$$e^2=e,\ f^2=f,\ ef=g,\ fe=0,\ e^T=f,\ f^T=f,\ \text{ and } g^T=g.$$
+Therefore the set $\{e,f,g,0\}$ forms an involutory sub\sgp\ in $\langle\mathrm{M}_n(\mathcal{K}),\cdot,{}^T\rangle$, the set $\{g,0\}$ is
+an ideal of this sub\sgp and is closed under transposition. It remains to observe that the Rees quotient of the \is\
+$\langle\{e,f,g,0\},\cdot,{}^T\rangle$ over the ideal $\{g,0\}$ is isomorphic to the 3-element twisted semilattice $\TSL$.
+
+Now let $n=2$ and let the number of elements in $\mathcal{K}$ be not of the form $4k+3$. Then the field $\mathcal{K}$ contains an element
+$x$ satisfying $1+x^2=0$, see, e.g., \cite[Theorem~3.75]{LidlNiederreiter}. Now the argument of the previous paragraph applies, with the
+$2\times 2$-matrices
+$$e'=\begin{pmatrix}
+1 & 0 \\
+x & 0
+\end{pmatrix},\ \ f'=
+\begin{pmatrix}
+1 & x\\
+0 & 0
+\end{pmatrix},\ \text{ and }\
+g'=
+\begin{pmatrix}
+1 & x \\
+x & x^2
+\end{pmatrix}$$
+in the roles of $e,f$, and $g$, respectively.
+\end{proof}
+
+We could have continued along the same lines to show that in fact all examples of INFB \iss\ found in~\cite{Dolinka:2010,ADV:2012} can be
+similarly deduced from Theorem~\ref{twisted}. However we think that Corollaries~\ref{twisted Brandt} and~\ref{matrices} are representative
+enough. Now we present a new application.
+
+Let $\mathcal{K}$ be a finite field and let $\mathrm{T}_n(\mathcal{K})$ stand for the set of all upper-triangular $n\times n$-matrices over
+$\mathcal{K}$. The set $\mathrm{T}_n(\mathcal{K})$ forms an \is\ under the usual matrix multiplication and the skew transposition. The
+following result classifies all INBF \iss\ of the form $\langle\mathrm{T}_n(\mathcal{K}),\cdot,{}^D\rangle$.
+
+\begin{Thm}
+\label{triangular} The \is\ $\langle\mathrm{T}_n(\mathcal{K}),\cdot,{}^D\rangle$, where $\mathcal{K}$ is a finite field, is \infb\ if and
+only if $n\ge 4$ and $\mathcal{K}$ contains at least $3$ elements.
+\end{Thm}
+
+\begin{proof}
+In~\cite{Goldberg&Volkov:2003} it is shown that the reduct $\langle\mathrm{T}_n(\mathcal{K}),\cdot\rangle$ is INFB if and only if $n\ge 4$
+and $\mathcal{K}$ contains at least $3$ elements. Therefore, the `only if' part of our theorem follows from Lemma~\ref{easy} and the `if'
+part will follow from Theorem~\ref{twisted} as soon as we will verify that $\TSL\in\var\langle\mathrm{T}_n(\mathcal{K}),\cdot,{}^D\rangle$.
+Indeed, for every $n\ge2$ the matrix units $e_{11}$ and $e_{nn}$ belong to $\mathrm{T}_n(\mathcal{K})$ and satisfy
+$$e_{11}^2=e_{11},\ e_{nn}^2=e_{nn},\ e_{11}e_{nn}=e_{nn}e_{11}=0,\ e_{11}^D=e_{nn},\ \text{ and } e_{nn}^D=e_{11}.$$
+Hence the set $\{e_{11},e_{nn},0\}$ forms an involutory sub\sgp\ in $\langle\mathrm{T}_n(\mathcal{K}),\cdot,{}^D\rangle$ and this
+involutory sub\sgp\ is isomorphic to the 3-element twisted semilattice $\TSL$.
+\end{proof}
+
+Observe that in~\cite{Goldberg&Volkov:2003} it is shown that for any $n$ and $\mathcal{K}$, the Brandt monoid $\langle B_2^1,\cdot\rangle$
+does not belong to the \sgp\ variety generated by the \sgp\ $\langle\mathrm{T}_n(\mathcal{K}),\cdot\rangle$. Hence the twisted Brandt
+monoid $\TB$ does not belong to the \is\ variety $\var\langle\mathrm{T}_n(\mathcal{K}),\cdot,{}^D\rangle$. Thus, Theorem~\ref{triangular}
+provides a series of examples of INFB \iss\ whose varieties do not contain $\TB$. Such examples have not been known before.
+
+\section{Regular semigroups}
+\label{sec:regular}
+
+In this section we address the question whether or not the presence of the 3-element twisted semilattice $\TSL$ in the variety generated by
+a \fis\ $\mathcal{S}$ is necessary for the property of being INFB to be inherited by $\mathcal{S}$ from its \sgp\ reduct. So far we have no
+answer to this question in its full generality; here we show that the answer is affirmative for the case where the reduct is a regular
+\sgp.
+
+We start with registering a property of Green's relations in \iss\ that do not have $\TSL$ among quotients of their involutory sub\sgps.
+
+\begin{Lemma}
+\label{D-structure} If $\TSL$ is not a quotient of an involutory sub\sgp\ $\mathcal{S}=\langle S,\cdot,{}^*\rangle$, then every idempotent
+$e\in S$ satisfies $ee^*\Rc e\Lc e^*e\Rc e^*\Lc ee^*$.
+\end{Lemma}
+
+\begin{proof}
+Clearly, we may assume that $\mathcal{S}$ is generated by $e$ as a unary \sgp. Let $I=See^*S\cup Se^*eS$, then $I$ is a $*$-closed ideal in
+$\mathcal{S}$. If $e\notin I$, then also $e^*\notin I$ and the Rees quotient $\mathcal{S}/I$ is isomorphic to $\TSL$, a contradiction.
+Thus, $e\in I$, that is $e=w$ where $w$ is an alternating product of factors $e$ and $e^*$. Multiplying the equality $e=w$ through by $e$
+on the left and on the right, we obtain an equality of the form $e=ee^*\cdots e^*e$. Hence $ee^*\Rc e\Lc e^*e$. Using the fact that the
+involution is an anti-isomorphism of $\langle S,\cdot\rangle$ and the equalities $(ee^*)^*=ee^*$, $(e^*e)^*=e^*e$, we also obtain $ee^*\Lc
+e^*\Rc e^*e$.
+\end{proof}
+
+Recall the classic result by Miller and Clifford that will be invoked a few times.
+
+\begin{Lemma}[{\mdseries\cite[Proposition~2.3.7]{how}}]
+\label{Miller&Clifford} Let $a,b$ be elements of a $\mathscr{D}$-class of an arbitrary \sgp. Then $ab\in R_a\cap L_b$ if and only if
+$L_a\cap R_b$ contains an idempotent.
+\end{Lemma}
+
+We will also need the following result from~\cite{ADV:2012}.
+
+\begin{Prop}[{\mdseries\cite[Proposition~2.9]{ADV:2012}}]
+\label{NINFB} Let $\mathcal{S}=\langle S,\cdot,{}^*\rangle$ be a \fis. If there exists an involutory word $\om(x)$ in one variable $x$ such
+that $\mathcal{S}$ satisfies the identity $x=x\om(x)x$, then $\mathcal{S}$ is not \infb.
+\end{Prop}
+
+Recall that an element $x$ of a \sgp\ $\langle S,\cdot\rangle$ is said to be \emph{regular} if $x=xyx$ for some $y\in S$. A [unary] \sgp\
+is \emph{regular} if all of its elements are regular.
+
+\begin{Thm}
+\label{regular} Let $\mathcal{S}=\langle S,\cdot,{}^*\rangle$ be a finite regular \is. If $\TSL\notin\var\mathcal{S}$, then $\mathcal{S}$
+is not \infb.
+\end{Thm}
+
+\begin{proof}
+Take an arbitrary element $x\in S$ and fix an element $y\in S$ such that $x=xyx$. Then $e=xy$ and $f=yx$ are idempotents and $e\Rc x\Lc f$.
+Since the involution is an anti-isomorphism of $\langle S,\cdot\rangle$, we also have $e^*\Lc x^*\Rc f^*$. By Lemma~\ref{D-structure},
+$ee^*\Rc e\Lc e^*e\Rc e^*\Lc ee^*$ and $ff^*\Rc f\Lc f^*f\Rc f^*\Lc ff^*$.  All listed relations are graphically represented in
+Fig.~\ref{fig:D-class} that shows an appropriate fragment of the eggbox picture for the $\mathscr{D}$-class of $x$ and $x^*$.
+\begin{figure}[th]
+\begin{center}
+{\large \begin{tabular}{|c|c|c|c|}
+\hline $x$\rule[-5pt]{0pt}{16pt} & $e$ & & $ee^*$\\
+\hline \rule[-5pt]{0pt}{16pt}& $e^*e$  & & $e^*$\\
+\hline $f$\rule[-5pt]{0pt}{16pt} & \phantom{$f^*f$} & $ff^*$ &  \phantom{$f^*f$}\\
+\hline $f^*f$\rule[-5pt]{0pt}{16pt} & & $f^*$ & $x^*$ \\
+\hline
+\end{tabular}}
+\caption{A fragment of the eggbox picture for the $\mathscr{D}$-class of the elements $x$ and $x^*$}\label{fig:D-class}
+\end{center}
+\end{figure}
+\end{proof}
+
+By the `only if' part of Lemma~\ref{Miller&Clifford}, the fact that the product $e^*e$ belongs to $L_e\cap R_{e^*}$ implies that the
+$\mathscr{H}$-class $H_{ee^*}=R_e\cap L_{e^*}$ contains an idempotent $g$ and hence, by Green's theorem~\cite[Theorem~2.2.5]{how}, this
+class is a subgroup of $\langle S,\cdot\rangle$ having $g$ as its identity element. Observe that $R_e=R_x$ and $L_{e^*}=L_{x^*}$ whence
+$H_{ee^*}=R_x\cap L_{x^*}$. Also observe that $gx=x$ since $g$ is an idempotent and $g\Rc x$.
+
+Similarly, $ff^*\in R_f\cap L_{f^*}$ implies that $H_{f^*f}=R_{f*}\cap L_f$ contains an idempotent. However, $R_{f^*}=R_{x^*}$ and
+$L_f=L_x$. Now, by the `if' part of Lemma~\ref{Miller&Clifford}, the fact that $L_x\cap R_{x^*}=H_{f^*f}$ contains an idempotent implies
+that the product $xx^*$ lies in $R_x\cap L_{x^*}=H_{ee^*}$. Let $n$ be the least common multiple of exponents of the subgroups of $\langle
+S,\cdot\rangle$. We then have $(xx^*)^n=g$ whence $(xx^*)^nx=x$.
+
+Since $x\in S$ is arbitrary, we see that the \is\ $\mathcal{S}$ satisfies the identity $(xx^*)^nx=x$. Now Proposition~\ref{NINFB} applies
+(with $\om(x)=x^*(xx^*)^{n-1}$).
+
+Now we may deduce various characterizations of regular INFB \iss.
+\renewcommand{\labelenumi}{\emph{(\roman{enumi})}}
+\begin{Cor}
+\label{characterization} Let $\mathcal{S}=\langle S,\cdot,{}^*\rangle$ be a finite regular \is. Then the following are equivalent:
+\begin{enumerate}
+\item $\mathcal{S}$ is \infb;
+\item the reduct $\langle S,\cdot\rangle$ is \infb\ and the variety $\var\mathcal{S}$ contains the $3$-element twisted
+semilattice $\TSL$;
+\item all Zimin words are involutory isoterms for $\mathcal{S}$.
+\end{enumerate}
+\end{Cor}
+
+\begin{proof}
+The implication (i) $\to$ (ii) follows from Lemma~\ref{easy} and Theorem~\ref{regular}. The implication (ii) $\to$ (iii) has been verified
+in the course of the proof of Theorem~\ref{twisted}. The implication (iii) $\to$ (i) is Theorem~\ref{Theorem 2.2}.
+\end{proof}
+
+Finally, we observe that the condition (ii) in Corollary~\ref{characterization} is algorithmically verifiable. Indeed, given a finite
+regular \is\ $\mathcal{S}$, we can check whether or not its reduct is INFB by using Sapir's algorithm from~\cite{Sapir:1987}. In order to
+verify whether or not the variety $\var\mathcal{S}$ contains the $3$-element twisted semilattice $\TSL$, we can use a general algorithm by
+Kalicki~\cite{Kalicki:1952}. This algorithm (being in fact an easy consequence of the standard proof of the HSP-theorem) decides, when
+given two finite algebras $\mathcal{A}$ and $\mathcal{B}$ of the same similarity type, whether or not $\mathcal{A}$ lies in the variety
+generated by $\mathcal{B}$. We have thus established the following fact.
+
+\begin{Cor}
+There exists an algorithm which decides, when given a  finite regular \is\ $\mathcal{S}$, whether or not $\mathcal{S}$ is \infb.
+\end{Cor}
+
+
+\begin{thebibliography}{99}
+\bibitem{ADV:2012}
+Auinger, K., Dolinka I., Volkov, M.V.: Matrix identities involving multiplication and transposition. J. Europ. Math. Soc. \textbf{14}(3),
+937--969 (2012)
+
+\bibitem{BuSa81}
+Burris, S., Sankappanavar, H.P.: A Course in Universal Algebra. Springer, Berlin (1981)
+
+\bibitem{Dolinka:2010}
+Dolinka, I.: On identities of finite involution semigroups. Semigroup Forum \textbf{80}, 105--120 (2010)
+
+\bibitem{Fajt}
+Fajtlowicz, S.: Equationally complete semigroups with involution. Algebra Universalis \textbf{1}, 355--358 (1972)
+
+\bibitem{Goldberg&Volkov:2003}
+Goldberg, I.A., Volkov, M.V.: Identities of semigroups of triangular matrices over a finite field. Mat. Zametki. \textbf{73}(4), 502--510
+(2003), in Russian; Engl.\ translation Math.\ Notes \textbf{73}(4), 474--481 (2003)
+
+\bibitem{how}
+Howie, J.M.: Fundamentals of Semigroup Theory. London Mathematical Society Monographs \textbf{12}, Clarendon Press, Oxford (1995)
+
+\bibitem{Jackson&Volkov:2010}
+Jackson, M., Volkov, M.V.: The algebra of adjacency patterns: Rees matrix semigroups with reversion. In: Fields of Logic and Computation.
+Lecture Notes in Compiter Science, vol. 6300, pp. 414--443. Springer, Berlin (2010)
+
+\bibitem{Kalicki:1952}
+Kalicki, J.: On comparison of finite algebras. Proc.\ Amer.\ Math.\ Soc. \textbf{3}(1), 36--40 (1952)
+
+\bibitem{Lawrence&Willard:1998}
+Lawrence, J.,  Willard, R.: On finitely based groups and nonfinitely based quasivarieties. J. Algebra \textbf{203}, 1--11 (2008)
+
+\bibitem{LidlNiederreiter}
+Lidl, R., Niederreiter, H.: Finite Fields. Addison-Wesley, Cambridge (1997)
+
+\bibitem{sapirburnside}
+Sapir, M. V.: Problems of Burnside type and the finite basis property in varieties of semigroups. Izv.\ Akad.\ Nauk SSSR, Ser.\ Mat.
+\textbf{51}, 319--340 (1987), in Russian; Engl.\ translation Math.\ USSR-Izv. \textbf{30}, 295--314 (1987)
+
+\bibitem{Sapir:1987}
+Sapir, M.V.: Inherently nonfinitely based finite semigroups. Mat. Sb. \textbf{133}(2), 154--166 (1987), in Russian; Engl.\ translation
+Math. USSR--Sb. \textbf{61}, 155--166 (1988)
+
+\bibitem{Sapir:1993}
+Sapir, M. V.: Identities of finite inverse semigroups. Internat.\ J. Algebra Comput. \textbf{3}, 115--124 (1993)
+
+\bibitem{Serre}
+Serre, J.-P.: Cours d'Arithmetique. Presses Universitaires de France, Paris (1980)
+
+\bibitem{Volkov:2001}
+Volkov, M.V.: The finite basis problem for finite semigroups. Sci. Math. Jpn. \textbf{53}(1), 171--199 (2001)
+\end{thebibliography}
+
+\end{document}
