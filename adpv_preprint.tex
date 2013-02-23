@@ -1,4 +1,4 @@
-\documentclass[smallextended]{svjour3}
+\documentclass[11pt,reqno]{amsart}
 \usepackage{mathptmx}      % use Times fonts if available on your TeX system
 %
 \usepackage{amsmath}
@@ -7,7 +7,7 @@
 \usepackage{url}
 \usepackage{eucal}
 
-\journalname{Semigroup Forum}
+
 
 \def\om{\omega}
 \def\Rc{\mathrel{\mathscr{R}}}
@@ -43,32 +43,29 @@
 
 \begin{document}
 
-\title{Unary enhancements\\ of inherently non-finitely based semigroups}
-\author{K.~Auinger \and I.~Dolinka \and T.~V.~Pervukhina \and M.~V.~Volkov}
+\title{Unary enhancements of~inherently~nonfinitely~based~semigroups}
+\author{K.~Auinger}
+\address{Fakult\"at f\"ur Mathematik, Universit\"at Wien, Nordbergstrasse 15,  A-1090 Wien, Austria}
+\email{karl.auinger@univie.ac.at}
 
-\institute{K.~Auinger \at Fakult\"at f\"ur Mathematik, Universit\"at Wien, Nordbergstrasse 15,  A-1090 Wien, Austria\\
-\email{karl.auinger@univie.ac.at} \and
-I.~Dolinka \at Department of Mathematics and Informatics, University of Novi Sad, Trg Dositeja Obradovi\'ca 4, 21101 Novi Sad, Serbia\\
-\email{dockie@dmi.uns.ac.rs} \and
-T.~V.~Pervukhina \and M. V. Volkov \at Institute of Mathematics and Computer Science, Ural Federal University, Lenina 51, 620000 Ekaterinburg, Russia\\
-\email{tsungirl@yandex.ru} \and
-M.~V.~Volkov (corresponding author)\\
-\email{mikhail.volkov@usu.ru}}
+\author{I.~Dolinka}
+\address{ Department of Mathematics and Informatics, University of Novi Sad, Trg Do\-si\-teja Obradovi\'ca 4, 21101 Novi Sad, Serbia}
+\email{dockie@dmi.uns.ac.rs}
 
+\author{T.~V.~Pervukhina}
+\address{Institute of Mathematics and Computer Science, Ural Federal University, Lenina 51, 620000 Ekaterinburg, Russia}
+\email{tsungirl@yandex.ru, mikhail.volkov@usu.ru}
 
-\date {Received: / Accepted}
-
-\maketitle
+\author{M.~V.~Volkov}
 
 \begin{abstract}
 This paper is a continuation of ~\cite{ADV:2012}, more precisely, of Subsection 2.2 of~\cite{ADV:2012} dealing with \infb\ \iss. We exhibit
 a simple condition under which a finite \is\ whose \sgp\ reduct is \infb\ is also \infb\ as a unary \sgp. As applications, we get already
 known as well as new examples of \infb\ \iss. We also show that for finite regular semigroups, our condition is not only sufficient but
 also necessary for the property of being \infb\ to persist. This leads to an algorithmic description of regular \infb\ \iss.
-
-\keywords{\is\ \and \infb\ \sgp\ \and twisted semilattice \and twisted Brandt monoid \and regular semigroup \and matrix semigroup}
-\subclass{20M07 \and 20M17 \and 20M25}
 \end{abstract}
+
+\maketitle
 
 \section{Background and overview}
 
@@ -242,7 +239,7 @@ isomorphic to the 3-element twisted semilattice $\TSL$. Thus, Theorem~\ref{twist
 
 Now consider the matrix \iss\ $\langle\mathrm{M}_n(\mathcal{K}),\cdot,{}^T\rangle$ where $\mathcal{K}$ is a finite field.
 
-\begin{Cor}[{\mdseries\cite[Theorems 3.9 and 3.10]{ADV:2012}}]
+\begin{Cor}[{\mdseries\cite[Theorems 3.9 \& 3.10]{ADV:2012}}]
 \label{matrices} The \is\ $\langle\mathrm{M}_n(\mathcal{K}),\cdot,{}^T\rangle$, where $\mathcal{K}$ is a finite field, is \infb\ if $n\ge
 3$ or if $n=2$ and the number of elements in $\mathcal{K}$ is not of the form $4k+3$.
 \end{Cor}
@@ -260,13 +257,13 @@ x & 0 & 0 & \cdots & 0\\
 y & 0 & 0 & \cdots & 0\\
 \vdots & \vdots & \vdots &\ddots & \vdots\\
 0 & 0 & 0 & \cdots & 0
-\end{pmatrix},\ \ f=
+\end{pmatrix},\  f=
 \begin{pmatrix} 1 & x & y & \cdots & 0\\
 0 & 0 & 0 & \cdots & 0\\
 0 & 0 & 0 & \cdots & 0\\
 \vdots & \vdots & \vdots &\ddots & \vdots\\
 0 & 0 & 0 & \cdots & 0
-\end{pmatrix},\ \text{ and }\
+\end{pmatrix},\
 g=
 \begin{pmatrix} 1 & x & y & \cdots & 0\\
 x & x^2 & xy & \cdots & 0\\
@@ -277,12 +274,12 @@ y & xy & y^2 & \cdots & 0\\
 satisfy
 $$e^2=e,\ f^2=f,\ ef=g,\ fe=0,\ e^T=f,\ f^T=e,\ \text{ and } g^T=g.$$
 Therefore the set $\{e,f,g,0\}$ forms an involutory sub\sgp\ in $\langle\mathrm{M}_n(\mathcal{K}),\cdot,{}^T\rangle$, the set $\{g,0\}$ is
-an ideal of this sub\sgp\ and is closed under transposition. It remains to observe that the Rees quotient of the \is\
+an ideal of this sub\sgp\ and is closed under transposition. It remains to observe that the Rees quotient of
 $\langle\{e,f,g,0\},\cdot,{}^T\rangle$ over the ideal $\{g,0\}$ is isomorphic to the 3-element twisted semilattice $\TSL$.
 
-Now let $n=2$ and let the number of elements in $\mathcal{K}$ be not of the form $4k+3$. Then the field $\mathcal{K}$ contains an element
-$x$ satisfying $1+x^2=0$, see, e.g., \cite[Theorem~3.75]{LidlNiederreiter}. Now the argument of the previous paragraph applies, with the
-$2\times 2$-matrices
+Now consider the case when $n=2$ and the number of elements in $\mathcal{K}$ is not of the form $4k+3$. Then the field $\mathcal{K}$
+contains an element $x$ satisfying $1+x^2=0$, see, e.g., \cite[Theorem~3.75]{LidlNiederreiter}. Now the argument of the previous paragraph
+applies, with the $2\times 2$-matrices
 $$e'=\begin{pmatrix}
 1 & 0 \\
 x & 0
@@ -411,14 +408,14 @@ $H_{ee^*}=R_x\cap L_{x^*}$. Also observe that $gx=x$ since $g$ is an idempotent 
 
 Similarly, $ff^*\in R_f\cap L_{f^*}$ implies that $H_{f^*f}=R_{f*}\cap L_f$ contains an idempotent. However, $R_{f^*}=R_{x^*}$ and
 $L_f=L_x$. Now, by the `if' part of Lemma~\ref{Miller&Clifford}, the fact that $L_x\cap R_{x^*}=H_{f^*f}$ contains an idempotent implies
-that the product $xx^*$ lies in $R_x\cap L_{x^*}=H_{ee^*}$. Let $n$ be the least common multiple of exponents of the subgroups of $\langle
-S,\cdot\rangle$. We then have $(xx^*)^n=g$ whence $(xx^*)^nx=gx=x$.
+that the product $xx^*$ lies in $R_x\cap L_{x^*}=H_{ee^*}$. Let $n$ be the least common multiple of the exponents of the subgroups of
+$\langle S,\cdot\rangle$. We then have $(xx^*)^n=g$ whence $(xx^*)^nx=gx=x$.
 
 Since $x\in S$ is arbitrary, we see that the \is\ $\mathcal{S}$ satisfies the identity $(xx^*)^nx=x$. Now Proposition~\ref{NINFB} applies,
 with $\om(x)=x^*(xx^*)^{n-1}$.
 
 Now we can easily deduce various characterizations of regular INFB \iss.
-\renewcommand{\labelenumi}{\emph{(\roman{enumi})}}
+\renewcommand{\labelenumi}{(\roman{enumi})}
 \begin{Cor}
 \label{characterization} Let $\mathcal{S}=\langle S,\cdot,{}^*\rangle$ be a finite regular \is. Then the following are equivalent:
 \begin{enumerate}
